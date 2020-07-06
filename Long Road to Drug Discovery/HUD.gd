@@ -54,6 +54,6 @@ func addCommas(value):
 	return res
 
 func _process(delta):
-	$Money.text = "Money: " + addCommas(money)
+	$Money.text = "Money: $" + addCommas(money)
 	$Years.text = "Years left: " + str(years)
 	$BackupFormulations.text = "Backup Formulations: " + str(backups)
