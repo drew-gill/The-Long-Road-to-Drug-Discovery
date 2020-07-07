@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/pepSound1.ogg-3fea56978f037575856b5e6af1bb40bf.oggstr"
+
+[deps]
+
+source_file="res://External Assets/Kenney Game Assets/Audio/Digital sounds (60 sounds)/pepSound1.ogg"
+dest_files=[ "res://.import/pepSound1.ogg-3fea56978f037575856b5e6af1bb40bf.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

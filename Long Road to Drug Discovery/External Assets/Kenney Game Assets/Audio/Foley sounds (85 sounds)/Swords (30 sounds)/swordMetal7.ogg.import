@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/swordMetal7.ogg-b0454a8d971c4cec86671cd6ad1cfd29.oggstr"
+
+[deps]
+
+source_file="res://External Assets/Kenney Game Assets/Audio/Foley sounds (85 sounds)/Swords (30 sounds)/swordMetal7.ogg"
+dest_files=[ "res://.import/swordMetal7.ogg-b0454a8d971c4cec86671cd6ad1cfd29.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

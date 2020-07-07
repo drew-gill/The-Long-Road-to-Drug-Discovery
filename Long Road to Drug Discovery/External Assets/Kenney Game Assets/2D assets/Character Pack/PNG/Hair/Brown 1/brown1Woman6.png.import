@@ -1,0 +1,34 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path="res://.import/brown1Woman6.png-e68c1a08800fe6f345576972ee706041.stex"
+metadata={
+"vram_texture": false
+}
+
+[deps]
+
+source_file="res://External Assets/Kenney Game Assets/2D assets/Character Pack/PNG/Hair/Brown 1/brown1Woman6.png"
+dest_files=[ "res://.import/brown1Woman6.png-e68c1a08800fe6f345576972ee706041.stex" ]
+
+[params]
+
+compress/mode=0
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/bptc_ldr=0
+compress/normal_map=0
+flags/repeat=0
+flags/filter=true
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+process/invert_color=false
+stream=false
+size_limit=0
+detect_3d=true
+svg/scale=1.0

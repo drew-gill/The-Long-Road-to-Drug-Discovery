@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/platesSlide3.ogg-8178da5593f629ef06e340fab1ed8867.oggstr"
+
+[deps]
+
+source_file="res://External Assets/Kenney Game Assets/Audio/Foley sounds (85 sounds)/Metal plates (14 sounds)/platesSlide3.ogg"
+dest_files=[ "res://.import/platesSlide3.ogg-8178da5593f629ef06e340fab1ed8867.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

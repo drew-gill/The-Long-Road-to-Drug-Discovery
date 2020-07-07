@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/Wood_Wall_Cross_01.obj-573a1844a4b4c320d68585a95bd914ce.mesh"
+
+[deps]
+
+files=[ "res://.import/Wood_Wall_Cross_01.obj-573a1844a4b4c320d68585a95bd914ce.mesh" ]
+
+source_file="res://External Assets/Kenney Game Assets/Archive/Medieval Town (Legacy 3D)/Models/Wood_Wall_Cross_01.obj"
+dest_files=[ "res://.import/Wood_Wall_Cross_01.obj-573a1844a4b4c320d68585a95bd914ce.mesh", "res://.import/Wood_Wall_Cross_01.obj-573a1844a4b4c320d68585a95bd914ce.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

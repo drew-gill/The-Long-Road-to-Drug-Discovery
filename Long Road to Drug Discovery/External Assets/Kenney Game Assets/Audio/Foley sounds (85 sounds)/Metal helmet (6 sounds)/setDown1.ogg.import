@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/setDown1.ogg-0bbb776304343a6bd0eed365f1028207.oggstr"
+
+[deps]
+
+source_file="res://External Assets/Kenney Game Assets/Audio/Foley sounds (85 sounds)/Metal helmet (6 sounds)/setDown1.ogg"
+dest_files=[ "res://.import/setDown1.ogg-0bbb776304343a6bd0eed365f1028207.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

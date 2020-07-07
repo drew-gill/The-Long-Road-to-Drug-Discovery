@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/life_up.ogg-f943a4f918ad2e169cf3d6ff2363ba81.oggstr"
+
+[deps]
+
+source_file="res://External Assets/Kenney Game Assets/Audio/Synth voice pack (100 sounds)/life_up.ogg"
+dest_files=[ "res://.import/life_up.ogg-f943a4f918ad2e169cf3d6ff2363ba81.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

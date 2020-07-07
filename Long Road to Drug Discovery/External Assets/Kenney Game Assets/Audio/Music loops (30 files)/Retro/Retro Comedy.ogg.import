@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Retro Comedy.ogg-1ad08d75e1f6bb8946a116ec069f580c.oggstr"
+
+[deps]
+
+source_file="res://External Assets/Kenney Game Assets/Audio/Music loops (30 files)/Retro/Retro Comedy.ogg"
+dest_files=[ "res://.import/Retro Comedy.ogg-1ad08d75e1f6bb8946a116ec069f580c.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

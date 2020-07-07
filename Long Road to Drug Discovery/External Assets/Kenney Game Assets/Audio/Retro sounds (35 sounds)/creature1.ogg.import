@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/creature1.ogg-42b90395992dcf15e4a125b8f49dcaf5.oggstr"
+
+[deps]
+
+source_file="res://External Assets/Kenney Game Assets/Audio/Retro sounds (35 sounds)/creature1.ogg"
+dest_files=[ "res://.import/creature1.ogg-42b90395992dcf15e4a125b8f49dcaf5.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

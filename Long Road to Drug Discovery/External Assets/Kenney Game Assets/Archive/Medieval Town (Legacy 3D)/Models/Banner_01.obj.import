@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/Banner_01.obj-6728120204a15441e0962c53ffd1eca0.mesh"
+
+[deps]
+
+files=[ "res://.import/Banner_01.obj-6728120204a15441e0962c53ffd1eca0.mesh" ]
+
+source_file="res://External Assets/Kenney Game Assets/Archive/Medieval Town (Legacy 3D)/Models/Banner_01.obj"
+dest_files=[ "res://.import/Banner_01.obj-6728120204a15441e0962c53ffd1eca0.mesh", "res://.import/Banner_01.obj-6728120204a15441e0962c53ffd1eca0.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

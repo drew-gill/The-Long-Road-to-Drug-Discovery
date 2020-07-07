@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/Brown_Cliff_Corner_Green_Top_01.obj-e6f4581d305e90d304d817fca938bdae.mesh"
+
+[deps]
+
+files=[ "res://.import/Brown_Cliff_Corner_Green_Top_01.obj-e6f4581d305e90d304d817fca938bdae.mesh" ]
+
+source_file="res://External Assets/Kenney Game Assets/Archive/Nature Pack (Legacy 3D)/Models/Brown_Cliff_Corner_Green_Top_01.obj"
+dest_files=[ "res://.import/Brown_Cliff_Corner_Green_Top_01.obj-e6f4581d305e90d304d817fca938bdae.mesh", "res://.import/Brown_Cliff_Corner_Green_Top_01.obj-e6f4581d305e90d304d817fca938bdae.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true
