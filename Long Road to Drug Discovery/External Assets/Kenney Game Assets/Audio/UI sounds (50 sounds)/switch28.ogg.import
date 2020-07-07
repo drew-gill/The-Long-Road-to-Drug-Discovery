@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/switch28.ogg-ced20650df7750c9d95a0c5b20f36446.oggstr"
+
+[deps]
+
+source_file="res://External Assets/Kenney Game Assets/Audio/UI sounds (50 sounds)/switch28.ogg"
+dest_files=[ "res://.import/switch28.ogg-ced20650df7750c9d95a0c5b20f36446.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

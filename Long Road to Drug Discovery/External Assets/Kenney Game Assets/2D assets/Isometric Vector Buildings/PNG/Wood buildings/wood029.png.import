@@ -1,0 +1,34 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path="res://.import/wood029.png-5765ec46511e8eeb4a025971153bba72.stex"
+metadata={
+"vram_texture": false
+}
+
+[deps]
+
+source_file="res://External Assets/Kenney Game Assets/2D assets/Isometric Vector Buildings/PNG/Wood buildings/wood029.png"
+dest_files=[ "res://.import/wood029.png-5765ec46511e8eeb4a025971153bba72.stex" ]
+
+[params]
+
+compress/mode=0
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/bptc_ldr=0
+compress/normal_map=0
+flags/repeat=0
+flags/filter=true
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+process/invert_color=false
+stream=false
+size_limit=0
+detect_3d=true
+svg/scale=1.0

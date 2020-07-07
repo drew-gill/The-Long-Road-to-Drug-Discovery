@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/roadTile_284.obj-f85ed53fba860926b567ce3c8dd4295d.mesh"
+
+[deps]
+
+files=[ "res://.import/roadTile_284.obj-f85ed53fba860926b567ce3c8dd4295d.mesh" ]
+
+source_file="res://External Assets/Kenney Game Assets/Archive/Road Pack (Legacy 3D)/Models/roadTile_284.obj"
+dest_files=[ "res://.import/roadTile_284.obj-f85ed53fba860926b567ce3c8dd4295d.mesh", "res://.import/roadTile_284.obj-f85ed53fba860926b567ce3c8dd4295d.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

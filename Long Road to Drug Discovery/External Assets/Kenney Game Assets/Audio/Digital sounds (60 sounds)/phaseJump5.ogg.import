@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/phaseJump5.ogg-86f474df38e3bf74f1e5d4c1eaff7656.oggstr"
+
+[deps]
+
+source_file="res://External Assets/Kenney Game Assets/Audio/Digital sounds (60 sounds)/phaseJump5.ogg"
+dest_files=[ "res://.import/phaseJump5.ogg-86f474df38e3bf74f1e5d4c1eaff7656.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

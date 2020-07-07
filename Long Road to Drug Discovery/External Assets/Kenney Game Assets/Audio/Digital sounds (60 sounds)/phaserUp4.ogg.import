@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/phaserUp4.ogg-47ea49cbe33a020951e5ed1eac7f9420.oggstr"
+
+[deps]
+
+source_file="res://External Assets/Kenney Game Assets/Audio/Digital sounds (60 sounds)/phaserUp4.ogg"
+dest_files=[ "res://.import/phaserUp4.ogg-47ea49cbe33a020951e5ed1eac7f9420.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

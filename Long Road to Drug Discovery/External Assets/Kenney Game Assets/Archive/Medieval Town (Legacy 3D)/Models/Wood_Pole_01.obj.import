@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/Wood_Pole_01.obj-b214067eb9c8f80f50f0eb7d52b1b317.mesh"
+
+[deps]
+
+files=[ "res://.import/Wood_Pole_01.obj-b214067eb9c8f80f50f0eb7d52b1b317.mesh" ]
+
+source_file="res://External Assets/Kenney Game Assets/Archive/Medieval Town (Legacy 3D)/Models/Wood_Pole_01.obj"
+dest_files=[ "res://.import/Wood_Pole_01.obj-b214067eb9c8f80f50f0eb7d52b1b317.mesh", "res://.import/Wood_Pole_01.obj-b214067eb9c8f80f50f0eb7d52b1b317.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

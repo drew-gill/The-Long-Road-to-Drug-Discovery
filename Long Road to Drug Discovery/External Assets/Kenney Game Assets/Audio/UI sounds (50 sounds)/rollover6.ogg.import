@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/rollover6.ogg-1ae06877581f329fe2a6510f7f9a1d2a.oggstr"
+
+[deps]
+
+source_file="res://External Assets/Kenney Game Assets/Audio/UI sounds (50 sounds)/rollover6.ogg"
+dest_files=[ "res://.import/rollover6.ogg-1ae06877581f329fe2a6510f7f9a1d2a.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

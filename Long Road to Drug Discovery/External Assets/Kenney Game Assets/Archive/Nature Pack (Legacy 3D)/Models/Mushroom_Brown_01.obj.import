@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/Mushroom_Brown_01.obj-357c5f7aa71ff849662cda8a75378df8.mesh"
+
+[deps]
+
+files=[ "res://.import/Mushroom_Brown_01.obj-357c5f7aa71ff849662cda8a75378df8.mesh" ]
+
+source_file="res://External Assets/Kenney Game Assets/Archive/Nature Pack (Legacy 3D)/Models/Mushroom_Brown_01.obj"
+dest_files=[ "res://.import/Mushroom_Brown_01.obj-357c5f7aa71ff849662cda8a75378df8.mesh", "res://.import/Mushroom_Brown_01.obj-357c5f7aa71ff849662cda8a75378df8.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

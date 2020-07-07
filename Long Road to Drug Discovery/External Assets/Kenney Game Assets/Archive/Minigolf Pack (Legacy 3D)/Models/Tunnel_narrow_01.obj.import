@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/Tunnel_narrow_01.obj-8da40fad061548a7987d163f64676d6b.mesh"
+
+[deps]
+
+files=[ "res://.import/Tunnel_narrow_01.obj-8da40fad061548a7987d163f64676d6b.mesh" ]
+
+source_file="res://External Assets/Kenney Game Assets/Archive/Minigolf Pack (Legacy 3D)/Models/Tunnel_narrow_01.obj"
+dest_files=[ "res://.import/Tunnel_narrow_01.obj-8da40fad061548a7987d163f64676d6b.mesh", "res://.import/Tunnel_narrow_01.obj-8da40fad061548a7987d163f64676d6b.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

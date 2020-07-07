@@ -1,0 +1,34 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path="res://.import/tilePink_60.png-7fc1cf646844dc0645ef482de9b2d874.stex"
+metadata={
+"vram_texture": false
+}
+
+[deps]
+
+source_file="res://External Assets/Kenney Game Assets/2D assets/Puzzle Assets 2/PNG/Tiles pink/tilePink_60.png"
+dest_files=[ "res://.import/tilePink_60.png-7fc1cf646844dc0645ef482de9b2d874.stex" ]
+
+[params]
+
+compress/mode=0
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/bptc_ldr=0
+compress/normal_map=0
+flags/repeat=0
+flags/filter=true
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+process/invert_color=false
+stream=false
+size_limit=0
+detect_3d=true
+svg/scale=1.0

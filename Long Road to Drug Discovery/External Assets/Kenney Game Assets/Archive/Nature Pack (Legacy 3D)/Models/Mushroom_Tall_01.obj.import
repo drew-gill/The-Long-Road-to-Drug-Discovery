@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/Mushroom_Tall_01.obj-94b3c4eb4498591e9870d5ee67c4b83d.mesh"
+
+[deps]
+
+files=[ "res://.import/Mushroom_Tall_01.obj-94b3c4eb4498591e9870d5ee67c4b83d.mesh" ]
+
+source_file="res://External Assets/Kenney Game Assets/Archive/Nature Pack (Legacy 3D)/Models/Mushroom_Tall_01.obj"
+dest_files=[ "res://.import/Mushroom_Tall_01.obj-94b3c4eb4498591e9870d5ee67c4b83d.mesh", "res://.import/Mushroom_Tall_01.obj-94b3c4eb4498591e9870d5ee67c4b83d.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

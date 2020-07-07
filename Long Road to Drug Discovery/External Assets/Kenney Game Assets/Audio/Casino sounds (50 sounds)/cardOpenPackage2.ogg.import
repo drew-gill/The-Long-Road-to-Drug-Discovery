@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/cardOpenPackage2.ogg-7ad2bbbdbb457dabbd37a7f2665c1e47.oggstr"
+
+[deps]
+
+source_file="res://External Assets/Kenney Game Assets/Audio/Casino sounds (50 sounds)/cardOpenPackage2.ogg"
+dest_files=[ "res://.import/cardOpenPackage2.ogg-7ad2bbbdbb457dabbd37a7f2665c1e47.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

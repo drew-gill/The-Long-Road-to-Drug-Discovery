@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/pickup1.ogg-64a7fd506c193a93c715a9d300a8ffcf.oggstr"
+
+[deps]
+
+source_file="res://External Assets/Kenney Game Assets/Audio/Retro sounds (35 sounds)/pickup1.ogg"
+dest_files=[ "res://.import/pickup1.ogg-64a7fd506c193a93c715a9d300a8ffcf.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
