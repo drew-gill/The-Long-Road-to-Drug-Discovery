@@ -1,5 +1,9 @@
 extends Node
 
+export var numOfPlayers = 1
+#up to player 4, if there are 4 total players
+var currentPlayer = 1 
+
 
 
 func _ready():
@@ -25,31 +29,11 @@ func _on_Start_pressed():
 	$BackupFormulations.show()
 	
 
-func _on_AddMoney_pressed():
-	money += 1000
-
-func _on_SubtractMoney_pressed():
-	money -= 1000
-
-
-func _on_AddYear_pressed():
-	years += 1
-
-
-func _on_SubtractYear_pressed():
-	years -= 1
-
-func addCommas(value):
-	var string = str(value)
-	var mod = string.length() % 3
-	var res = ""
-
-	for i in range(0, string.length()):
-		if i != 0 && i % 3 == mod:
-			res += ","
-		res += string[i]
-
-	return res
+func endTurn():
+	if(currentPlayer + 1 > numOfPlayers):
+		currentPlayer = 1
+	else:
+		currentPlayer += 1
 
 func _process(delta):
 	$Money.text = "Money: $" + addCommas(money)
