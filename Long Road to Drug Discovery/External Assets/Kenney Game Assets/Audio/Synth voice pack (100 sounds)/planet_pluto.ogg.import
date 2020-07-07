@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/planet_pluto.ogg-a63275b954bc917918d148a77b8aaf36.oggstr"
+
+[deps]
+
+source_file="res://External Assets/Kenney Game Assets/Audio/Synth voice pack (100 sounds)/planet_pluto.ogg"
+dest_files=[ "res://.import/planet_pluto.ogg-a63275b954bc917918d148a77b8aaf36.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

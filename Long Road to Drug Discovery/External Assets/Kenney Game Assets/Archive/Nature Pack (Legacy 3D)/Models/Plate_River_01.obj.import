@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/Plate_River_01.obj-7bad7de81b0df0ad6caf8c20aad31f9e.mesh"
+
+[deps]
+
+files=[ "res://.import/Plate_River_01.obj-7bad7de81b0df0ad6caf8c20aad31f9e.mesh" ]
+
+source_file="res://External Assets/Kenney Game Assets/Archive/Nature Pack (Legacy 3D)/Models/Plate_River_01.obj"
+dest_files=[ "res://.import/Plate_River_01.obj-7bad7de81b0df0ad6caf8c20aad31f9e.mesh", "res://.import/Plate_River_01.obj-7bad7de81b0df0ad6caf8c20aad31f9e.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

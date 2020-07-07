@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/Wood_Window_Square_Sill_01.obj-a585f8950c9040d5e880c64bfa229f7f.mesh"
+
+[deps]
+
+files=[ "res://.import/Wood_Window_Square_Sill_01.obj-a585f8950c9040d5e880c64bfa229f7f.mesh" ]
+
+source_file="res://External Assets/Kenney Game Assets/Archive/Medieval Town (Legacy 3D)/Models/Wood_Window_Square_Sill_01.obj"
+dest_files=[ "res://.import/Wood_Window_Square_Sill_01.obj-a585f8950c9040d5e880c64bfa229f7f.mesh", "res://.import/Wood_Window_Square_Sill_01.obj-a585f8950c9040d5e880c64bfa229f7f.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

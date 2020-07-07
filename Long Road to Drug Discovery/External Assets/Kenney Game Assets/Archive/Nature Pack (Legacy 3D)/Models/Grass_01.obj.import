@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/Grass_01.obj-33b8a44bceff6f88bd9ff5ad679ae662.mesh"
+
+[deps]
+
+files=[ "res://.import/Grass_01.obj-33b8a44bceff6f88bd9ff5ad679ae662.mesh" ]
+
+source_file="res://External Assets/Kenney Game Assets/Archive/Nature Pack (Legacy 3D)/Models/Grass_01.obj"
+dest_files=[ "res://.import/Grass_01.obj-33b8a44bceff6f88bd9ff5ad679ae662.mesh", "res://.import/Grass_01.obj-33b8a44bceff6f88bd9ff5ad679ae662.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

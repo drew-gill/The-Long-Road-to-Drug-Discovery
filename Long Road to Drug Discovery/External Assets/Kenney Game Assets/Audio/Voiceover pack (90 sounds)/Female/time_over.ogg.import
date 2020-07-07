@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/time_over.ogg-015e689801135ca155cb594d6fd985cc.oggstr"
+
+[deps]
+
+source_file="res://External Assets/Kenney Game Assets/Audio/Voiceover pack (90 sounds)/Female/time_over.ogg"
+dest_files=[ "res://.import/time_over.ogg-015e689801135ca155cb594d6fd985cc.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

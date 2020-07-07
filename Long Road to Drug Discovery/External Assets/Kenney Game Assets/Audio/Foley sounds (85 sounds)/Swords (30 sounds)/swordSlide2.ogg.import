@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/swordSlide2.ogg-5c21e3dd9c4f81da52eb6ccea9f2f88b.oggstr"
+
+[deps]
+
+source_file="res://External Assets/Kenney Game Assets/Audio/Foley sounds (85 sounds)/Swords (30 sounds)/swordSlide2.ogg"
+dest_files=[ "res://.import/swordSlide2.ogg-5c21e3dd9c4f81da52eb6ccea9f2f88b.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

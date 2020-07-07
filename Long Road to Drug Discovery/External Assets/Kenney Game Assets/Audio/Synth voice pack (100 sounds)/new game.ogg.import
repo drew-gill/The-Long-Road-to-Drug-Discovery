@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/new game.ogg-3ec1060b2d8660ef0e7fb552062c8217.oggstr"
+
+[deps]
+
+source_file="res://External Assets/Kenney Game Assets/Audio/Synth voice pack (100 sounds)/new game.ogg"
+dest_files=[ "res://.import/new game.ogg-3ec1060b2d8660ef0e7fb552062c8217.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

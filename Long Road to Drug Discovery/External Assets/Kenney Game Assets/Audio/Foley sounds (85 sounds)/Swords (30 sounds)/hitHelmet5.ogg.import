@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/hitHelmet5.ogg-f7876376bb2b5aeb313cbb2d962bac71.oggstr"
+
+[deps]
+
+source_file="res://External Assets/Kenney Game Assets/Audio/Foley sounds (85 sounds)/Swords (30 sounds)/hitHelmet5.ogg"
+dest_files=[ "res://.import/hitHelmet5.ogg-f7876376bb2b5aeb313cbb2d962bac71.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

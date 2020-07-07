@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/Tall_Rock_2_01.obj-c86cecf52325a8556932ead9b8d687db.mesh"
+
+[deps]
+
+files=[ "res://.import/Tall_Rock_2_01.obj-c86cecf52325a8556932ead9b8d687db.mesh" ]
+
+source_file="res://External Assets/Kenney Game Assets/Archive/Nature Pack (Legacy 3D)/Models/Tall_Rock_2_01.obj"
+dest_files=[ "res://.import/Tall_Rock_2_01.obj-c86cecf52325a8556932ead9b8d687db.mesh", "res://.import/Tall_Rock_2_01.obj-c86cecf52325a8556932ead9b8d687db.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

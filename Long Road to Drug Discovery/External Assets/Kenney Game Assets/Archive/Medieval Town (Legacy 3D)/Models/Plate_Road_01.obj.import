@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/Plate_Road_01.obj-f0bb5ca2eb8688a61ad767d7ba72794a.mesh"
+
+[deps]
+
+files=[ "res://.import/Plate_Road_01.obj-f0bb5ca2eb8688a61ad767d7ba72794a.mesh" ]
+
+source_file="res://External Assets/Kenney Game Assets/Archive/Medieval Town (Legacy 3D)/Models/Plate_Road_01.obj"
+dest_files=[ "res://.import/Plate_Road_01.obj-f0bb5ca2eb8688a61ad767d7ba72794a.mesh", "res://.import/Plate_Road_01.obj-f0bb5ca2eb8688a61ad767d7ba72794a.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true
