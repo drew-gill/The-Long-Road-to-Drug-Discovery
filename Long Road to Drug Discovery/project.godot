@@ -8,15 +8,32 @@
 
 config_version=4
 
-_global_script_classes=[  ]
+_global_script_classes=[ {
+"base": "Node2D",
+"class": "Board",
+"language": "GDScript",
+"path": "res://Scripts/game.gd"
+}, {
+"base": "Node2D",
+"class": "BoardTile",
+"language": "GDScript",
+"path": "res://Scripts/BoardTile.gd"
+}, {
+"base": "Node2D",
+"class": "Piece",
+"language": "GDScript",
+"path": "res://Prefabs/Piece.gd"
+} ]
 _global_script_class_icons={
-
+"Board": "",
+"BoardTile": "",
+"Piece": ""
 }
 
 [application]
 
 config/name="Long Road to Drug Discovery"
-run/main_scene="res://HUD.tscn"
+run/main_scene="res://Scenes/Main Scene.tscn"
 config/icon="res://icon.png"
 
 [rendering]

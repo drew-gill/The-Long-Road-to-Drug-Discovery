@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/zap1.ogg-92c085d2709329a2284db42db97926b7.oggstr"
+
+[deps]
+
+source_file="res://External Assets/Kenney Game Assets/Audio/Digital sounds (60 sounds)/zap1.ogg"
+dest_files=[ "res://.import/zap1.ogg-92c085d2709329a2284db42db97926b7.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
