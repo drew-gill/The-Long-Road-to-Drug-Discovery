@@ -12,7 +12,7 @@ _global_script_classes=[ {
 "base": "Node2D",
 "class": "Board",
 "language": "GDScript",
-"path": "res://Scenes/game.gd"
+"path": "res://Scripts/game.gd"
 }, {
 "base": "Node2D",
 "class": "BoardTile",

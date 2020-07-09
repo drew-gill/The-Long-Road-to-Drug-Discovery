@@ -1,8 +1,10 @@
 [gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://Scenes/Player.gd" type="Script" id=1]
+[ext_resource path="res://Prefabs/Player.gd" type="Script" id=1]
 [ext_resource path="res://Custom Assets/mouseYellowWalk.png" type="Texture" id=2]
 [ext_resource path="res://Custom Assets/mouseYellow.png" type="Texture" id=3]
+
+
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
