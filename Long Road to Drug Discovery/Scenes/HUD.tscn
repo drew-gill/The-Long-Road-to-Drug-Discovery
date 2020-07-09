@@ -14,9 +14,9 @@ font_data = ExtResource( 1 )
 script = ExtResource( 2 )
 
 [node name="Start" type="Button" parent="."]
-margin_left = 507.0
+margin_left = 465.0
 margin_top = 357.0
-margin_right = 584.0
+margin_right = 542.0
 margin_bottom = 393.0
 custom_fonts/font = SubResource( 1 )
 text = "Start"
@@ -102,12 +102,25 @@ __meta__ = {
 }
 
 [node name="Warning" type="Label" parent="."]
-margin_left = 426.0
-margin_top = 235.0
-margin_right = 677.0
-margin_bottom = 255.0
+margin_left = 373.0
+margin_top = 242.0
+margin_right = 624.0
+margin_bottom = 262.0
 custom_fonts/font = SubResource( 2 )
 text = "Warning! Put text here."
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Warning2" type="Label" parent="."]
+margin_left = 380.0
+margin_top = 11.0
+margin_right = 631.0
+margin_bottom = 31.0
+custom_fonts/font = SubResource( 2 )
+text = "Player 1's Turn!"
+align = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
