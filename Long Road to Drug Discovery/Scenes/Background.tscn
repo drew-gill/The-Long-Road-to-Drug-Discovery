@@ -1,10 +1,13 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Custom Assets/Kenney Game Assets/2D assets/Boardgame Pack/PNG/Chips/chipGreen.png" type="Texture" id=1]
 [ext_resource path="res://Custom Assets/Kenney Game Assets/2D assets/Alien Spaceship Pack/PNG/laserPink3.png" type="Texture" id=2]
 [ext_resource path="res://Custom Assets/Kenney Game Assets/2D assets/Boardgame Pack/PNG/Chips/chipBlue.png" type="Texture" id=3]
 [ext_resource path="res://Custom Assets/Kenney Game Assets/2D assets/Alien Spaceship Pack/PNG/shipPink.png" type="Texture" id=4]
 [ext_resource path="res://Custom Assets/Kenney Game Assets/2D assets/Boardgame Pack/PNG/Chips/chipWhite_border.png" type="Texture" id=5]
+[ext_resource path="res://Custom Assets/Kenney Game Assets/2D assets/Boardgame Pack/PNG/Chips/chipBlue_border.png" type="Texture" id=6]
+[ext_resource path="res://Custom Assets/Kenney Game Assets/2D assets/Alien Spaceship Pack/PNG/laserYellow3.png" type="Texture" id=7]
+[ext_resource path="res://Custom Assets/Kenney Game Assets/2D assets/Alien Spaceship Pack/PNG/shipBeige.png" type="Texture" id=8]
 
 [node name="Node2D" type="Node2D"]
 position = Vector2( 3, 41 )
@@ -29,12 +32,12 @@ texture = ExtResource( 3 )
 offset = Vector2( -16, 0 )
 
 [node name="p-1-3" type="Sprite" parent="."]
-position = Vector2( 292, 140 )
+position = Vector2( 293, 140 )
 texture = ExtResource( 3 )
 offset = Vector2( -16, 0 )
 
 [node name="p-1-4" type="Sprite" parent="."]
-position = Vector2( 230, 206 )
+position = Vector2( 230, 207 )
 texture = ExtResource( 1 )
 offset = Vector2( -16, 0 )
 
@@ -55,7 +58,7 @@ offset = Vector2( -16, 0 )
 
 [node name="p-2-3" type="Sprite" parent="."]
 position = Vector2( 196, 440 )
-texture = ExtResource( 2 )
+texture = ExtResource( 7 )
 offset = Vector2( -16, 0 )
 
 [node name="p-2-4" type="Sprite" parent="."]
@@ -76,7 +79,7 @@ offset = Vector2( -16, 0 )
 
 [node name="p-3-1" type="Sprite" parent="."]
 position = Vector2( 353, 415 )
-texture = ExtResource( 2 )
+texture = ExtResource( 6 )
 offset = Vector2( -16, 0 )
 
 [node name="p-3-2" type="Sprite" parent="."]
@@ -139,33 +142,33 @@ texture = ExtResource( 4 )
 offset = Vector2( -149.231, 98.3077 )
 
 [node name="p-5-1" type="Sprite" parent="."]
-position = Vector2( 598, 69 )
+position = Vector2( 509, 43 )
 texture = ExtResource( 3 )
 offset = Vector2( 4, 82 )
 
 [node name="p-5-2" type="Sprite" parent="."]
-position = Vector2( 598, 69 )
+position = Vector2( 531, 113 )
 scale = Vector2( 1.00174, 1.00174 )
 texture = ExtResource( 3 )
 offset = Vector2( 74.0105, 24.9567 )
 
 [node name="p-5-3" type="Sprite" parent="."]
-position = Vector2( 598, 69 )
+position = Vector2( 640, 134 )
 texture = ExtResource( 3 )
 offset = Vector2( 32, -61 )
 
 [node name="p-5-4" type="Sprite" parent="."]
-position = Vector2( 598, 69 )
+position = Vector2( 693, 76 )
 texture = ExtResource( 1 )
 offset = Vector2( -69, -74 )
 
 [node name="p-5-5" type="Sprite" parent="."]
-position = Vector2( 598, 69 )
+position = Vector2( 680, 16 )
 texture = ExtResource( 3 )
 offset = Vector2( -149, -15 )
 
 [node name="p-5-6" type="Sprite" parent="."]
-position = Vector2( 606, 62 )
+position = Vector2( 563, -12 )
 scale = Vector2( 0.722222, 0.722222 )
-texture = ExtResource( 4 )
+texture = ExtResource( 8 )
 offset = Vector2( -149.231, 98.3077 )
