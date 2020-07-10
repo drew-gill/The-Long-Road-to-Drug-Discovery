@@ -44,12 +44,6 @@ func _showWarning(text):
 	$Warning.text = text
 	$Warning.show()
 
-func endTurn():
-	if(currentPlayer + 1 > numOfPlayers):
-		currentPlayer = 1
-	else:
-		currentPlayer += 1
-
 func _on_AddMoney_pressed():
 	$"../Player".alterPlayerMoney(1000)
 
@@ -64,6 +58,10 @@ func _on_AddYear_pressed():
 func _on_SubtractYear_pressed():
 	$"../Player".alterPlayerYears(-1)
 
+func _on_EndTurn_pressed():
+	_endTurn()
+	
+
 func addCommas(value):
 	var string = str(value)
 	var mod = string.length() % 3
@@ -76,13 +74,20 @@ func addCommas(value):
 
 	return res
 
-
+func _endTurn():
+	if(currentPlayer + 1 > numOfPlayers):
+		currentPlayer = 1
+	else:
+		currentPlayer += 1
 
 func _process(delta):
 	if($"../Player" != null):
 		$Money.text = "Money: $" + addCommas($"../Player".getPlayerMoney())
 		$Years.text = "Years left: " + str($"../Player".getPlayerYears())
 		$BackupFormulations.text = "Backup Formulations: " + str($"../Player".getPlayerBackups())
+		$PlayerTurn.text = "Player " + str(currentPlayer) +"'s Turn!"
 	else:
 		_showAll(false)
 		_showWarning("Warning! No players found in the scene.")
+
+
