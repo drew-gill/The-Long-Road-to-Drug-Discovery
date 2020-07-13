@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Prefabs/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/HUD.tscn" type="PackedScene" id=2]
 [ext_resource path="res://External Assets/Platformer Assets Extra Animations & Enemies/Alien sprites/alienPink_badge1.png" type="Texture" id=3]
+[ext_resource path="res://Scenes/PlayerTracker.gd" type="Script" id=4]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 23.9023
@@ -10,10 +11,14 @@ radius = 23.9023
 [node name="Main Scene" type="Node2D"]
 
 [node name="HUD" parent="." instance=ExtResource( 2 )]
-numOfPlayers = 4
 
-[node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 468.873, 171.454 )
+[node name="Player2" parent="." instance=ExtResource( 1 )]
+position = Vector2( 630.917, 177.456 )
+
+[node name="Player1" parent="." instance=ExtResource( 1 )]
+position = Vector2( 399.426, 153.449 )
+playerNumber = 2
+movementSpeed = 100
 
 [node name="Point1" type="Area2D" parent="."]
 position = Vector2( 760.461, 158.624 )
@@ -32,3 +37,7 @@ texture = ExtResource( 3 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Point2"]
 shape = SubResource( 1 )
+
+[node name="PlayerTracker" type="Node2D" parent="."]
+script = ExtResource( 4 )
+numOfPlayers = 2
