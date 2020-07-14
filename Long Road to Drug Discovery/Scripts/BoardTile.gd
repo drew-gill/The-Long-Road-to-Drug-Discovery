@@ -10,25 +10,20 @@ signal remove_piece
 # Emitted when a new Piece is added to this tile
 signal add_piece
 
-#Set unique ID for each tile
-var tileID = null
+
+#Set properties for each tile
+var next = null
+var landOnCost = null
+var landOnTime = null
 
 # Data structure for Piece node that this tile is holding
 var piece = {
 	"exists": false,
 	"piece": null #class Piece
 }
-
 func _ready():
 	pass
 
-func get_tile_ID():
-	return tileID
-	
-func set_tile_ID(id):
-	tileID = id
-	
-	
 func get_tile_pos() -> Vector2:
 	return position
 	
@@ -36,7 +31,6 @@ func set_tile_pos(new_position: Vector2) -> void:
 	position = new_position
 	
 func get_tile_coord_pos() -> Vector2:
-	#CHANGE DENOMINATOR DEPENDING ON SIZE
 	var coord_position = position/board.TILE_WIDTH
 	coord_position.x = int(coord_position.x)
 	coord_position.y = int(coord_position.y)
@@ -45,7 +39,6 @@ func get_tile_coord_pos() -> Vector2:
 func remove_piece() -> void:
 	piece["exists"] = false
 	piece["piece"] = null
-	
 	emit_signal("remove_piece")
 	
 func set_piece(new_piece) -> void:
@@ -56,11 +49,23 @@ func set_piece(new_piece) -> void:
 	new_piece.connect("leaving_tile", self, "remove_piece")
 	
 	emit_signal("add_piece")
+	
 
+func set_next(next_tile: BoardTile) -> void:
+	next = next_tile
+
+func get_next() -> BoardTile:
+	return next
+
+func set_properties(landingCost: int, landingTime: int) -> void:
+	landOnCost = landingCost
+	landOnTime = landingTime
+	
 
 func _on_Button_pressed():
 	print("----")
-	print(tileID)
-	print(get_tile_pos())
 	print(get_tile_coord_pos())
+	print(get_next().get_tile_coord_pos())
+	print(landOnCost)
+	print(landOnTime)
 	print("----")
