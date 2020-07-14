@@ -27,22 +27,18 @@ func get_current_tile()-> BoardTile:
 
 	
 func getPlayerMoney():
-	return money
+	return moneySpent
 
 func getPlayerYears():
-	return years
+	return timeElapsed
 	
-func getPlayerBackups():
-	return backups
 
 func alterPlayerMoney(changeValue):
-	money += changeValue
+	moneySpent += changeValue
 
 func alterPlayerYears(changeValue):
-	years += changeValue
+	timeElapsed += changeValue
 	
-func alterPlayerBackups(changeValue):
-	backups += changeValue
 #When the piece is clicked:
 
 func _on_Button_pressed():
