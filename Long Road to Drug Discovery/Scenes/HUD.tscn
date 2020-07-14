@@ -4,7 +4,6 @@
 [ext_resource path="res://Scripts/HUD.gd" type="Script" id=2]
 [ext_resource path="res://Scripts/Dialog.gd" type="Script" id=3]
 
-
 [sub_resource type="DynamicFont" id=1]
 size = 24
 font_data = ExtResource( 1 )
@@ -22,6 +21,17 @@ margin_right = 542.0
 margin_bottom = 393.0
 custom_fonts/font = SubResource( 1 )
 text = "Start"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="EndTurn" type="Button" parent="."]
+margin_left = 444.0
+margin_top = 35.0
+margin_right = 578.0
+margin_bottom = 71.0
+custom_fonts/font = SubResource( 1 )
+text = "End Turn"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -115,7 +125,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Warning2" type="Label" parent="."]
+[node name="PlayerTurn" type="Label" parent="."]
 margin_left = 380.0
 margin_top = 11.0
 margin_right = 631.0
@@ -146,6 +156,7 @@ wait_time = 0.01
 autostart = true
 
 [connection signal="pressed" from="Start" to="." method="_on_Start_pressed"]
+[connection signal="pressed" from="EndTurn" to="." method="_on_EndTurn_pressed"]
 [connection signal="pressed" from="AddMoney" to="." method="_on_AddMoney_pressed"]
 [connection signal="pressed" from="SubtractMoney" to="." method="_on_SubtractMoney_pressed"]
 [connection signal="pressed" from="SubtractYear" to="." method="_on_SubtractYear_pressed"]

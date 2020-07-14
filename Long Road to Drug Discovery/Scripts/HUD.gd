@@ -1,10 +1,8 @@
 extends Node
 
-export var numOfPlayers = 1
-#up to player 4, if there are 4 total players
-var currentPlayer = 1 
 
-
+var currentPlayerNumber
+var currentPlayer
 
 func _ready():
 	_showAll(false)
@@ -48,25 +46,23 @@ func _showWarning(text):
 	$Warning.text = text
 	$Warning.show()
 
-func endTurn():
-	if(currentPlayer + 1 > numOfPlayers):
-		currentPlayer = 1
-	else:
-		currentPlayer += 1
-
 func _on_AddMoney_pressed():
-	$"../Player".alterPlayerMoney(1000)
+	currentPlayer.alterPlayerMoney(1000)
 
 func _on_SubtractMoney_pressed():
-	$"../Player".alterPlayerMoney(-1000)
+	currentPlayer.alterPlayerMoney(-1000)
 
 
 func _on_AddYear_pressed():
-	$"../Player".alterPlayerYears(1)
+	currentPlayer.alterPlayerYears(1)
 
 
 func _on_SubtractYear_pressed():
-	$"../Player".alterPlayerYears(-1)
+	currentPlayer.alterPlayerYears(-1)
+
+func _on_EndTurn_pressed():
+	$"../PlayerTracker".endTurn()
+	
 
 func addCommas(value):
 	var string = str(value)
@@ -83,10 +79,17 @@ func addCommas(value):
 
 
 func _process(delta):
-	if($"../Player" != null):
-		$Money.text = "Money: $" + addCommas($"../Player".getPlayerMoney())
-		$Years.text = "Years left: " + str($"../Player".getPlayerYears())
-		$BackupFormulations.text = "Backup Formulations: " + str($"../Player".getPlayerBackups())
+	currentPlayerNumber = $"../PlayerTracker".getCurrentPlayer()
+	
+	currentPlayer = get_node("../Player" + str(currentPlayerNumber))
+	
+	if(currentPlayer != null):
+		$Money.text = "Money: $" + addCommas(currentPlayer.getPlayerMoney())
+		$Years.text = "Years left: " + str(currentPlayer.getPlayerYears())
+		$BackupFormulations.text = "Backup Formulations: " + str(currentPlayer.getPlayerBackups())
+		$PlayerTurn.text = "Player " + str(currentPlayerNumber) +"'s Turn!"
 	else:
 		_showAll(false)
 		_showWarning("Warning! No players found in the scene.")
+
+
