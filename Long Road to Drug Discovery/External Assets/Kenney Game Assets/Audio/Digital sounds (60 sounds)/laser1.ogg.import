@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/laser1.ogg-b8e8ba057a98a4b65fc6f8db51c346ad.oggstr"
+
+[deps]
+
+source_file="res://External Assets/Kenney Game Assets/Audio/Digital sounds (60 sounds)/laser1.ogg"
+dest_files=[ "res://.import/laser1.ogg-b8e8ba057a98a4b65fc6f8db51c346ad.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

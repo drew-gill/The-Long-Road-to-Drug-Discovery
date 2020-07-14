@@ -28,6 +28,7 @@ func _showAll(boolean):
 		$Years.show()
 		$BackupFormulations.show()
 		$TextBox.show()
+
 	else:
 		$Start.hide()
 		$AddYear.hide()
@@ -38,6 +39,7 @@ func _showAll(boolean):
 		$Years.hide()
 		$BackupFormulations.hide()
 		$TextBox.hide()
+
 	
 	#always hide the warning, only want this when specifically called.
 	$Warning.hide()

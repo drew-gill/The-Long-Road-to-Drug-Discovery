@@ -4,6 +4,7 @@
 [ext_resource path="res://Scripts/HUD.gd" type="Script" id=2]
 [ext_resource path="res://Scripts/Dialog.gd" type="Script" id=3]
 
+
 [sub_resource type="DynamicFont" id=1]
 size = 24
 font_data = ExtResource( 1 )
@@ -143,9 +144,11 @@ __meta__ = {
 [node name="Timer" type="Timer" parent="TextBox"]
 wait_time = 0.01
 autostart = true
+
 [connection signal="pressed" from="Start" to="." method="_on_Start_pressed"]
 [connection signal="pressed" from="AddMoney" to="." method="_on_AddMoney_pressed"]
 [connection signal="pressed" from="SubtractMoney" to="." method="_on_SubtractMoney_pressed"]
 [connection signal="pressed" from="SubtractYear" to="." method="_on_SubtractYear_pressed"]
 [connection signal="pressed" from="AddYear" to="." method="_on_AddYear_pressed"]
 [connection signal="timeout" from="TextBox/Timer" to="TextBox/Dialog" method="_on_Timer_timeout"]
+
