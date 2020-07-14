@@ -36,6 +36,12 @@ config/name="Long Road to Drug Discovery"
 run/main_scene="res://Scenes/HUD.tscn"
 config/icon="res://icon.png"
 
+[display]
+
+window/size/always_on_top=true
+window/stretch/aspect="keep"
+window/stretch/shrink=1.2
+
 [rendering]
 
 quality/driver/driver_name="GLES2"

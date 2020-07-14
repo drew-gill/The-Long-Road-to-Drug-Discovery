@@ -2,8 +2,9 @@ extends Node2D
 class_name Piece
 
 #piece properties
-var moneySpent = 0
-var timeElapsed = 0 
+export var money = 1000000
+export var years = 20
+export var backups = 0
 
 #Signals
 signal leaving_tile
@@ -21,9 +22,27 @@ func get_current_tile()-> BoardTile:
 	tile_position.x = int(tile_position.x)
 	tile_position.y = int(tile_position.y)
 	return board.get_tile_by_pos(tile_position)
+
 	
+func getPlayerMoney():
+	return money
+
+func getPlayerYears():
+	return years
+	
+func getPlayerBackups():
+	return backups
+
+func alterPlayerMoney(changeValue):
+	money += changeValue
+
+func alterPlayerYears(changeValue):
+	years += changeValue
+	
+func alterPlayerBackups(changeValue):
+	backups += changeValue
 #When the piece is clicked:
+
 func _on_Button_pressed():
-	print(get_current_tile().get_tile_ID())
-	print("Money Spent: $" + str(moneySpent))
-	board.move_piece(self, Vector2(1,0))
+	print("Money Spent: $" + str(money))
+	board.move_piece(self)
