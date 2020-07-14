@@ -7,6 +7,9 @@
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
-scale = Vector2( 0.083, 0.083 )
+visible = false
+self_modulate = Color( 1, 1, 1, 0.403922 )
+position = Vector2( -0.000484943, 0.0644569 )
+scale = Vector2( 0.236, 0.236 )
 texture = ExtResource( 1 )
 centered = false
