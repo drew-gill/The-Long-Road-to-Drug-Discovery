@@ -1,0 +1,159 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://Scripts/Choose_NumPlayers.gd" type="Script" id=1]
+[ext_resource path="res://fonts/FSAlbertPro-ExtraBold.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://Custom Assets/mouseYellow.png" type="Texture" id=3]
+[ext_resource path="res://Custom Assets/mouseBlue.png" type="Texture" id=4]
+[ext_resource path="res://Custom Assets/mouseGray.png" type="Texture" id=5]
+[ext_resource path="res://Custom Assets/mouseGreen.png" type="Texture" id=6]
+
+[sub_resource type="DynamicFont" id=1]
+size = 60
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 30
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 30
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 80
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 70
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=6]
+size = 80
+font_data = ExtResource( 2 )
+
+[node name="Control" type="Control"]
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title" type="Label" parent="."]
+margin_left = 149.0
+margin_top = 51.0
+margin_right = 1131.0
+margin_bottom = 112.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color_shadow = Color( 0, 0.67451, 0.92549, 1 )
+custom_constants/shadow_offset_x = 0
+custom_constants/shadow_offset_y = 5
+text = "CHOOSE THE NUMBER OF PLAYERS"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BackButton" type="Button" parent="."]
+margin_left = 250.0
+margin_top = 575.0
+margin_right = 550.0
+margin_bottom = 664.0
+custom_fonts/font = SubResource( 2 )
+text = "BACK"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ContinueButton" type="Button" parent="."]
+margin_left = 700.0
+margin_top = 575.0
+margin_right = 1000.0
+margin_bottom = 664.0
+custom_fonts/font = SubResource( 3 )
+text = "CONTINUE"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Control" type="Control" parent="."]
+margin_left = 261.0
+margin_top = 146.0
+margin_right = 1020.0
+margin_bottom = 238.0
+rect_min_size = Vector2( 759, 92 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MinusPlayer" type="Button" parent="Control"]
+margin_right = 308.0
+margin_bottom = 92.0
+custom_fonts/font = SubResource( 4 )
+text = "-"
+
+[node name="NumPlayers" type="Label" parent="Control"]
+margin_left = 358.0
+margin_top = 15.0
+margin_right = 398.0
+margin_bottom = 86.0
+custom_fonts/font = SubResource( 5 )
+text = "1"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AddPlayer" type="Button" parent="Control"]
+margin_left = 451.0
+margin_right = 759.0
+margin_bottom = 92.0
+custom_fonts/font = SubResource( 6 )
+text = "+"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Players" type="Control" parent="."]
+margin_left = 261.0
+margin_top = 146.0
+margin_right = 301.0
+margin_bottom = 186.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Player1" type="TextureRect" parent="Players"]
+margin_left = 353.363
+margin_top = 233.672
+margin_right = 412.363
+margin_bottom = 273.672
+texture = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Player2" type="TextureRect" parent="Players"]
+visible = false
+margin_left = 287.35
+margin_top = 227.86
+margin_right = 346.35
+margin_bottom = 267.86
+texture = ExtResource( 5 )
+
+[node name="Player3" type="TextureRect" parent="Players"]
+visible = false
+margin_left = 451.23
+margin_top = 231.227
+margin_right = 510.23
+margin_bottom = 271.227
+texture = ExtResource( 6 )
+
+[node name="Player4" type="TextureRect" parent="Players"]
+visible = false
+margin_left = 608.374
+margin_top = 236.839
+margin_right = 667.374
+margin_bottom = 276.839
+texture = ExtResource( 3 )
+[connection signal="pressed" from="BackButton" to="." method="_on_BackButton_pressed"]
+[connection signal="pressed" from="ContinueButton" to="." method="_on_ContinueButton_pressed"]
+[connection signal="pressed" from="Control/MinusPlayer" to="." method="_on_MinusPlayer_pressed"]
+[connection signal="pressed" from="Control/AddPlayer" to="." method="_on_AddPlayer_pressed"]

@@ -12,7 +12,7 @@ _global_script_classes=[ {
 "base": "Node2D",
 "class": "Board",
 "language": "GDScript",
-"path": "res://Scenes/game.gd"
+"path": "res://Scripts/game.gd"
 }, {
 "base": "Node2D",
 "class": "BoardTile",
@@ -33,18 +33,22 @@ _global_script_class_icons={
 [application]
 
 config/name="Long Road to Drug Discovery"
-run/main_scene="res://Scenes/HUD.tscn"
+run/main_scene="res://Scenes/StartupSequence/TitleScreen.tscn"
 config/icon="res://icon.png"
+
+[autoload]
+
+GlobalVar="*res://Scripts/GlobalVar.gd"
 
 [display]
 
-window/size/always_on_top=true
-window/stretch/aspect="keep"
-window/stretch/shrink=1.2
+window/size/width=1280
+window/size/height=720
 
 [rendering]
 
 quality/driver/driver_name="GLES2"
 vram_compression/import_etc=true
 vram_compression/import_etc2=false
+environment/default_clear_color=Color( 0.14902, 0.192157, 0.219608, 1 )
 environment/default_environment="res://default_env.tres"

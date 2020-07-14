@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://External Assets/fonts/Xolonium-Regular.ttf" type="DynamicFontData" id=1]
-[ext_resource path="res://Scenes/HUD.gd" type="Script" id=2]
+[ext_resource path="res://Scripts/HUD.gd" type="Script" id=2]
+[ext_resource path="res://Scripts/Dialogue.gd" type="Script" id=3]
 
 [sub_resource type="DynamicFont" id=1]
 size = 24
@@ -20,6 +21,28 @@ margin_right = 542.0
 margin_bottom = 393.0
 custom_fonts/font = SubResource( 1 )
 text = "Start"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="EndTurn" type="Button" parent="."]
+margin_left = 444.0
+margin_top = 35.0
+margin_right = 578.0
+margin_bottom = 71.0
+custom_fonts/font = SubResource( 1 )
+text = "End Turn"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ToggleDialogue" type="Button" parent="."]
+margin_left = 914.526
+margin_top = 181.316
+margin_right = 1048.53
+margin_bottom = 217.316
+custom_fonts/font = SubResource( 1 )
+text = "Toggle Dialogue"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -113,7 +136,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Warning2" type="Label" parent="."]
+[node name="PlayerTurn" type="Label" parent="."]
 margin_left = 380.0
 margin_top = 11.0
 margin_right = 631.0
@@ -124,8 +147,30 @@ align = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="DialogueBox" type="Polygon2D" parent="."]
+position = Vector2( 431.402, 172.947 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+polygon = PoolVector2Array( 371.443, 77.8848, 777.731, 79.4481, 778.031, 338.101, 373.565, 338.808 )
+
+[node name="Dialogue" type="RichTextLabel" parent="DialogueBox"]
+margin_left = 391.0
+margin_top = 92.0
+margin_right = 762.0
+margin_bottom = 328.0
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Timer" type="Timer" parent="DialogueBox"]
+wait_time = 0.01
+autostart = true
 [connection signal="pressed" from="Start" to="." method="_on_Start_pressed"]
+[connection signal="pressed" from="EndTurn" to="." method="_on_EndTurn_pressed"]
+[connection signal="pressed" from="ToggleDialogue" to="." method="toggleDialogueBox"]
 [connection signal="pressed" from="AddMoney" to="." method="_on_AddMoney_pressed"]
 [connection signal="pressed" from="SubtractMoney" to="." method="_on_SubtractMoney_pressed"]
 [connection signal="pressed" from="SubtractYear" to="." method="_on_SubtractYear_pressed"]
 [connection signal="pressed" from="AddYear" to="." method="_on_AddYear_pressed"]
+[connection signal="timeout" from="DialogueBox/Timer" to="DialogueBox/Dialogue" method="_on_Timer_timeout"]
