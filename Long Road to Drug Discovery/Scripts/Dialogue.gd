@@ -192,16 +192,8 @@ func _ready():
 					set_bbcode(dialogPhase9Part2[6])
 	visible_characters = 0
 
-func _input(event):
-	if Input.is_mouse_button_pressed(1):
-		visible_characters = -1
-#		if visible_characters>get_total_character_count():
-#			if page<dialog.size()-1:
-#				visible_characters = 0
-#				page +=1
-#				set_bbcode(dialog[page])
-#		else:
-#			visible_characters = get_total_character_count()
+func resetText():
+	visible_characters = -1
 
 func _on_Timer_timeout():
 	visible_characters += 1

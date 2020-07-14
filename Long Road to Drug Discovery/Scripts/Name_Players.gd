@@ -109,7 +109,7 @@ func _on_DrugName4_text_changed():
 	GlobalVar.DrugName4 = edit.get_text()
 
 func _on_BackButton_pressed():
-	get_tree().change_scene("res://Scenes/Choose_NumPlayers.tscn")
+	get_tree().change_scene("res://Scenes/StartupSequence/Choose_NumPlayers.tscn")
 
 func _on_ContinueButton_pressed():
-	get_tree().change_scene("res://Scenes/game.tscn")
+	get_tree().change_scene("res://Scenes/Main Scene.tscn")

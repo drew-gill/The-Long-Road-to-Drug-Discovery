@@ -100,8 +100,7 @@ func _process(delta):
 	$Control/NumPlayers.text = str(GlobalVar.num_players)
 
 func _on_BackButton_pressed():
-	get_tree().change_scene("res://Scenes/TitleScreen.tscn")
+	get_tree().change_scene("res://Scenes/StartupSequence/TitleScreen.tscn")
 
 func _on_ContinueButton_pressed():
-	
-	get_tree().change_scene("res://Scenes/Name_Players.tscn")
+	get_tree().change_scene("res://Scenes/StartupSequence/Name_Players.tscn")

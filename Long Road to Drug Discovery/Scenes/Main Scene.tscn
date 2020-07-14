@@ -1,47 +1,29 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Prefabs/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/HUD.tscn" type="PackedScene" id=2]
-[ext_resource path="res://External Assets/Platformer Assets Extra Animations & Enemies/Alien sprites/alienPink_badge1.png" type="Texture" id=3]
-[ext_resource path="res://Scenes/PlayerTracker.gd" type="Script" id=4]
-
-[sub_resource type="CircleShape2D" id=1]
-radius = 23.9023
+[ext_resource path="res://Scripts/PlayerTracker.gd" type="Script" id=4]
 
 [node name="Main Scene" type="Node2D"]
 
 [node name="HUD" parent="." instance=ExtResource( 2 )]
 
+[node name="Player4" parent="." instance=ExtResource( 1 )]
+position = Vector2( 237.472, 55.3477 )
+playerNumber = 4
+
 [node name="Player3" parent="." instance=ExtResource( 1 )]
-position = Vector2( 630.917, 177.456 )
+position = Vector2( 779.83, 42.0809 )
 playerNumber = 3
 
 [node name="Player2" parent="." instance=ExtResource( 1 )]
-position = Vector2( 358.272, 228.899 )
+position = Vector2( 83.9118, 339.907 )
 playerNumber = 2
 
 [node name="Player1" parent="." instance=ExtResource( 1 )]
-position = Vector2( 395.996, 159.451 )
+position = Vector2( 499.784, 308.364 )
 movementSpeed = 100
-
-[node name="Point1" type="Area2D" parent="."]
-position = Vector2( 760.461, 158.624 )
-
-[node name="Sprite" type="Sprite" parent="Point1"]
-texture = ExtResource( 3 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Point1"]
-shape = SubResource( 1 )
-
-[node name="Point2" type="Area2D" parent="."]
-position = Vector2( 764.872, 319.337 )
-
-[node name="Sprite" type="Sprite" parent="Point2"]
-texture = ExtResource( 3 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Point2"]
-shape = SubResource( 1 )
 
 [node name="PlayerTracker" type="Node2D" parent="."]
 script = ExtResource( 4 )
-numOfPlayers = 3
+numOfPlayers = 4
