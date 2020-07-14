@@ -1,0 +1,403 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://fonts/FSAlbertPro-ExtraBold.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Scripts/Name_Players.gd" type="Script" id=2]
+[ext_resource path="res://Custom Assets/mouseYellow.png" type="Texture" id=3]
+[ext_resource path="res://Custom Assets/mouseBlue.png" type="Texture" id=4]
+[ext_resource path="res://Custom Assets/mouseGray.png" type="Texture" id=5]
+[ext_resource path="res://Custom Assets/mouseGreen.png" type="Texture" id=6]
+[ext_resource path="res://fonts/FSAlbert_35.tres" type="DynamicFont" id=7]
+[ext_resource path="res://fonts/FSAlbert_40.tres" type="DynamicFont" id=8]
+
+[sub_resource type="DynamicFont" id=1]
+size = 30
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 30
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 60
+font_data = ExtResource( 1 )
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BackButton" type="Button" parent="."]
+margin_left = 250.0
+margin_top = 575.0
+margin_right = 550.0
+margin_bottom = 664.0
+custom_fonts/font = SubResource( 1 )
+text = "BACK"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ContinueButton" type="Button" parent="."]
+margin_left = 700.0
+margin_top = 575.0
+margin_right = 1000.0
+margin_bottom = 664.0
+custom_fonts/font = SubResource( 2 )
+text = "CONTINUE"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title" type="Label" parent="."]
+margin_left = 49.0
+margin_top = 51.0
+margin_right = 1231.0
+margin_bottom = 112.0
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color_shadow = Color( 0, 0.67451, 0.92549, 1 )
+custom_constants/shadow_offset_x = 0
+custom_constants/shadow_offset_y = 5
+text = "CHOOSE YOUR DISEASE AND DRUG NAME"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Player1" type="Control" parent="."]
+margin_left = 183.0
+margin_top = 190.0
+margin_right = 223.0
+margin_bottom = 204.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Player1_Icon" type="VBoxContainer" parent="Player1"]
+margin_right = 40.0
+margin_bottom = 40.0
+grow_horizontal = 2
+custom_constants/separation = 15
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Player1/Player1_Icon"]
+margin_right = 129.0
+margin_bottom = 36.0
+custom_fonts/font = ExtResource( 7 )
+text = "Player 1"
+align = 1
+
+[node name="Player1_Button" type="Button" parent="Player1/Player1_Icon"]
+margin_left = 29.0
+margin_top = 51.0
+margin_right = 100.0
+margin_bottom = 92.0
+size_flags_horizontal = 4
+icon = ExtResource( 4 )
+flat = true
+
+[node name="Disease1" type="HBoxContainer" parent="Player1"]
+margin_top = 154.0
+margin_right = 914.0
+margin_bottom = 199.0
+custom_constants/separation = 20
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Player1/Disease1"]
+margin_top = 2.0
+margin_right = 147.0
+margin_bottom = 43.0
+custom_fonts/font = ExtResource( 8 )
+text = "Disease:"
+
+[node name="Disease1" type="TextEdit" parent="Player1/Disease1"]
+margin_left = 167.0
+margin_right = 914.0
+margin_bottom = 45.0
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 7 )
+
+[node name="DrugName1" type="HBoxContainer" parent="Player1"]
+margin_top = 241.0
+margin_right = 914.0
+margin_bottom = 286.0
+custom_constants/separation = 20
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Player1/DrugName1"]
+margin_top = 2.0
+margin_right = 217.0
+margin_bottom = 43.0
+custom_fonts/font = ExtResource( 8 )
+text = "Drug Name:"
+
+[node name="DrugName1" type="TextEdit" parent="Player1/DrugName1"]
+margin_left = 237.0
+margin_right = 914.0
+margin_bottom = 45.0
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 7 )
+
+[node name="Player2" type="Control" parent="."]
+visible = false
+margin_left = 183.0
+margin_top = 190.0
+margin_right = 223.0
+margin_bottom = 230.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Player2_Icon" type="VBoxContainer" parent="Player2"]
+margin_right = 40.0
+margin_bottom = 40.0
+grow_horizontal = 2
+custom_constants/separation = 15
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Player2/Player2_Icon"]
+margin_right = 129.0
+margin_bottom = 36.0
+custom_fonts/font = ExtResource( 7 )
+text = "Player 2"
+align = 1
+
+[node name="Player2_Button" type="Button" parent="Player2/Player2_Icon"]
+margin_left = 29.0
+margin_top = 40.0
+margin_right = 100.0
+margin_bottom = 81.0
+size_flags_horizontal = 4
+icon = ExtResource( 5 )
+flat = true
+
+[node name="Disease2" type="HBoxContainer" parent="Player2"]
+margin_top = 154.0
+margin_right = 914.0
+margin_bottom = 199.0
+custom_constants/separation = 20
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Player2/Disease2"]
+margin_top = 2.0
+margin_right = 147.0
+margin_bottom = 43.0
+custom_fonts/font = ExtResource( 8 )
+text = "Disease:"
+
+[node name="Disease2" type="TextEdit" parent="Player2/Disease2"]
+margin_left = 167.0
+margin_right = 914.0
+margin_bottom = 45.0
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 7 )
+
+[node name="DrugName2" type="HBoxContainer" parent="Player2"]
+margin_top = 241.0
+margin_right = 914.0
+margin_bottom = 286.0
+custom_constants/separation = 20
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Player2/DrugName2"]
+margin_top = 2.0
+margin_right = 217.0
+margin_bottom = 43.0
+custom_fonts/font = ExtResource( 8 )
+text = "Drug Name:"
+
+[node name="DrugName2" type="TextEdit" parent="Player2/DrugName2"]
+margin_left = 237.0
+margin_right = 914.0
+margin_bottom = 45.0
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 7 )
+
+[node name="Player3" type="Control" parent="."]
+visible = false
+margin_left = 183.0
+margin_top = 190.0
+margin_right = 223.0
+margin_bottom = 230.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Player3_Icon" type="VBoxContainer" parent="Player3"]
+margin_right = 40.0
+margin_bottom = 40.0
+grow_horizontal = 2
+custom_constants/separation = 15
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Player3/Player3_Icon"]
+margin_right = 129.0
+margin_bottom = 36.0
+custom_fonts/font = ExtResource( 7 )
+text = "Player 3"
+align = 1
+
+[node name="Player3_Button" type="Button" parent="Player3/Player3_Icon"]
+margin_left = 29.0
+margin_top = 40.0
+margin_right = 100.0
+margin_bottom = 81.0
+size_flags_horizontal = 4
+icon = ExtResource( 6 )
+flat = true
+
+[node name="Disease3" type="HBoxContainer" parent="Player3"]
+margin_top = 154.0
+margin_right = 914.0
+margin_bottom = 199.0
+custom_constants/separation = 20
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Player3/Disease3"]
+margin_top = 2.0
+margin_right = 147.0
+margin_bottom = 43.0
+custom_fonts/font = ExtResource( 8 )
+text = "Disease:"
+
+[node name="Disease3" type="TextEdit" parent="Player3/Disease3"]
+margin_left = 167.0
+margin_right = 914.0
+margin_bottom = 45.0
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 7 )
+
+[node name="DrugName3" type="HBoxContainer" parent="Player3"]
+margin_top = 241.0
+margin_right = 914.0
+margin_bottom = 286.0
+custom_constants/separation = 20
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Player3/DrugName3"]
+margin_top = 2.0
+margin_right = 217.0
+margin_bottom = 43.0
+custom_fonts/font = ExtResource( 8 )
+text = "Drug Name:"
+
+[node name="DrugName3" type="TextEdit" parent="Player3/DrugName3"]
+margin_left = 237.0
+margin_right = 914.0
+margin_bottom = 45.0
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 7 )
+
+[node name="Player4" type="Control" parent="."]
+visible = false
+margin_left = 183.0
+margin_top = 190.0
+margin_right = 223.0
+margin_bottom = 230.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Player4_Icon" type="VBoxContainer" parent="Player4"]
+margin_right = 40.0
+margin_bottom = 40.0
+grow_horizontal = 2
+custom_constants/separation = 15
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Player4/Player4_Icon"]
+margin_right = 129.0
+margin_bottom = 36.0
+custom_fonts/font = ExtResource( 7 )
+text = "Player 4"
+align = 1
+
+[node name="Player4_Button" type="Button" parent="Player4/Player4_Icon"]
+margin_left = 29.0
+margin_top = 40.0
+margin_right = 100.0
+margin_bottom = 81.0
+size_flags_horizontal = 4
+icon = ExtResource( 3 )
+flat = true
+
+[node name="Disease4" type="HBoxContainer" parent="Player4"]
+margin_top = 154.0
+margin_right = 914.0
+margin_bottom = 199.0
+custom_constants/separation = 20
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Player4/Disease4"]
+margin_top = 2.0
+margin_right = 147.0
+margin_bottom = 43.0
+custom_fonts/font = ExtResource( 8 )
+text = "Disease:"
+
+[node name="Disease4" type="TextEdit" parent="Player4/Disease4"]
+margin_left = 167.0
+margin_right = 914.0
+margin_bottom = 45.0
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 7 )
+
+[node name="DrugName4" type="HBoxContainer" parent="Player4"]
+margin_top = 241.0
+margin_right = 914.0
+margin_bottom = 286.0
+custom_constants/separation = 20
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Player4/DrugName4"]
+margin_top = 2.0
+margin_right = 217.0
+margin_bottom = 43.0
+custom_fonts/font = ExtResource( 8 )
+text = "Drug Name:"
+
+[node name="DrugName4" type="TextEdit" parent="Player4/DrugName4"]
+margin_left = 237.0
+margin_right = 914.0
+margin_bottom = 45.0
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 7 )
+[connection signal="pressed" from="BackButton" to="." method="_on_BackButton_pressed"]
+[connection signal="pressed" from="ContinueButton" to="." method="_on_ContinueButton_pressed"]
+[connection signal="pressed" from="Player1/Player1_Icon/Player1_Button" to="." method="_on_Player1_Button_pressed"]
+[connection signal="text_changed" from="Player1/Disease1/Disease1" to="." method="_on_Disease1_text_changed"]
+[connection signal="text_changed" from="Player1/DrugName1/DrugName1" to="." method="_on_DrugName1_text_changed"]
+[connection signal="pressed" from="Player2/Player2_Icon/Player2_Button" to="." method="_on_Player2_Button_pressed"]
+[connection signal="text_changed" from="Player2/Disease2/Disease2" to="." method="_on_Disease2_text_changed"]
+[connection signal="text_changed" from="Player2/DrugName2/DrugName2" to="." method="_on_DrugName2_text_changed"]
+[connection signal="pressed" from="Player3/Player3_Icon/Player3_Button" to="." method="_on_Player3_Button_pressed"]
+[connection signal="text_changed" from="Player3/Disease3/Disease3" to="." method="_on_Disease3_text_changed"]
+[connection signal="text_changed" from="Player3/DrugName3/DrugName3" to="." method="_on_DrugName3_text_changed"]
+[connection signal="pressed" from="Player4/Player4_Icon/Player4_Button" to="." method="_on_Player4_Button_pressed"]
+[connection signal="text_changed" from="Player4/Disease4/Disease4" to="." method="_on_Disease4_text_changed"]
+[connection signal="text_changed" from="Player4/DrugName4/DrugName4" to="." method="_on_DrugName4_text_changed"]

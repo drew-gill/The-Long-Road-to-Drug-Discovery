@@ -14,7 +14,14 @@ func _on_Start_pressed():
 	_showAll(true)
 	$Start.hide()
 	
-
+func toggleDialogueBox():
+	if(!$DialogueBox.visible):
+		$DialogueBox.show()
+		$DialogueBox/Dialogue.resetText()
+	else:
+		$DialogueBox.hide()
+		
+		
 func _showAll(boolean):
 	if(boolean == true):
 		$Start.show()
@@ -25,7 +32,7 @@ func _showAll(boolean):
 		$Money.show()
 		$Years.show()
 		$BackupFormulations.show()
-		$TextBox.show()
+		$DialogueBox.show()
 
 	else:
 		$Start.hide()
@@ -36,7 +43,7 @@ func _showAll(boolean):
 		$Money.hide()
 		$Years.hide()
 		$BackupFormulations.hide()
-		$TextBox.hide()
+		$DialogueBox.hide()
 
 	
 	#always hide the warning, only want this when specifically called.
