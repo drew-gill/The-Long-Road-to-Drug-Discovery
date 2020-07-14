@@ -1,0 +1,49 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://Prefabs/Player.gd" type="Script" id=1]
+[ext_resource path="res://Custom Assets/mouseYellowWalk.png" type="Texture" id=2]
+[ext_resource path="res://Custom Assets/mouseYellow.png" type="Texture" id=3]
+[ext_resource path="res://Custom Assets/mouseBlue.png" type="Texture" id=4]
+[ext_resource path="res://Custom Assets/mouseGreenWalk.png" type="Texture" id=5]
+[ext_resource path="res://Custom Assets/mouseGreen.png" type="Texture" id=6]
+[ext_resource path="res://Custom Assets/mouseGrayWalk.png" type="Texture" id=7]
+[ext_resource path="res://Custom Assets/mouseBlueWalk.png" type="Texture" id=8]
+[ext_resource path="res://Custom Assets/mouseGray.png" type="Texture" id=9]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 4 ), ExtResource( 8 ) ],
+"loop": true,
+"name": "moveBlue",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 9 ), ExtResource( 7 ) ],
+"loop": true,
+"name": "moveGray",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 3 ), ExtResource( 2 ) ],
+"loop": true,
+"name": "moveYellow",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 6 ), ExtResource( 5 ) ],
+"loop": true,
+"name": "moveGreen",
+"speed": 5.0
+} ]
+
+[sub_resource type="CapsuleShape2D" id=2]
+radius = 18.1097
+height = 28.3264
+
+[node name="Player" type="KinematicBody2D"]
+script = ExtResource( 1 )
+
+[node name="MouseSprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 1 )
+animation = "moveGreen"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 1.5708
+shape = SubResource( 2 )

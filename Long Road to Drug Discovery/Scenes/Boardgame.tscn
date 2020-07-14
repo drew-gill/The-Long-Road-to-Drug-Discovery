@@ -1,13 +1,13 @@
 [gd_scene load_steps=9 format=2]
 
-[ext_resource path="res://Custom Assets/Kenney Game Assets/2D assets/Boardgame Pack/PNG/Chips/chipGreen.png" type="Texture" id=1]
-[ext_resource path="res://Custom Assets/Kenney Game Assets/2D assets/Alien Spaceship Pack/PNG/laserPink3.png" type="Texture" id=2]
-[ext_resource path="res://Custom Assets/Kenney Game Assets/2D assets/Boardgame Pack/PNG/Chips/chipBlue.png" type="Texture" id=3]
-[ext_resource path="res://Custom Assets/Kenney Game Assets/2D assets/Alien Spaceship Pack/PNG/shipPink.png" type="Texture" id=4]
-[ext_resource path="res://Custom Assets/Kenney Game Assets/2D assets/Boardgame Pack/PNG/Chips/chipWhite_border.png" type="Texture" id=5]
-[ext_resource path="res://Custom Assets/Kenney Game Assets/2D assets/Boardgame Pack/PNG/Chips/chipBlue_border.png" type="Texture" id=6]
-[ext_resource path="res://Custom Assets/Kenney Game Assets/2D assets/Alien Spaceship Pack/PNG/laserYellow3.png" type="Texture" id=7]
-[ext_resource path="res://Custom Assets/Kenney Game Assets/2D assets/Alien Spaceship Pack/PNG/shipBeige.png" type="Texture" id=8]
+[ext_resource path="res://External Assets/Kenney Game Assets/2D assets/Boardgame Pack/PNG/Chips/chipGreen.png" type="Texture" id=1]
+[ext_resource path="res://External Assets/Kenney Game Assets/2D assets/Alien Spaceship Pack/PNG/laserPink3.png" type="Texture" id=2]
+[ext_resource path="res://External Assets/Kenney Game Assets/2D assets/Boardgame Pack/PNG/Chips/chipBlue.png" type="Texture" id=3]
+[ext_resource path="res://External Assets/Kenney Game Assets/2D assets/Alien Spaceship Pack/PNG/shipPink.png" type="Texture" id=4]
+[ext_resource path="res://External Assets/Kenney Game Assets/2D assets/Boardgame Pack/PNG/Chips/chipWhite_border.png" type="Texture" id=5]
+[ext_resource path="res://External Assets/Kenney Game Assets/2D assets/Boardgame Pack/PNG/Chips/chipBlue_border.png" type="Texture" id=6]
+[ext_resource path="res://External Assets/Kenney Game Assets/2D assets/Alien Spaceship Pack/PNG/laserYellow3.png" type="Texture" id=7]
+[ext_resource path="res://External Assets/Kenney Game Assets/2D assets/Alien Spaceship Pack/PNG/shipBeige.png" type="Texture" id=8]
 
 [node name="Node2D" type="Node2D"]
 position = Vector2( 3, 41 )
