@@ -17,6 +17,7 @@ visible = false
 self_modulate = Color( 1, 1, 1, 0.254902 )
 margin_left = 0.743885
 margin_top = 0.539845
+margin_right = 50.7439
 margin_bottom = 50.5398
 __meta__ = {
 "_edit_use_anchors_": false
