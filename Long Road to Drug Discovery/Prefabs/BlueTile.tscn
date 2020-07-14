@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Prefabs/BlueTile.gd" type="Script" id=1]
+[ext_resource path="res://Custom Assets/Kenney Game Assets/2D assets/Boardgame Pack/PNG/Chips/chipBlue.png" type="Texture" id=2]
+
+[node name="BoardTile" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 11.5159, 11.8827 )
+scale = Vector2( 0.381279, 0.381279 )
+texture = ExtResource( 2 )
