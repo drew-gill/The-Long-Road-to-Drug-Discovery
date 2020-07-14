@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://External Assets/fonts/Xolonium-Regular.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Scripts/HUD.gd" type="Script" id=2]
+[ext_resource path="res://Scripts/Dialog.gd" type="Script" id=3]
 
 
 [sub_resource type="DynamicFont" id=1]
@@ -125,8 +126,29 @@ align = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="TextBox" type="Polygon2D" parent="."]
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+polygon = PoolVector2Array( 371.443, 77.8848, 777.731, 79.4481, 778.031, 338.101, 373.565, 338.808 )
+
+[node name="Dialog" type="RichTextLabel" parent="TextBox"]
+margin_left = 391.0
+margin_top = 92.0
+margin_right = 762.0
+margin_bottom = 328.0
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Timer" type="Timer" parent="TextBox"]
+wait_time = 0.01
+autostart = true
+
 [connection signal="pressed" from="Start" to="." method="_on_Start_pressed"]
 [connection signal="pressed" from="AddMoney" to="." method="_on_AddMoney_pressed"]
 [connection signal="pressed" from="SubtractMoney" to="." method="_on_SubtractMoney_pressed"]
 [connection signal="pressed" from="SubtractYear" to="." method="_on_SubtractYear_pressed"]
 [connection signal="pressed" from="AddYear" to="." method="_on_AddYear_pressed"]
+[connection signal="timeout" from="TextBox/Timer" to="TextBox/Dialog" method="_on_Timer_timeout"]
+
