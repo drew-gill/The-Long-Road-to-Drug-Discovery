@@ -4,6 +4,8 @@ class_name Piece
 #piece properties
 var moneySpent = 0
 var timeElapsed = 0 
+var pieceName = 'Josiel'
+
 
 #Signals
 signal leaving_tile
@@ -24,6 +26,9 @@ func get_current_tile()-> BoardTile:
 	
 #When the piece is clicked:
 func _on_Button_pressed():
-	print(get_current_tile().get_tile_ID())
+	print(pieceName)
+	print('--------------------------------')
+	print("Current Tile ID " + str(get_current_tile().get_tile_ID()))
 	print("Money Spent: $" + str(moneySpent))
 	board.move_piece(self, Vector2(1,0))
+	print('--------------------------------')
