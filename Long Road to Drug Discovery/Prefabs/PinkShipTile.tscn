@@ -1,25 +1,22 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://Graphics/tileSprite.png" type="Texture" id=1]
+[ext_resource path="res://External Assets/Kenney Game Assets/2D assets/Alien Spaceship Pack/PNG/shipPink_damage1.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/BoardTile.gd" type="Script" id=2]
 
 [node name="BoardTile" type="Node2D"]
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
-visible = false
-scale = Vector2( 0.024, 0.024 )
+position = Vector2( 25, 37.5 )
+scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 1 )
-centered = false
 
 [node name="Button" type="Button" parent="."]
-visible = false
-self_modulate = Color( 1, 1, 1, 0.254902 )
-margin_left = 0.743885
-margin_top = 0.539845
-margin_right = 50.7439
-margin_bottom = 50.5398
+modulate = Color( 1, 1, 1, 0.117647 )
+margin_right = 50.0
+margin_bottom = 50.0
 __meta__ = {
-"_edit_use_anchors_": false
+"_edit_use_anchors_": false,
+"_editor_description_": ""
 }
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
