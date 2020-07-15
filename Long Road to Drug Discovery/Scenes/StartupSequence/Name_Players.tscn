@@ -28,6 +28,10 @@ script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+dropdown1_path = NodePath("Player1/Disease1/Disease1")
+dropdown2_path = NodePath("Player2/Disease2/Disease2")
+dropdown3_path = NodePath("Player3/Disease3/Disease3")
+dropdown4_path = NodePath("Player4/Disease4/Disease4")
 
 [node name="BackButton" type="Button" parent="."]
 margin_left = 250.0
@@ -68,8 +72,8 @@ __meta__ = {
 [node name="Player1" type="Control" parent="."]
 margin_left = 183.0
 margin_top = 190.0
-margin_right = 223.0
-margin_bottom = 204.0
+margin_right = 183.0
+margin_bottom = 190.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -115,7 +119,7 @@ margin_bottom = 43.0
 custom_fonts/font = ExtResource( 8 )
 text = "Disease:"
 
-[node name="Disease1" type="TextEdit" parent="Player1/Disease1"]
+[node name="Disease1" type="OptionButton" parent="Player1/Disease1"]
 margin_left = 167.0
 margin_right = 914.0
 margin_bottom = 45.0
@@ -149,8 +153,8 @@ custom_fonts/font = ExtResource( 7 )
 visible = false
 margin_left = 183.0
 margin_top = 190.0
-margin_right = 223.0
-margin_bottom = 230.0
+margin_right = 183.0
+margin_bottom = 190.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -173,9 +177,9 @@ align = 1
 
 [node name="Player2_Button" type="Button" parent="Player2/Player2_Icon"]
 margin_left = 29.0
-margin_top = 40.0
+margin_top = 51.0
 margin_right = 100.0
-margin_bottom = 81.0
+margin_bottom = 92.0
 size_flags_horizontal = 4
 icon = ExtResource( 5 )
 flat = true
@@ -196,7 +200,7 @@ margin_bottom = 43.0
 custom_fonts/font = ExtResource( 8 )
 text = "Disease:"
 
-[node name="Disease2" type="TextEdit" parent="Player2/Disease2"]
+[node name="Disease2" type="OptionButton" parent="Player2/Disease2"]
 margin_left = 167.0
 margin_right = 914.0
 margin_bottom = 45.0
@@ -230,8 +234,8 @@ custom_fonts/font = ExtResource( 7 )
 visible = false
 margin_left = 183.0
 margin_top = 190.0
-margin_right = 223.0
-margin_bottom = 230.0
+margin_right = 183.0
+margin_bottom = 190.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -254,9 +258,9 @@ align = 1
 
 [node name="Player3_Button" type="Button" parent="Player3/Player3_Icon"]
 margin_left = 29.0
-margin_top = 40.0
+margin_top = 51.0
 margin_right = 100.0
-margin_bottom = 81.0
+margin_bottom = 92.0
 size_flags_horizontal = 4
 icon = ExtResource( 6 )
 flat = true
@@ -277,7 +281,7 @@ margin_bottom = 43.0
 custom_fonts/font = ExtResource( 8 )
 text = "Disease:"
 
-[node name="Disease3" type="TextEdit" parent="Player3/Disease3"]
+[node name="Disease3" type="OptionButton" parent="Player3/Disease3"]
 margin_left = 167.0
 margin_right = 914.0
 margin_bottom = 45.0
@@ -311,8 +315,8 @@ custom_fonts/font = ExtResource( 7 )
 visible = false
 margin_left = 183.0
 margin_top = 190.0
-margin_right = 223.0
-margin_bottom = 230.0
+margin_right = 183.0
+margin_bottom = 190.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -335,9 +339,9 @@ align = 1
 
 [node name="Player4_Button" type="Button" parent="Player4/Player4_Icon"]
 margin_left = 29.0
-margin_top = 40.0
+margin_top = 51.0
 margin_right = 100.0
-margin_bottom = 81.0
+margin_bottom = 92.0
 size_flags_horizontal = 4
 icon = ExtResource( 3 )
 flat = true
@@ -358,7 +362,7 @@ margin_bottom = 43.0
 custom_fonts/font = ExtResource( 8 )
 text = "Disease:"
 
-[node name="Disease4" type="TextEdit" parent="Player4/Disease4"]
+[node name="Disease4" type="OptionButton" parent="Player4/Disease4"]
 margin_left = 167.0
 margin_right = 914.0
 margin_bottom = 45.0
@@ -390,14 +394,14 @@ custom_fonts/font = ExtResource( 7 )
 [connection signal="pressed" from="BackButton" to="." method="_on_BackButton_pressed"]
 [connection signal="pressed" from="ContinueButton" to="." method="_on_ContinueButton_pressed"]
 [connection signal="pressed" from="Player1/Player1_Icon/Player1_Button" to="." method="_on_Player1_Button_pressed"]
-[connection signal="text_changed" from="Player1/Disease1/Disease1" to="." method="_on_Disease1_text_changed"]
+[connection signal="item_selected" from="Player1/Disease1/Disease1" to="." method="_on_Disease1_item_selected"]
 [connection signal="text_changed" from="Player1/DrugName1/DrugName1" to="." method="_on_DrugName1_text_changed"]
 [connection signal="pressed" from="Player2/Player2_Icon/Player2_Button" to="." method="_on_Player2_Button_pressed"]
-[connection signal="text_changed" from="Player2/Disease2/Disease2" to="." method="_on_Disease2_text_changed"]
+[connection signal="item_selected" from="Player2/Disease2/Disease2" to="." method="_on_Disease2_item_selected"]
 [connection signal="text_changed" from="Player2/DrugName2/DrugName2" to="." method="_on_DrugName2_text_changed"]
 [connection signal="pressed" from="Player3/Player3_Icon/Player3_Button" to="." method="_on_Player3_Button_pressed"]
-[connection signal="text_changed" from="Player3/Disease3/Disease3" to="." method="_on_Disease3_text_changed"]
+[connection signal="item_selected" from="Player3/Disease3/Disease3" to="." method="_on_Disease3_item_selected"]
 [connection signal="text_changed" from="Player3/DrugName3/DrugName3" to="." method="_on_DrugName3_text_changed"]
 [connection signal="pressed" from="Player4/Player4_Icon/Player4_Button" to="." method="_on_Player4_Button_pressed"]
-[connection signal="text_changed" from="Player4/Disease4/Disease4" to="." method="_on_Disease4_text_changed"]
+[connection signal="item_selected" from="Player4/Disease4/Disease4" to="." method="_on_Disease4_item_selected"]
 [connection signal="text_changed" from="Player4/DrugName4/DrugName4" to="." method="_on_DrugName4_text_changed"]
