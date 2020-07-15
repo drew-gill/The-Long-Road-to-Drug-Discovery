@@ -15,10 +15,10 @@ font_data = ExtResource( 1 )
 script = ExtResource( 2 )
 
 [node name="Start" type="Button" parent="."]
-margin_left = 465.0
-margin_top = 357.0
-margin_right = 542.0
-margin_bottom = 393.0
+margin_left = 38.1846
+margin_top = 615.628
+margin_right = 115.185
+margin_bottom = 651.628
 custom_fonts/font = SubResource( 1 )
 text = "Start"
 __meta__ = {
@@ -36,11 +36,22 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="RollDice" type="Button" parent="."]
+margin_left = 48.918
+margin_top = 430.082
+margin_right = 226.918
+margin_bottom = 466.082
+custom_fonts/font = SubResource( 1 )
+text = "Roll the Dice"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="ToggleDialogue" type="Button" parent="."]
-margin_left = 914.526
-margin_top = 181.316
-margin_right = 1048.53
-margin_bottom = 217.316
+margin_left = 1534.92
+margin_top = 252.716
+margin_right = 1763.92
+margin_bottom = 288.716
 custom_fonts/font = SubResource( 1 )
 text = "Toggle Dialogue"
 __meta__ = {
@@ -124,11 +135,23 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="LevelText" type="Label" parent="."]
+margin_left = 21.0
+margin_top = 343.854
+margin_right = 333.0
+margin_bottom = 406.854
+custom_fonts/font = SubResource( 1 )
+text = "Level: 1
+Roll: 1"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Warning" type="Label" parent="."]
-margin_left = 373.0
-margin_top = 242.0
-margin_right = 624.0
-margin_bottom = 262.0
+margin_left = 1101.28
+margin_top = 13.5189
+margin_right = 1352.28
+margin_bottom = 33.5189
 custom_fonts/font = SubResource( 2 )
 text = "Warning! Put text here."
 align = 1
@@ -149,14 +172,14 @@ __meta__ = {
 }
 
 [node name="DialogueBox" type="Polygon2D" parent="."]
-position = Vector2( 431.402, 172.947 )
+position = Vector2( 1091.46, 255.454 )
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 polygon = PoolVector2Array( 371.443, 77.8848, 777.731, 79.4481, 778.031, 338.101, 373.565, 338.808 )
 
 [node name="Dialogue" type="RichTextLabel" parent="DialogueBox"]
-margin_left = 391.0
+margin_left = 402.107
 margin_top = 92.0
-margin_right = 762.0
+margin_right = 773.107
 margin_bottom = 328.0
 script = ExtResource( 3 )
 __meta__ = {
@@ -168,6 +191,7 @@ wait_time = 0.01
 autostart = true
 [connection signal="pressed" from="Start" to="." method="_on_Start_pressed"]
 [connection signal="pressed" from="EndTurn" to="." method="_on_EndTurn_pressed"]
+[connection signal="pressed" from="RollDice" to="." method="_on_RollDice_pressed"]
 [connection signal="pressed" from="ToggleDialogue" to="." method="toggleDialogueBox"]
 [connection signal="pressed" from="AddMoney" to="." method="_on_AddMoney_pressed"]
 [connection signal="pressed" from="SubtractMoney" to="." method="_on_SubtractMoney_pressed"]

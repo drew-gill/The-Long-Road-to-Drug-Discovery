@@ -1,0 +1,155 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Prefabs/Tile.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Prefabs/Level.gd" type="Script" id=4]
+
+[node name="GameBoard" type="Node2D"]
+
+[node name="Level1" type="Node2D" parent="."]
+position = Vector2( 126.758, 31.0915 )
+script = ExtResource( 4 )
+LevelNumber = 1
+StartingTilePath = NodePath("StartingTile")
+
+[node name="StartingTile" parent="Level1" instance=ExtResource( 1 )]
+position = Vector2( 61.2569, 121.788 )
+tileNumber = 0
+LandOnCost = 0
+LandOnTime = 0
+NextTilePath = NodePath("../Tile1")
+
+[node name="Tile1" parent="Level1" instance=ExtResource( 1 )]
+position = Vector2( 62.8436, 282.042 )
+NextTilePath = NodePath("../Tile2")
+LandOnLevelPath = NodePath("../../Level2")
+TileType = 1
+
+[node name="Tile2" parent="Level1" instance=ExtResource( 1 )]
+position = Vector2( 224.684, 366.135 )
+tileNumber = 2
+NextTilePath = NodePath("../Tile3")
+LandOnLevelPath = NodePath("../../Level2")
+TileType = 1
+
+[node name="Tile3" parent="Level1" instance=ExtResource( 1 )]
+position = Vector2( 386.525, 259.828 )
+tileNumber = 3
+NextTilePath = NodePath("../Tile4")
+LandOnLevelPath = NodePath("../../Level2")
+TileType = 2
+
+[node name="Tile4" parent="Level1" instance=ExtResource( 1 )]
+position = Vector2( 522.221, 370.895 )
+tileNumber = 4
+NextTilePath = NodePath("../Tile5")
+LandOnLevelPath = NodePath("../../Level2")
+TileType = 2
+
+[node name="Tile5" parent="Level1" instance=ExtResource( 1 )]
+position = Vector2( 650.671, 270.935 )
+tileNumber = 5
+NextTilePath = NodePath("../Tile6")
+LandOnLevelPath = NodePath("../../Level2")
+TileType = 3
+
+[node name="Tile6" parent="Level1" instance=ExtResource( 1 )]
+position = Vector2( 822.861, 369.309 )
+tileNumber = 6
+LandOnLevelPath = NodePath("../../Level2")
+TileType = 3
+
+[node name="Level2" type="Node2D" parent="."]
+position = Vector2( 443.702, 531.083 )
+script = ExtResource( 4 )
+LevelNumber = 2
+StartingTilePath = NodePath("StartingTile")
+
+[node name="StartingTile" parent="Level2" instance=ExtResource( 1 )]
+position = Vector2( 61.2569, 115.636 )
+tileNumber = 0
+LandOnCost = 0
+LandOnTime = 0
+NextTilePath = NodePath("../Tile1")
+
+[node name="Tile1" parent="Level2" instance=ExtResource( 1 )]
+position = Vector2( 56.4968, 282.042 )
+NextTilePath = NodePath("../Tile2")
+TileType = 1
+
+[node name="Tile2" parent="Level2" instance=ExtResource( 1 )]
+position = Vector2( 224.684, 366.135 )
+tileNumber = 2
+NextTilePath = NodePath("../Tile3")
+TileType = 1
+
+[node name="Tile3" parent="Level2" instance=ExtResource( 1 )]
+position = Vector2( 393.7, 259.828 )
+tileNumber = 3
+NextTilePath = NodePath("../Tile4")
+LandOnLevelPath = NodePath("../../Level1")
+TileType = 2
+
+[node name="Tile4" parent="Level2" instance=ExtResource( 1 )]
+position = Vector2( 515.046, 370.895 )
+tileNumber = 4
+NextTilePath = NodePath("../Tile5")
+TileType = 2
+
+[node name="Tile5" parent="Level2" instance=ExtResource( 1 )]
+position = Vector2( 648.28, 270.935 )
+tileNumber = 5
+NextTilePath = NodePath("../Tile6")
+TileType = 3
+
+[node name="Tile6" parent="Level2" instance=ExtResource( 1 )]
+position = Vector2( 822.861, 369.309 )
+tileNumber = 6
+TileType = 3
+
+[node name="Level3" type="Node2D" parent="."]
+position = Vector2( 1313.04, 111.418 )
+script = ExtResource( 4 )
+LevelNumber = 2
+StartingTilePath = NodePath("StartingTile")
+
+[node name="StartingTile" parent="Level3" instance=ExtResource( 1 )]
+position = Vector2( 61.2569, 121.788 )
+tileNumber = 0
+LandOnCost = 0
+LandOnTime = 0
+NextTilePath = NodePath("../Tile1")
+
+[node name="Tile1" parent="Level3" instance=ExtResource( 1 )]
+position = Vector2( 62.0487, 282.042 )
+NextTilePath = NodePath("../Tile2")
+TileType = 1
+
+[node name="Tile2" parent="Level3" instance=ExtResource( 1 )]
+position = Vector2( 224.684, 366.135 )
+tileNumber = 2
+NextTilePath = NodePath("../Tile3")
+TileType = 1
+
+[node name="Tile3" parent="Level3" instance=ExtResource( 1 )]
+position = Vector2( 334.48, 233.92 )
+tileNumber = 3
+NextTilePath = NodePath("../Tile4")
+LandOnLevelPath = NodePath("../../Level1")
+TileType = 2
+
+[node name="Tile4" parent="Level3" instance=ExtResource( 1 )]
+position = Vector2( 442.872, 383.85 )
+tileNumber = 4
+NextTilePath = NodePath("../Tile5")
+TileType = 2
+
+[node name="Tile5" parent="Level3" instance=ExtResource( 1 )]
+position = Vector2( 339.226, 554.08 )
+tileNumber = 5
+NextTilePath = NodePath("../Tile6")
+TileType = 3
+
+[node name="Tile6" parent="Level3" instance=ExtResource( 1 )]
+position = Vector2( 486.048, 569.176 )
+tileNumber = 6
+TileType = 3

@@ -3,6 +3,8 @@ extends KinematicBody2D
 var money = 1000000
 var years = 20
 var backups = 0
+var currentLevel = 1
+var currentTile = 0
 export var playerNumber = 1 #Player 1 vs Player 2, for example
 
 export (int) var movementSpeed = 75
@@ -38,9 +40,27 @@ func alterPlayerYears(changeValue):
 func alterPlayerBackups(changeValue):
 	backups += changeValue
 
+func setMovementTarget(location):
+	movementTarget = location
+	
+func alterCurrentLevel(changeValue):
+	currentLevel += changeValue
+	
+func getCurrentLevel():
+	return currentLevel
+	
+func setCurrentTile(tileNumber):
+	currentTile = tileNumber
+
+func getCurrentTile():
+	return currentTile
+
 func _input(event):
+	pass
 	if event is InputEventMouseButton:
 		movementTarget = event.position
+	
+
 	
 func _physics_process(delta):
 	if(playerNumber == $"../PlayerTracker".getCurrentPlayer()):

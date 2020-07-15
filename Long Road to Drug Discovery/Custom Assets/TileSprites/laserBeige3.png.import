@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/laserPink3.png-21513f11f63c3af0c705a7b5843a9b42.stex"
+path="res://.import/laserBeige3.png-8ab2eb645abbf69f4f5040fbc57184d1.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://External Assets/Kenney Game Assets/2D assets/Alien Spaceship Pack/PNG/laserPink3.png"
-dest_files=[ "res://.import/laserPink3.png-21513f11f63c3af0c705a7b5843a9b42.stex" ]
+source_file="res://Custom Assets/TileSprites/laserBeige3.png"
+dest_files=[ "res://.import/laserBeige3.png-8ab2eb645abbf69f4f5040fbc57184d1.stex" ]
 
 [params]
 

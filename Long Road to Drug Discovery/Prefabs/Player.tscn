@@ -1,14 +1,14 @@
 [gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Prefabs/Player.gd" type="Script" id=1]
-[ext_resource path="res://Custom Assets/mouseYellowWalk.png" type="Texture" id=2]
-[ext_resource path="res://Custom Assets/mouseYellow.png" type="Texture" id=3]
-[ext_resource path="res://Custom Assets/mouseBlue.png" type="Texture" id=4]
-[ext_resource path="res://Custom Assets/mouseGreenWalk.png" type="Texture" id=5]
-[ext_resource path="res://Custom Assets/mouseGreen.png" type="Texture" id=6]
-[ext_resource path="res://Custom Assets/mouseGrayWalk.png" type="Texture" id=7]
-[ext_resource path="res://Custom Assets/mouseBlueWalk.png" type="Texture" id=8]
-[ext_resource path="res://Custom Assets/mouseGray.png" type="Texture" id=9]
+[ext_resource path="res://Custom Assets/MouseAnimations/mouseYellowWalk.png" type="Texture" id=2]
+[ext_resource path="res://Custom Assets/MouseAnimations/mouseYellow.png" type="Texture" id=3]
+[ext_resource path="res://Custom Assets/MouseAnimations/mouseBlue.png" type="Texture" id=4]
+[ext_resource path="res://Custom Assets/MouseAnimations/mouseGreenWalk.png" type="Texture" id=5]
+[ext_resource path="res://Custom Assets/MouseAnimations/mouseGreen.png" type="Texture" id=6]
+[ext_resource path="res://Custom Assets/MouseAnimations/mouseGrayWalk.png" type="Texture" id=7]
+[ext_resource path="res://Custom Assets/MouseAnimations/mouseBlueWalk.png" type="Texture" id=8]
+[ext_resource path="res://Custom Assets/MouseAnimations/mouseGray.png" type="Texture" id=9]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -22,14 +22,14 @@ animations = [ {
 "name": "moveGray",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 3 ), ExtResource( 2 ) ],
-"loop": true,
-"name": "moveYellow",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 6 ), ExtResource( 5 ) ],
 "loop": true,
 "name": "moveGreen",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 3 ), ExtResource( 2 ) ],
+"loop": true,
+"name": "moveYellow",
 "speed": 5.0
 } ]
 

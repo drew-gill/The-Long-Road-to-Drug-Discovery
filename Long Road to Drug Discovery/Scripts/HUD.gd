@@ -4,6 +4,8 @@ extends Node
 var currentPlayerNumber
 var currentPlayer
 
+signal beginMoving
+
 func _ready():
 	_showAll(false)
 	$Start.show()
@@ -69,6 +71,7 @@ func _on_SubtractYear_pressed():
 
 func _on_EndTurn_pressed():
 	$"../PlayerTracker".endTurn()
+
 	
 
 func addCommas(value):
@@ -95,8 +98,17 @@ func _process(delta):
 		$Years.text = "Years left: " + str(currentPlayer.getPlayerYears())
 		$BackupFormulations.text = "Backup Formulations: " + str(currentPlayer.getPlayerBackups())
 		$PlayerTurn.text = "Player " + str(currentPlayerNumber) +"'s Turn!"
+		#print(str(currentPlayer.getCurrentLevel()) + ":" + str(currentPlayer.getCurrentTile()))
+		$LevelText.text = "Level: " + str(currentPlayer.getCurrentLevel()) + "\n Roll: " + str(currentPlayer.getCurrentTile())
 	else:
 		_showAll(false)
 		_showWarning("Warning! No players found in the scene.")
 
 
+
+
+func _on_RollDice_pressed():
+	var roll = randi()%6 + 1
+	currentPlayer.setCurrentTile(roll)
+	emit_signal("beginMoving")
+	
