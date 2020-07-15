@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/Rock_2_01.obj-4dc9d3c53b4f6068312d8fe03e8488cc.mesh"
+
+[deps]
+
+files=[ "res://.import/Rock_2_01.obj-4dc9d3c53b4f6068312d8fe03e8488cc.mesh" ]
+
+source_file="res://External Assets/Kenney Game Assets/Archive/Nature Pack (Legacy 3D)/Models/Rock_2_01.obj"
+dest_files=[ "res://.import/Rock_2_01.obj-4dc9d3c53b4f6068312d8fe03e8488cc.mesh", "res://.import/Rock_2_01.obj-4dc9d3c53b4f6068312d8fe03e8488cc.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

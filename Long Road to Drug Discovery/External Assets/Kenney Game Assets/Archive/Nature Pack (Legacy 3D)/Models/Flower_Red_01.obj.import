@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/Flower_Red_01.obj-97da25c4a1ff3f914819ca8f5f8ef671.mesh"
+
+[deps]
+
+files=[ "res://.import/Flower_Red_01.obj-97da25c4a1ff3f914819ca8f5f8ef671.mesh" ]
+
+source_file="res://External Assets/Kenney Game Assets/Archive/Nature Pack (Legacy 3D)/Models/Flower_Red_01.obj"
+dest_files=[ "res://.import/Flower_Red_01.obj-97da25c4a1ff3f914819ca8f5f8ef671.mesh", "res://.import/Flower_Red_01.obj-97da25c4a1ff3f914819ca8f5f8ef671.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

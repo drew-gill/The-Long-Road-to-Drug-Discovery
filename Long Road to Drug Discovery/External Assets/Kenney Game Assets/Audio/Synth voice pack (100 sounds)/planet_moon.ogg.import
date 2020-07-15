@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/planet_moon.ogg-296653533a94309308003e9ada83b86f.oggstr"
+
+[deps]
+
+source_file="res://External Assets/Kenney Game Assets/Audio/Synth voice pack (100 sounds)/planet_moon.ogg"
+dest_files=[ "res://.import/planet_moon.ogg-296653533a94309308003e9ada83b86f.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

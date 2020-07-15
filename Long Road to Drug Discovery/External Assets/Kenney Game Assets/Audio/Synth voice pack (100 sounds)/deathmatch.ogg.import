@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/deathmatch.ogg-aca3f98c0402461b2d414b68d1c3d5c4.oggstr"
+
+[deps]
+
+source_file="res://External Assets/Kenney Game Assets/Audio/Synth voice pack (100 sounds)/deathmatch.ogg"
+dest_files=[ "res://.import/deathmatch.ogg-aca3f98c0402461b2d414b68d1c3d5c4.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

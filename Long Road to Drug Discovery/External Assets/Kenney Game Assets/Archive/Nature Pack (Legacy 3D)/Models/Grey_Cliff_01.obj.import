@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/Grey_Cliff_01.obj-2a99bfb954fd528d3c12b8cb5e4a6aae.mesh"
+
+[deps]
+
+files=[ "res://.import/Grey_Cliff_01.obj-2a99bfb954fd528d3c12b8cb5e4a6aae.mesh" ]
+
+source_file="res://External Assets/Kenney Game Assets/Archive/Nature Pack (Legacy 3D)/Models/Grey_Cliff_01.obj"
+dest_files=[ "res://.import/Grey_Cliff_01.obj-2a99bfb954fd528d3c12b8cb5e4a6aae.mesh", "res://.import/Grey_Cliff_01.obj-2a99bfb954fd528d3c12b8cb5e4a6aae.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/time_up.ogg-ec50c6497284d85645e92aeea4ead1ca.oggstr"
+
+[deps]
+
+source_file="res://External Assets/Kenney Game Assets/Audio/Synth voice pack (100 sounds)/time_up.ogg"
+dest_files=[ "res://.import/time_up.ogg-ec50c6497284d85645e92aeea4ead1ca.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
