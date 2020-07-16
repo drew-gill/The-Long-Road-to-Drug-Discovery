@@ -2,12 +2,13 @@
 
 [ext_resource path="res://fonts/FSAlbertPro-ExtraBold.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Scripts/Name_Players.gd" type="Script" id=2]
-[ext_resource path="res://Custom Assets/mouseYellow.png" type="Texture" id=3]
-[ext_resource path="res://Custom Assets/mouseBlue.png" type="Texture" id=4]
-[ext_resource path="res://Custom Assets/mouseGray.png" type="Texture" id=5]
-[ext_resource path="res://Custom Assets/mouseGreen.png" type="Texture" id=6]
+[ext_resource path="res://Custom Assets/MouseAnimations/mouseYellow.png" type="Texture" id=3]
+[ext_resource path="res://Custom Assets/MouseAnimations/mouseBlue.png" type="Texture" id=4]
+[ext_resource path="res://Custom Assets/MouseAnimations/mouseGray.png" type="Texture" id=5]
+[ext_resource path="res://Custom Assets/MouseAnimations/mouseGreen.png" type="Texture" id=6]
 [ext_resource path="res://fonts/FSAlbert_35.tres" type="DynamicFont" id=7]
 [ext_resource path="res://fonts/FSAlbert_40.tres" type="DynamicFont" id=8]
+
 
 [sub_resource type="DynamicFont" id=1]
 size = 30

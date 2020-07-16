@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/mouseBlue.png-03c7c94813cd459a88d990147bf30bbf.stex"
+path="res://.import/mouseYellow.png-080737a5a59e351afb03481386c50b99.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Custom Assets/mouseBlue.png"
-dest_files=[ "res://.import/mouseBlue.png-03c7c94813cd459a88d990147bf30bbf.stex" ]
+source_file="res://Custom Assets/MouseAnimations/mouseYellow.png"
+dest_files=[ "res://.import/mouseYellow.png-080737a5a59e351afb03481386c50b99.stex" ]
 
 [params]
 

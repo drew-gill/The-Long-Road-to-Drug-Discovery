@@ -1,29 +1,295 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Prefabs/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/HUD.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Prefabs/Tile.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scripts/PlayerTracker.gd" type="Script" id=4]
 
 [node name="Main Scene" type="Node2D"]
 
 [node name="HUD" parent="." instance=ExtResource( 2 )]
 
+[node name="BoardGame" type="Node2D" parent="."]
+
+[node name="Level 1" type="Node2D" parent="BoardGame"]
+
+[node name="Starting" parent="BoardGame/Level 1" instance=ExtResource( 3 )]
+position = Vector2( 394.216, 210.359 )
+
+[node name="Tile 1" parent="BoardGame/Level 1" instance=ExtResource( 3 )]
+position = Vector2( 813.397, 85.6039 )
+TileType = 3
+
+[node name="Tile 2" parent="BoardGame/Level 1" instance=ExtResource( 3 )]
+position = Vector2( 427.389, 146.463 )
+TileType = 3
+
+[node name="Tile 3" parent="BoardGame/Level 1" instance=ExtResource( 3 )]
+position = Vector2( 494.493, 112.359 )
+TileType = 2
+
+[node name="Tile 4" parent="BoardGame/Level 1" instance=ExtResource( 3 )]
+position = Vector2( 576.88, 96.8589 )
+TileType = 2
+
+[node name="Tile 5" parent="BoardGame/Level 1" instance=ExtResource( 3 )]
+position = Vector2( 655.834, 87.7946 )
+TileType = 1
+
+[node name="Tile 6" parent="BoardGame/Level 1" instance=ExtResource( 3 )]
+position = Vector2( 732.925, 88.071 )
+TileType = 1
+
+[node name="Level 2" type="Node2D" parent="BoardGame"]
+
+[node name="Starting" parent="BoardGame/Level 2" instance=ExtResource( 3 )]
+position = Vector2( 889.939, 89.2647 )
+
+[node name="Tile 1" parent="BoardGame/Level 2" instance=ExtResource( 3 )]
+position = Vector2( 1123.37, 321.785 )
+TileType = 3
+
+[node name="Tile 2" parent="BoardGame/Level 2" instance=ExtResource( 3 )]
+position = Vector2( 966.477, 94.3071 )
+TileType = 3
+
+[node name="Tile 3" parent="BoardGame/Level 2" instance=ExtResource( 3 )]
+position = Vector2( 1033.7, 119.669 )
+TileType = 2
+
+[node name="Tile 4" parent="BoardGame/Level 2" instance=ExtResource( 3 )]
+position = Vector2( 1086.02, 159.145 )
+TileType = 2
+
+[node name="Tile 5" parent="BoardGame/Level 2" instance=ExtResource( 3 )]
+position = Vector2( 1110.77, 216.28 )
+TileType = 1
+
+[node name="Tile 6" parent="BoardGame/Level 2" instance=ExtResource( 3 )]
+position = Vector2( 1114.54, 269.886 )
+TileType = 1
+
+[node name="Level 3" type="Node2D" parent="BoardGame"]
+
+[node name="Starting" parent="BoardGame/Level 3" instance=ExtResource( 3 )]
+position = Vector2( 1124.13, 374.183 )
+
+[node name="Tile 1" parent="BoardGame/Level 3" instance=ExtResource( 3 )]
+position = Vector2( 940.459, 618.61 )
+TileType = 3
+
+[node name="Tile 2" parent="BoardGame/Level 3" instance=ExtResource( 3 )]
+position = Vector2( 1125.84, 428.623 )
+TileType = 3
+
+[node name="Tile 3" parent="BoardGame/Level 3" instance=ExtResource( 3 )]
+position = Vector2( 1121.14, 482.588 )
+TileType = 2
+
+[node name="Tile 4" parent="BoardGame/Level 3" instance=ExtResource( 3 )]
+position = Vector2( 1108.43, 531.114 )
+TileType = 2
+
+[node name="Tile 5" parent="BoardGame/Level 3" instance=ExtResource( 3 )]
+position = Vector2( 1074.74, 578.652 )
+TileType = 1
+
+[node name="Tile 6" parent="BoardGame/Level 3" instance=ExtResource( 3 )]
+position = Vector2( 1021.25, 616.624 )
+TileType = 1
+
+[node name="Level 4" type="Node2D" parent="BoardGame"]
+
+[node name="Starting" parent="BoardGame/Level 4" instance=ExtResource( 3 )]
+position = Vector2( 864.62, 619.019 )
+
+[node name="Tile 1" parent="BoardGame/Level 4" instance=ExtResource( 3 )]
+position = Vector2( 471.319, 552.292 )
+TileType = 3
+
+[node name="Tile 2" parent="BoardGame/Level 4" instance=ExtResource( 3 )]
+position = Vector2( 783.086, 621.683 )
+TileType = 3
+
+[node name="Tile 3" parent="BoardGame/Level 4" instance=ExtResource( 3 )]
+position = Vector2( 705.913, 621.943 )
+TileType = 2
+
+[node name="Tile 4" parent="BoardGame/Level 4" instance=ExtResource( 3 )]
+position = Vector2( 625.542, 622.706 )
+TileType = 2
+
+[node name="Tile 5" parent="BoardGame/Level 4" instance=ExtResource( 3 )]
+position = Vector2( 560.265, 612.955 )
+TileType = 1
+
+[node name="Tile 6" parent="BoardGame/Level 4" instance=ExtResource( 3 )]
+position = Vector2( 511.848, 586.376 )
+TileType = 1
+
+[node name="Level 5" type="Node2D" parent="BoardGame"]
+
+[node name="Starting" parent="BoardGame/Level 5" instance=ExtResource( 3 )]
+position = Vector2( 453.75, 501.873 )
+
+[node name="Tile 1" parent="BoardGame/Level 5" instance=ExtResource( 3 )]
+position = Vector2( 611.201, 208.681 )
+TileType = 3
+
+[node name="Tile 2" parent="BoardGame/Level 5" instance=ExtResource( 3 )]
+position = Vector2( 443.162, 449.357 )
+TileType = 3
+
+[node name="Tile 3" parent="BoardGame/Level 5" instance=ExtResource( 3 )]
+position = Vector2( 441.755, 398.958 )
+TileType = 2
+
+[node name="Tile 4" parent="BoardGame/Level 5" instance=ExtResource( 3 )]
+position = Vector2( 452.014, 348.382 )
+TileType = 2
+
+[node name="Tile 5" parent="BoardGame/Level 5" instance=ExtResource( 3 )]
+position = Vector2( 490.578, 297.995 )
+TileType = 1
+
+[node name="Tile 6" parent="BoardGame/Level 5" instance=ExtResource( 3 )]
+position = Vector2( 546.363, 245.946 )
+TileType = 1
+
+[node name="Level 6" type="Node2D" parent="BoardGame"]
+
+[node name="Starting" parent="BoardGame/Level 6" instance=ExtResource( 3 )]
+position = Vector2( 686.536, 188.223 )
+
+[node name="Tile 1" parent="BoardGame/Level 6" instance=ExtResource( 3 )]
+position = Vector2( 991.203, 376.398 )
+TileType = 3
+
+[node name="Tile 2" parent="BoardGame/Level 6" instance=ExtResource( 3 )]
+position = Vector2( 768.733, 189.428 )
+TileType = 3
+
+[node name="Tile 3" parent="BoardGame/Level 6" instance=ExtResource( 3 )]
+position = Vector2( 847.495, 195.686 )
+TileType = 2
+
+[node name="Tile 4" parent="BoardGame/Level 6" instance=ExtResource( 3 )]
+position = Vector2( 920.031, 221.152 )
+TileType = 2
+
+[node name="Tile 5" parent="BoardGame/Level 6" instance=ExtResource( 3 )]
+position = Vector2( 975.958, 266.019 )
+TileType = 1
+
+[node name="Tile 6" parent="BoardGame/Level 6" instance=ExtResource( 3 )]
+position = Vector2( 994.276, 321.853 )
+TileType = 1
+
+[node name="Level 7" type="Node2D" parent="BoardGame"]
+
+[node name="Starting" parent="BoardGame/Level 7" instance=ExtResource( 3 )]
+position = Vector2( 988.116, 436.264 )
+
+[node name="Tile 1" parent="BoardGame/Level 7" instance=ExtResource( 3 )]
+position = Vector2( 579.966, 491.692 )
+TileType = 3
+
+[node name="Tile 2" parent="BoardGame/Level 7" instance=ExtResource( 3 )]
+position = Vector2( 964.355, 490.769 )
+TileType = 3
+
+[node name="Tile 3" parent="BoardGame/Level 7" instance=ExtResource( 3 )]
+position = Vector2( 889.274, 518.152 )
+TileType = 2
+
+[node name="Tile 4" parent="BoardGame/Level 7" instance=ExtResource( 3 )]
+position = Vector2( 808.087, 522.069 )
+TileType = 2
+
+[node name="Tile 5" parent="BoardGame/Level 7" instance=ExtResource( 3 )]
+position = Vector2( 723.992, 520.717 )
+TileType = 1
+
+[node name="Tile 6" parent="BoardGame/Level 7" instance=ExtResource( 3 )]
+position = Vector2( 644.27, 518.859 )
+TileType = 1
+
+[node name="Level 8" type="Node2D" parent="BoardGame"]
+
+[node name="Starting" parent="BoardGame/Level 8" instance=ExtResource( 3 )]
+position = Vector2( 555.72, 443.68 )
+
+[node name="Tile 1" parent="BoardGame/Level 8" instance=ExtResource( 3 )]
+position = Vector2( 848.01, 285.096 )
+TileType = 3
+
+[node name="Tile 2" parent="BoardGame/Level 8" instance=ExtResource( 3 )]
+position = Vector2( 564.571, 396.477 )
+TileType = 3
+
+[node name="Tile 3" parent="BoardGame/Level 8" instance=ExtResource( 3 )]
+position = Vector2( 592.624, 344.4 )
+TileType = 2
+
+[node name="Tile 4" parent="BoardGame/Level 8" instance=ExtResource( 3 )]
+position = Vector2( 633.275, 301.701 )
+TileType = 2
+
+[node name="Tile 5" parent="BoardGame/Level 8" instance=ExtResource( 3 )]
+position = Vector2( 703.862, 278.1 )
+TileType = 1
+
+[node name="Tile 6" parent="BoardGame/Level 8" instance=ExtResource( 3 )]
+position = Vector2( 776.703, 268.825 )
+TileType = 1
+
+[node name="Level 9" type="Node2D" parent="BoardGame"]
+
+[node name="Starting" parent="BoardGame/Level 9" instance=ExtResource( 3 )]
+position = Vector2( 753.839, 348.328 )
+
+[node name="Tile 1" parent="BoardGame/Level 9" instance=ExtResource( 3 )]
+position = Vector2( 888.269, 332.772 )
+TileType = 3
+
+[node name="Tile 2" parent="BoardGame/Level 9" instance=ExtResource( 3 )]
+position = Vector2( 706.539, 393.299 )
+TileType = 3
+
+[node name="Tile 3" parent="BoardGame/Level 9" instance=ExtResource( 3 )]
+position = Vector2( 711.284, 446.109 )
+TileType = 2
+
+[node name="Tile 4" parent="BoardGame/Level 9" instance=ExtResource( 3 )]
+position = Vector2( 785.838, 458.502 )
+TileType = 2
+
+[node name="Tile 5" parent="BoardGame/Level 9" instance=ExtResource( 3 )]
+position = Vector2( 863.841, 441.257 )
+TileType = 1
+
+[node name="Tile 6" parent="BoardGame/Level 9" instance=ExtResource( 3 )]
+position = Vector2( 896.423, 390.664 )
+TileType = 1
+
 [node name="Player4" parent="." instance=ExtResource( 1 )]
-position = Vector2( 237.472, 55.3477 )
+position = Vector2( 144.161, 140.269 )
 playerNumber = 4
 
 [node name="Player3" parent="." instance=ExtResource( 1 )]
-position = Vector2( 779.83, 42.0809 )
+position = Vector2( 230.958, 141.279 )
 playerNumber = 3
 
 [node name="Player2" parent="." instance=ExtResource( 1 )]
-position = Vector2( 83.9118, 339.907 )
+position = Vector2( 142.947, 195.769 )
 playerNumber = 2
 
 [node name="Player1" parent="." instance=ExtResource( 1 )]
-position = Vector2( 499.784, 308.364 )
+position = Vector2( 251.884, 106.268 )
 movementSpeed = 100
 
 [node name="PlayerTracker" type="Node2D" parent="."]
+scale = Vector2( 1.03148, 9.65638 )
 script = ExtResource( 4 )
 numOfPlayers = 4
+[connection signal="beginMoving" from="HUD" to="PlayerTracker" method="_on_HUD_beginMoving"]

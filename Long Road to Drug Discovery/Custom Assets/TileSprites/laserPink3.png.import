@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/mouseGrayWalk.png-7ee3d905473b588383cf1f7f072986fe.stex"
+path="res://.import/laserPink3.png-ee63d20d7e2277f2642135dea959451d.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Custom Assets/mouseGrayWalk.png"
-dest_files=[ "res://.import/mouseGrayWalk.png-7ee3d905473b588383cf1f7f072986fe.stex" ]
+source_file="res://Custom Assets/TileSprites/laserPink3.png"
+dest_files=[ "res://.import/laserPink3.png-ee63d20d7e2277f2642135dea959451d.stex" ]
 
 [params]
 

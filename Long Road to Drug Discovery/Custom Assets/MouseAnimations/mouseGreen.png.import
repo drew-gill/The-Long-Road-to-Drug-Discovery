@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/laserYellow3.png-41aa46499416b43b042e996390515df6.stex"
+path="res://.import/mouseGreen.png-bfbb7d9e13154df228d6201bb2f16cdb.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://External Assets/Kenney Game Assets/2D assets/Alien Spaceship Pack/PNG/laserYellow3.png"
-dest_files=[ "res://.import/laserYellow3.png-41aa46499416b43b042e996390515df6.stex" ]
+source_file="res://Custom Assets/MouseAnimations/mouseGreen.png"
+dest_files=[ "res://.import/mouseGreen.png-bfbb7d9e13154df228d6201bb2f16cdb.stex" ]
 
 [params]
 

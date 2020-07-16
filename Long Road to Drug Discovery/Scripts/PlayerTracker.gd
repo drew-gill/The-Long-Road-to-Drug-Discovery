@@ -16,3 +16,10 @@ func endTurn():
 
 func getCurrentPlayer():
 	return currentPlayer
+
+
+#CHANGE THIS
+#Identify which first space ship to land
+func _on_HUD_beginMoving():
+	var currentPlayerNode = get_node("../Player" + str(currentPlayer))
+	
