@@ -22,6 +22,4 @@ func getCurrentPlayer():
 #Identify which first space ship to land
 func _on_HUD_beginMoving():
 	var currentPlayerNode = get_node("../Player" + str(currentPlayer))
-	if(currentPlayerNode != null):
-		currentPlayerNode.setMovementTarget(Vector2(2000,2000))
 	

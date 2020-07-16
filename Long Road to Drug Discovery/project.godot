@@ -19,15 +19,27 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Scripts/BoardTile.gd"
 }, {
+"base": "Node",
+"class": "HUD2",
+"language": "GDScript",
+"path": "res://Scripts/HUD2.gd"
+}, {
 "base": "Node2D",
 "class": "Piece",
 "language": "GDScript",
 "path": "res://Prefabs/Piece.gd"
+}, {
+"base": "KinematicBody2D",
+"class": "Player",
+"language": "GDScript",
+"path": "res://Prefabs/Player.gd"
 } ]
 _global_script_class_icons={
 "Board": "",
 "BoardTile": "",
-"Piece": ""
+"HUD2": "",
+"Piece": "",
+"Player": ""
 }
 
 [application]

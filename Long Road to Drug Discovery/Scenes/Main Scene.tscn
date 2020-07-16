@@ -25,7 +25,7 @@ position = Vector2( 104.783, 164.34 )
 playerNumber = 2
 
 [node name="Player1" parent="." instance=ExtResource( 1 )]
-position = Vector2( 262.83, 122.975 )
+position = Vector2( 251.884, 106.268 )
 movementSpeed = 100
 
 [node name="PlayerTracker" type="Node2D" parent="."]
