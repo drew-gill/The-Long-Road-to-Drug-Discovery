@@ -22,20 +22,20 @@ animations = [ {
 "name": "moveGray",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 4 ), ExtResource( 8 ) ],
-"loop": true,
-"name": "moveBlue",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 3 ), ExtResource( 2 ) ],
 "loop": true,
 "name": "moveYellow",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 4 ), ExtResource( 8 ) ],
+"loop": true,
+"name": "moveBlue",
+"speed": 5.0
 } ]
 
 [sub_resource type="CapsuleShape2D" id=2]
-radius = 18.1097
-height = 28.3264
+radius = 9.99391
+height = 2.20818
 
 [node name="Player" type="KinematicBody2D"]
 script = ExtResource( 1 )
@@ -46,7 +46,7 @@ frames = SubResource( 1 )
 animation = "moveGreen"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( -0.862885, -1.29433 )
+position = Vector2( 0, 5 )
 rotation = 1.5708
 shape = SubResource( 2 )
 

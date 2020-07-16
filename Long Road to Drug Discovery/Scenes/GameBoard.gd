@@ -19,6 +19,7 @@ func generate_pieces() -> void:
 	starting.set_piece(new_piece)
 	
 	
+	
 func generate_HUD():
 	var newHUD = load("res://Scenes/HUD2.tscn").instance()
 	add_child(newHUD)

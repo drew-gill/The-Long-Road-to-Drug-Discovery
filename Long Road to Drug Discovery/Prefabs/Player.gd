@@ -60,6 +60,7 @@ func getCurrentTile():
 	
 func _physics_process(delta):
 	if(playerNumber == 1):
+		
 		if (Input.is_action_pressed("ui_right")):
 			movementVelocity = position.direction_to(movementTarget) * movementSpeed
 			$MouseSprite.flip_h = movementVelocity.x > 0
@@ -69,6 +70,8 @@ func _physics_process(delta):
 				$MouseSprite.play()
 			else:
 				$MouseSprite.stop()
+		else:
+			 $MouseSprite.stop()
 
 
 
