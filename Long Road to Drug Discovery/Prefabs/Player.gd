@@ -1,10 +1,11 @@
 extends KinematicBody2D
+class_name Player
 
-var money = 1000000
+var money = 1000000000
 var years = 20
 var backups = 0
 var currentLevel = 1
-var currentTile = 0
+var currentTile = 4
 export var playerNumber = 1 #Player 1 vs Player 2, for example
 
 export (int) var movementSpeed = 75
@@ -55,26 +56,21 @@ func setCurrentTile(tileNumber):
 func getCurrentTile():
 	return currentTile
 
-func _input(event):
-	pass
-	if event is InputEventMouseButton:
-		movementTarget = event.position
-	
 
 	
 func _physics_process(delta):
-	if(playerNumber == $"../PlayerTracker".getCurrentPlayer()):
-		movementVelocity = position.direction_to(movementTarget) * movementSpeed
-		$MouseSprite.flip_h = movementVelocity.x > 0
-		
-		
-		if(position.distance_to(movementTarget) > 5):
-			movementVelocity = move_and_slide(movementVelocity)
-			$MouseSprite.play()
-		else:
-			$MouseSprite.stop()
-	else:
-		$MouseSprite.stop()
+	if(playerNumber == 1):
+		if (Input.is_action_pressed("ui_right")):
+			movementVelocity = position.direction_to(movementTarget) * movementSpeed
+			$MouseSprite.flip_h = movementVelocity.x > 0
+				
+			if(position.distance_to(movementTarget) > 5):
+				movementVelocity = move_and_slide(movementVelocity)
+				$MouseSprite.play()
+			else:
+				$MouseSprite.stop()
+
+
 
 func setAnimation():
 	if(playerNumber == 1):
@@ -87,3 +83,7 @@ func setAnimation():
 		$MouseSprite.animation = "moveYellow"
 	else:
 		$MouseSprite.animation = "moveGray"
+
+func _on_Button_pressed():
+	print("Money Spent: $" + str(money))
+	print("Time Spent: " + str(years))
