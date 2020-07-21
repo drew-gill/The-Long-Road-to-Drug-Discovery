@@ -7,6 +7,8 @@ var Disease1 = ""
 var DrugName1 = ""
 var Budget1 = 0
 var Time1 = 15
+var Phase1 = 1
+var Roll1 = 0
 
 #Player 2 Attributes
 var Disease2 = ""
@@ -25,3 +27,4 @@ var Disease4 = ""
 var DrugName4 = ""
 var Budget4 = 0
 var Time4 = 15
+
