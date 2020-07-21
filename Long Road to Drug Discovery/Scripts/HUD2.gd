@@ -1,9 +1,9 @@
 extends Node
 class_name HUD2
 
-
-var currentPlayerNumber = 1
+export (NodePath) var playerTrackerPath
 var currentPlayer
+var playerTracker
 
 signal beginMoving
 signal transfer_phaseandroll
@@ -11,6 +11,8 @@ signal transfer_phaseandroll
 func _ready():
 	_showAll(false)
 	$Start.show()
+	playerTracker = get_node(playerTrackerPath)
+	randomize() #used to reset seed for dice roll
 	
 	
 
@@ -72,7 +74,7 @@ func _on_SubtractYear_pressed():
 	currentPlayer.alterPlayerYears(-1)
 
 func _on_EndTurn_pressed():
-	$"../PlayerTracker".endTurn()
+	playerTracker.endTurn()
 	
 
 func addCommas(value):
@@ -90,14 +92,16 @@ func addCommas(value):
 
 
 func _process(delta):
-	currentPlayer = get_node("../Player" + str(currentPlayerNumber))
+	currentPlayer = playerTracker.getCurrentPlayerNode()
 	if(currentPlayer != null):
 		$Money.text = "Money: $" + addCommas(currentPlayer.getPlayerMoney())
 		$Years.text = "Years left: " + str(currentPlayer.getPlayerYears())
 		$BackupFormulations.text = "Backup Formulations: " + str(currentPlayer.getPlayerBackups())
 		$PlayerTurn.text = "Player " + str(currentPlayer.getPlayerNumber()) +"'s Turn!"
-		#print(str(currentPlayer.getCurrentLevel()) + ":" + str(currentPlayer.getCurrentTile()))
-		$LevelText.text = "Level: " + str(currentPlayer.getCurrentLevel()) + "\n Roll: " + str(currentPlayer.getCurrentTile())
+		if(currentPlayer.getCurrentTile() < 1):
+			$LevelText.text = "Level: " + str(currentPlayer.getCurrentLevel()) + "\n Please roll the dice!"
+		else:
+			$LevelText.text = "Level: " + str(currentPlayer.getCurrentLevel()) + "\n Roll: " + str(currentPlayer.getCurrentTile())
 		
 	else:
 		_showAll(false)

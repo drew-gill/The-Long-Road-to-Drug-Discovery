@@ -1,6 +1,5 @@
 extends Node2D
 
-export var numOfPlayers = 1
 #up to player 4, if there are 4 total players
 var currentPlayer = 1
 
@@ -9,17 +8,14 @@ func _ready():
 
 
 func endTurn():
-	if(currentPlayer + 1 > numOfPlayers):
+	if(currentPlayer + 1 > GlobalVar.num_players):
 		currentPlayer = 1
 	else:
 		currentPlayer += 1
 
-func getCurrentPlayer():
+func getCurrentPlayerNumber():
 	return currentPlayer
 
-
-#CHANGE THIS
-#Identify which first space ship to land
-func _on_HUD_beginMoving():
-	var currentPlayerNode = get_node("../Player" + str(currentPlayer))
+func getCurrentPlayerNode():
+	return get_node("../Player" + str(currentPlayer))
 	

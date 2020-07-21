@@ -106,7 +106,7 @@ func _on_BackButton_pressed():
 	get_tree().change_scene("res://Scenes/StartupSequence/Choose_NumPlayers.tscn")
 
 func _on_ContinueButton_pressed():
-	get_tree().change_scene("res://Scenes/GameBoard.tscn")
+	get_tree().change_scene("res://Scenes/GameBoardScrolling.tscn")
 	
 func add_items():
 	$Player1/Disease1/Disease1.theme = Theme.new()

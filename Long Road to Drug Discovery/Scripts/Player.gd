@@ -79,7 +79,7 @@ func getCurrentTile():
 
 	
 func _physics_process(delta):
-	if(playerNumber == 1):
+	if(playerNumber == get_node("../PlayerTracker").getCurrentPlayerNumber()):
 		
 		if (Input.is_action_pressed("ui_right")):
 			movementVelocity = position.direction_to(movementTarget) * movementSpeed
