@@ -1,6 +1,9 @@
 extends KinematicBody2D
 class_name Player
 
+var playerDisease = ""
+var playerDrugName = ""
+
 var money = 1000000000
 var years = 20
 var backups = 0
@@ -16,14 +19,32 @@ func _ready():
 	setAnimation()
 	movementTarget = self.position
 	
+func setPlayerDisease(disease):
+	playerDisease = disease
+
+func getPlayerDisease():
+	return playerDisease
+
+func setPlayerDrugName(drugName):
+	playerDrugName = drugName
+	
+func getPlayerDrugName():
+	return playerDrugName
+
 func setPlayerNumber(num):
 	playerNumber = num
-	
+
 func getPlayerNumber():
 	return playerNumber
 	
+func setPlayerMoney(PlayerMoney):
+	money = PlayerMoney
+	
 func getPlayerMoney():
 	return money
+
+func setPlayerYears(PlayerYears):
+	years = PlayerYears
 
 func getPlayerYears():
 	return years
