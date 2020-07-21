@@ -1,6 +1,6 @@
 extends Camera2D
 
-
+#the camera should be a sibling of the level objects, with a child HUD 2D node
 
 #the level to focus on, whether it is where the current player is or selected.
 var levelFocus
