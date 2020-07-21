@@ -179,12 +179,12 @@ func generate_pieces() -> void:
 func get_tile_by_pos(tile_pos: Vector2) -> BoardTile:
 	return board_array[tile_pos.x][tile_pos.y]
 
-	
+
 #Moves piece to next tile
-#func move_piece(piece: Piece):
-#	var current_tile = piece.get_current_tile()
-#	var destination = current_tile.get_next()
-#	destination.set_piece(piece)
-#	piece.emit_signal("leaving_tile")
+func move_piece(piece: Piece):
+	var current_tile = piece.get_current_tile()
+	var destination = current_tile.get_next()
+	destination.set_piece(piece)
+	piece.emit_signal("leaving_tile")
 	
 	
