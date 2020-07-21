@@ -90,7 +90,7 @@ func addCommas(value):
 
 
 func _process(delta):
-	currentPlayer = get_node("../Player")
+	currentPlayer = get_node("../../Player")
 	if(currentPlayer != null):
 		$Money.text = "Money: $" + addCommas(currentPlayer.getPlayerMoney())
 		$Years.text = "Years left: " + str(currentPlayer.getPlayerYears())
@@ -110,3 +110,11 @@ func _on_RollDice_pressed():
 	currentPlayer.setCurrentTile(roll)
 	emit_signal("beginMoving")
 	
+
+
+
+#Change the active level of the parent camera object
+func _on_OptionButton_item_selected(id):
+	if(id == 0):
+		id = currentPlayer.getCurrentLevel()
+	get_parent().SetActiveLevelNumber(id)

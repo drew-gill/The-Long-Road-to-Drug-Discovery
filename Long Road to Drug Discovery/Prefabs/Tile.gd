@@ -51,6 +51,7 @@ func levelUp(player):
 	var starting = LandOnLevel.getStartingTile()
 	starting.set_piece(player)
 	player.alterCurrentLevel(1)
+	get_node("../../ScrollingCamera").SetActiveLevelNumber(player.getCurrentLevel())
 	
 func tryAgain(player):
 	var starting = get_parent().getStartingTile()
@@ -59,7 +60,7 @@ func tryAgain(player):
 
 func GoToNextTile(player):
 	if(NextTile != null):
-		player.setMovementTarget(NextTile.position + Vector2(0,-50))
+		player.setMovementTarget(NextTile._getTilePosition() + Vector2(0,-50))
 		
 func StopPlayer(player):
 	player.setMovementTarget(self.position) #set target with offset
@@ -73,6 +74,10 @@ func _on_Tile_player_entered(player):
 	else:
 		GoToNextTile(player)
 
+#The tile's position, with the level position accounted for.
+func _getTilePosition():
+	return self.get_position() + self.get_parent().get_position()
+
 func set_piece(player) -> void:
-	player.position = position + Vector2(0,-50)
+	player.position = _getTilePosition() + Vector2(0,-50)
 	GoToNextTile(player)
