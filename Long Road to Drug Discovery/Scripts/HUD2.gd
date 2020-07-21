@@ -2,7 +2,7 @@ extends Node
 class_name HUD2
 
 
-var currentPlayerNumber
+var currentPlayerNumber = 1
 var currentPlayer
 
 signal beginMoving
@@ -72,7 +72,6 @@ func _on_SubtractYear_pressed():
 
 func _on_EndTurn_pressed():
 	$"../PlayerTracker".endTurn()
-
 	
 
 func addCommas(value):
@@ -90,12 +89,12 @@ func addCommas(value):
 
 
 func _process(delta):
-	currentPlayer = get_node("../Player")
+	currentPlayer = get_node("../Player" + str(currentPlayerNumber))
 	if(currentPlayer != null):
 		$Money.text = "Money: $" + addCommas(currentPlayer.getPlayerMoney())
 		$Years.text = "Years left: " + str(currentPlayer.getPlayerYears())
 		$BackupFormulations.text = "Backup Formulations: " + str(currentPlayer.getPlayerBackups())
-		$PlayerTurn.text = "Player " + str(currentPlayerNumber) +"'s Turn!"
+		$PlayerTurn.text = "Player " + str(currentPlayer.getPlayerNumber()) +"'s Turn!"
 		#print(str(currentPlayer.getCurrentLevel()) + ":" + str(currentPlayer.getCurrentTile()))
 		$LevelText.text = "Level: " + str(currentPlayer.getCurrentLevel()) + "\n Roll: " + str(currentPlayer.getCurrentTile())
 	else:
