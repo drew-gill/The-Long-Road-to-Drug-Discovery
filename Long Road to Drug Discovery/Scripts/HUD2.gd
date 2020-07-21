@@ -6,6 +6,7 @@ var currentPlayerNumber = 1
 var currentPlayer
 
 signal beginMoving
+signal transfer_phaseandroll
 
 func _ready():
 	_showAll(false)
@@ -97,6 +98,7 @@ func _process(delta):
 		$PlayerTurn.text = "Player " + str(currentPlayer.getPlayerNumber()) +"'s Turn!"
 		#print(str(currentPlayer.getCurrentLevel()) + ":" + str(currentPlayer.getCurrentTile()))
 		$LevelText.text = "Level: " + str(currentPlayer.getCurrentLevel()) + "\n Roll: " + str(currentPlayer.getCurrentTile())
+		
 	else:
 		_showAll(false)
 		_showWarning("Warning! No players found in the scene.")
@@ -108,4 +110,14 @@ func _on_RollDice_pressed():
 	var roll = randi()%6 + 1
 	currentPlayer.setCurrentTile(roll)
 	emit_signal("beginMoving")
+	connect("transfer_phaseandroll", get_node("DialogueBox/Dialogue"), "_on_transfer_phaseandroll")
+	emit_signal("transfer_phaseandroll", int(currentPlayer.getCurrentLevel()), int(currentPlayer.getCurrentTile()))
 	
+
+
+
+#Change the active level of the parent camera object
+func _on_OptionButton_item_selected(id):
+	if(id == 0):
+		id = currentPlayer.getCurrentLevel()
+	get_parent().SetActiveLevelNumber(id)

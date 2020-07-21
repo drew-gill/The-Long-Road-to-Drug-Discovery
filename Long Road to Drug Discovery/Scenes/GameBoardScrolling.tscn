@@ -1,0 +1,195 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Prefabs/Tile.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/GameBoardScrolling.gd" type="Script" id=2]
+[ext_resource path="res://Scripts/PlayerTracker.gd" type="Script" id=3]
+[ext_resource path="res://Prefabs/Level.gd" type="Script" id=4]
+[ext_resource path="res://Scenes/HUD2.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/ScrollingCamera.gd" type="Script" id=6]
+
+[node name="GameBoard" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="Level1" type="Node2D" parent="."]
+script = ExtResource( 4 )
+LevelNumber = 1
+StartingTilePath = NodePath("StartingTile")
+
+[node name="StartingTile" parent="Level1" instance=ExtResource( 1 )]
+position = Vector2( 443.887, 123.022 )
+tileNumber = 0
+LandOnCost = 0
+LandOnTime = 0
+NextTilePath = NodePath("../Tile1")
+LandOnLevelPath = NodePath("..")
+
+[node name="Tile1" parent="Level1" instance=ExtResource( 1 )]
+position = Vector2( 574.903, 183.31 )
+LandOnCost = -40000000
+NextTilePath = NodePath("../Tile2")
+LandOnLevelPath = NodePath("..")
+TileType = 2
+
+[node name="Tile2" parent="Level1" instance=ExtResource( 1 )]
+position = Vector2( 690.858, 264.737 )
+tileNumber = 2
+LandOnCost = -60000000
+LandOnTime = -2
+NextTilePath = NodePath("../Tile3")
+LandOnLevelPath = NodePath("../../Level2")
+TileType = 3
+
+[node name="Tile3" parent="Level1" instance=ExtResource( 1 )]
+position = Vector2( 791.466, 168.277 )
+tileNumber = 3
+LandOnCost = -80000000
+LandOnTime = -2
+NextTilePath = NodePath("../Tile4")
+LandOnLevelPath = NodePath("../../Level2")
+TileType = 3
+
+[node name="Tile4" parent="Level1" instance=ExtResource( 1 )]
+position = Vector2( 910.987, 258.555 )
+tileNumber = 4
+LandOnCost = -80000000
+LandOnTime = -2
+NextTilePath = NodePath("../Tile5")
+LandOnLevelPath = NodePath("../../Level2")
+TileType = 3
+
+[node name="Tile5" parent="Level1" instance=ExtResource( 1 )]
+position = Vector2( 1043.3, 303.187 )
+tileNumber = 5
+LandOnCost = -40000000
+NextTilePath = NodePath("../Tile6")
+LandOnLevelPath = NodePath("../../Level2")
+TileType = 1
+
+[node name="Tile6" parent="Level1" instance=ExtResource( 1 )]
+position = Vector2( 1161.1, 236.156 )
+tileNumber = 6
+LandOnCost = -40000000
+LandOnLevelPath = NodePath("../../Level2")
+TileType = 1
+
+[node name="Level2" type="Node2D" parent="."]
+position = Vector2( 1920, 0 )
+script = ExtResource( 4 )
+LevelNumber = 2
+StartingTilePath = NodePath("StartingTile")
+
+[node name="StartingTile" parent="Level2" instance=ExtResource( 1 )]
+position = Vector2( 388.183, 346.459 )
+tileNumber = 0
+LandOnCost = 0
+LandOnTime = 0
+NextTilePath = NodePath("../Tile1")
+LandOnLevelPath = NodePath("..")
+
+[node name="Tile1" parent="Level2" instance=ExtResource( 1 )]
+position = Vector2( 436.948, 469.841 )
+LandOnCost = -40000000
+NextTilePath = NodePath("../Tile2")
+LandOnLevelPath = NodePath("..")
+TileType = 2
+
+[node name="Tile2" parent="Level2" instance=ExtResource( 1 )]
+position = Vector2( 598.836, 412.766 )
+tileNumber = 2
+LandOnCost = -40000000
+NextTilePath = NodePath("../Tile3")
+LandOnLevelPath = NodePath("..")
+TileType = 2
+
+[node name="Tile3" parent="Level2" instance=ExtResource( 1 )]
+position = Vector2( 684.635, 509.675 )
+tileNumber = 3
+LandOnCost = -40000000
+NextTilePath = NodePath("../Tile4")
+LandOnLevelPath = NodePath("..")
+TileType = 2
+
+[node name="Tile4" parent="Level2" instance=ExtResource( 1 )]
+position = Vector2( 822.145, 436.079 )
+tileNumber = 4
+LandOnCost = -80000000
+LandOnTime = -2
+NextTilePath = NodePath("../Tile5")
+LandOnLevelPath = NodePath("../../Level3")
+TileType = 3
+
+[node name="Tile5" parent="Level2" instance=ExtResource( 1 )]
+position = Vector2( 950.209, 538.718 )
+tileNumber = 5
+LandOnCost = -40000000
+NextTilePath = NodePath("../Tile6")
+LandOnLevelPath = NodePath("../../Level3")
+TileType = 1
+
+[node name="Tile6" parent="Level2" instance=ExtResource( 1 )]
+position = Vector2( 1079.11, 453.046 )
+tileNumber = 6
+LandOnCost = -40000000
+LandOnLevelPath = NodePath("../../Level3")
+TileType = 1
+
+[node name="Level3" type="Node2D" parent="."]
+position = Vector2( 3840, 0 )
+script = ExtResource( 4 )
+LevelNumber = 3
+StartingTilePath = NodePath("StartingTile")
+
+[node name="StartingTile" parent="Level3" instance=ExtResource( 1 )]
+position = Vector2( 381.648, 658.312 )
+tileNumber = 0
+LandOnCost = 0
+LandOnTime = 0
+NextTilePath = NodePath("../Tile1")
+LandOnLevelPath = NodePath("..")
+
+[node name="Tile1" parent="Level3" instance=ExtResource( 1 )]
+position = Vector2( 483.855, 767.642 )
+NextTilePath = NodePath("../Tile2")
+TileType = 1
+
+[node name="Tile2" parent="Level3" instance=ExtResource( 1 )]
+position = Vector2( 619.591, 668.734 )
+tileNumber = 2
+NextTilePath = NodePath("../Tile3")
+TileType = 1
+
+[node name="Tile3" parent="Level3" instance=ExtResource( 1 )]
+position = Vector2( 707.312, 786.075 )
+tileNumber = 3
+NextTilePath = NodePath("../Tile4")
+LandOnLevelPath = NodePath("../../Level1")
+TileType = 2
+
+[node name="Tile4" parent="Level3" instance=ExtResource( 1 )]
+position = Vector2( 835.218, 665.912 )
+tileNumber = 4
+NextTilePath = NodePath("../Tile5")
+TileType = 2
+
+[node name="Tile5" parent="Level3" instance=ExtResource( 1 )]
+position = Vector2( 909.08, 795.622 )
+tileNumber = 5
+NextTilePath = NodePath("../Tile6")
+TileType = 3
+
+[node name="Tile6" parent="Level3" instance=ExtResource( 1 )]
+position = Vector2( 1045.05, 692.586 )
+tileNumber = 6
+TileType = 3
+
+[node name="PlayerTracker" type="Node2D" parent="."]
+script = ExtResource( 3 )
+
+[node name="ScrollingCamera" type="Camera2D" parent="."]
+offset = Vector2( 960, 540 )
+current = true
+smoothing_enabled = true
+smoothing_speed = 1.0
+script = ExtResource( 6 )
+
+[node name="HUD2" parent="ScrollingCamera" instance=ExtResource( 5 )]

@@ -10,7 +10,6 @@ var backups = 0
 var currentLevel = 1
 var currentTile = 4
 export var playerNumber = 1 #Player 1 vs Player 2, for example
-
 export (int) var movementSpeed = 75
 var movementTarget = Vector2()
 var movementVelocity = Vector2()
