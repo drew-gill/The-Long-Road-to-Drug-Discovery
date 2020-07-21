@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/war_reloading.ogg-ed0ccd01ed13b6a515d47f6a2bdd65a2.oggstr"
+
+[deps]
+
+source_file="res://External Assets/Kenney Game Assets/Audio/Voiceover pack (90 sounds)/Male/war_reloading.ogg"
+dest_files=[ "res://.import/war_reloading.ogg-ed0ccd01ed13b6a515d47f6a2bdd65a2.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

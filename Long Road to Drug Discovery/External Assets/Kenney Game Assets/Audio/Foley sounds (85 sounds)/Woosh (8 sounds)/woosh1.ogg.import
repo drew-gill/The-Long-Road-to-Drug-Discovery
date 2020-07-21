@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/woosh1.ogg-b8e9dc05b313c12a45188aff8209a9b6.oggstr"
+
+[deps]
+
+source_file="res://External Assets/Kenney Game Assets/Audio/Foley sounds (85 sounds)/Woosh (8 sounds)/woosh1.ogg"
+dest_files=[ "res://.import/woosh1.ogg-b8e9dc05b313c12a45188aff8209a9b6.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

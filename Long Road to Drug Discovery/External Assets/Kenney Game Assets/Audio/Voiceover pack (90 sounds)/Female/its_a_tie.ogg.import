@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/its_a_tie.ogg-0475f0618fa19f7ef7289f989fc6ae62.oggstr"
+
+[deps]
+
+source_file="res://External Assets/Kenney Game Assets/Audio/Voiceover pack (90 sounds)/Female/its_a_tie.ogg"
+dest_files=[ "res://.import/its_a_tie.ogg-0475f0618fa19f7ef7289f989fc6ae62.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

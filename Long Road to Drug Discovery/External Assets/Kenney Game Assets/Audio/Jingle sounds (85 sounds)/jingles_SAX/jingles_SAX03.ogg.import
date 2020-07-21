@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/jingles_SAX03.ogg-6972ba176eeee2dfd3d34bf4f1319986.oggstr"
+
+[deps]
+
+source_file="res://External Assets/Kenney Game Assets/Audio/Jingle sounds (85 sounds)/jingles_SAX/jingles_SAX03.ogg"
+dest_files=[ "res://.import/jingles_SAX03.ogg-6972ba176eeee2dfd3d34bf4f1319986.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

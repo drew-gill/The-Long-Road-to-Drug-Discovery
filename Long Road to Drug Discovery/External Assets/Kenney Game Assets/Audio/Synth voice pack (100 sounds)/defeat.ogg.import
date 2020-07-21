@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/defeat.ogg-e7c2668a937642c91c055f7f5e42db8d.oggstr"
+
+[deps]
+
+source_file="res://External Assets/Kenney Game Assets/Audio/Synth voice pack (100 sounds)/defeat.ogg"
+dest_files=[ "res://.import/defeat.ogg-e7c2668a937642c91c055f7f5e42db8d.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
