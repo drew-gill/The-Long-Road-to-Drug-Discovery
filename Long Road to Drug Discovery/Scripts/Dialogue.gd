@@ -68,14 +68,21 @@ var dialogPhase9Part2 = ["Roll the dice to determine the number of lives saved o
 "5.	Save 1.2 million lives",
 "6.	Save 5 million lives"]
 
-var phase = 8
-var roll = 1
+var phase = 1
+var roll = 0
+
+func _on_transfer_phaseandroll(phaseValue, rollValue):
+	phase = phaseValue
+	roll = rollValue
+	_ready()
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	match phase:
 		1:
 			match roll:
+				0:
+					set_bbcode(dialogPhase1[roll])
 				1:
 					set_bbcode(dialogPhase1[roll])
 				2:
@@ -86,6 +93,8 @@ func _ready():
 					set_bbcode(dialogPhase1[4])
 		2:
 			match roll:
+				0:
+					set_bbcode(dialogPhase2[roll])
 				1:
 					set_bbcode(dialogPhase2[1])
 				2:
@@ -98,6 +107,8 @@ func _ready():
 					set_bbcode(dialogPhase2[5])
 		3:
 			match roll:
+				0:
+					set_bbcode(dialogPhase3[roll])
 				1:
 					set_bbcode(dialogPhase3[1])
 				2:
@@ -110,6 +121,8 @@ func _ready():
 					set_bbcode(dialogPhase3[5])
 		4:
 			match roll:
+				0:
+					set_bbcode(dialogPhase4[roll])
 				1:
 					set_bbcode(dialogPhase4[1])
 				2:
@@ -120,6 +133,8 @@ func _ready():
 					set_bbcode(dialogPhase4[4])
 		5:
 			match roll:
+				0:
+					set_bbcode(dialogPhase5[roll])
 				1 , 2:
 					set_bbcode(dialogPhase5[1])
 				3:
@@ -130,6 +145,8 @@ func _ready():
 					set_bbcode(dialogPhase5[4])
 		6:
 			match roll:
+				0:
+					set_bbcode(dialogPhase6[roll])
 				1 , 2:
 					set_bbcode(dialogPhase6[1])
 				3:
@@ -140,6 +157,8 @@ func _ready():
 					set_bbcode(dialogPhase6[4])
 		7:
 			match roll:
+				0:
+					set_bbcode(dialogPhase7[roll])
 				1:
 					set_bbcode(dialogPhase7[1])
 				2:
@@ -152,6 +171,8 @@ func _ready():
 					set_bbcode(dialogPhase7[5])
 		8:
 			match roll:
+				0:
+					set_bbcode(dialogPhase8[roll])
 				1:
 					set_bbcode(dialogPhase8[1])
 				2:
@@ -164,6 +185,8 @@ func _ready():
 					set_bbcode(dialogPhase8[5])
 		9:
 			match roll:
+				0:
+					set_bbcode(dialogPhase9Part1[roll])
 				1:
 					set_bbcode(dialogPhase9Part1[1])
 				2:
@@ -178,6 +201,8 @@ func _ready():
 					set_bbcode(dialogPhase9Part1[6])
 		10:
 			match roll:
+				0:
+					set_bbcode(dialogPhase9Part2[roll])
 				1:
 					set_bbcode(dialogPhase9Part2[1])
 				2:
