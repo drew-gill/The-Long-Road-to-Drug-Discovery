@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/mouseYellow.png-37ad1d056b602f82d02d97909a26f151.stex"
+path="res://.import/shipBlue.png-e3350ec5d05349bce0e81c3dc380df4a.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Custom Assets/mouseYellow.png"
-dest_files=[ "res://.import/mouseYellow.png-37ad1d056b602f82d02d97909a26f151.stex" ]
+source_file="res://Custom Assets/TileSprites/shipBlue.png"
+dest_files=[ "res://.import/shipBlue.png-e3350ec5d05349bce0e81c3dc380df4a.stex" ]
 
 [params]
 

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/shipBeige.png-dfc0ea45c26a95c2a80407ebee64e20f.stex"
+path="res://.import/mouseGray.png-7d814a6eb84af3c8c617f4035cf38477.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://External Assets/Kenney Game Assets/2D assets/Alien Spaceship Pack/PNG/shipBeige.png"
-dest_files=[ "res://.import/shipBeige.png-dfc0ea45c26a95c2a80407ebee64e20f.stex" ]
+source_file="res://Custom Assets/MouseAnimations/mouseGray.png"
+dest_files=[ "res://.import/mouseGray.png-7d814a6eb84af3c8c617f4035cf38477.stex" ]
 
 [params]
 

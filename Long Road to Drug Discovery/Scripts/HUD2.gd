@@ -1,4 +1,5 @@
 extends Node
+class_name HUD2
 
 
 var currentPlayerNumber
@@ -89,10 +90,7 @@ func addCommas(value):
 
 
 func _process(delta):
-	currentPlayerNumber = $"../PlayerTracker".getCurrentPlayer()
-	
-	currentPlayer = get_node("../Player" + str(currentPlayerNumber))
-	
+	currentPlayer = get_node("../Player")
 	if(currentPlayer != null):
 		$Money.text = "Money: $" + addCommas(currentPlayer.getPlayerMoney())
 		$Years.text = "Years left: " + str(currentPlayer.getPlayerYears())

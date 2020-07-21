@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/shipPink.png-35b158f833eec62b705298148a6ddd8c.stex"
+path="res://.import/shipPink.png-31d9d9cfa8d662b25eff2799718af5f4.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://External Assets/Kenney Game Assets/2D assets/Alien Spaceship Pack/PNG/shipPink.png"
-dest_files=[ "res://.import/shipPink.png-35b158f833eec62b705298148a6ddd8c.stex" ]
+source_file="res://Custom Assets/TileSprites/shipPink.png"
+dest_files=[ "res://.import/shipPink.png-31d9d9cfa8d662b25eff2799718af5f4.stex" ]
 
 [params]
 

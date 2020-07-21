@@ -19,21 +19,27 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Scripts/BoardTile.gd"
 }, {
-"base": "Node2D",
-"class": "Piece",
+"base": "Node",
+"class": "HUD2",
 "language": "GDScript",
-"path": "res://Prefabs/Piece.gd"
+"path": "res://Scripts/HUD2.gd"
+}, {
+"base": "KinematicBody2D",
+"class": "Player",
+"language": "GDScript",
+"path": "res://Prefabs/Player.gd"
 } ]
 _global_script_class_icons={
 "Board": "",
 "BoardTile": "",
-"Piece": ""
+"HUD2": "",
+"Player": ""
 }
 
 [application]
 
 config/name="Long Road to Drug Discovery"
-run/main_scene="res://Scenes/StartupSequence/TitleScreen.tscn"
+run/main_scene="res://Scenes/GameBoard.tscn"
 config/icon="res://icon.png"
 
 [autoload]
@@ -42,8 +48,8 @@ GlobalVar="*res://Scripts/GlobalVar.gd"
 
 [display]
 
-window/size/width=1280
-window/size/height=720
+window/size/width=1920
+window/size/height=1080
 
 [rendering]
 

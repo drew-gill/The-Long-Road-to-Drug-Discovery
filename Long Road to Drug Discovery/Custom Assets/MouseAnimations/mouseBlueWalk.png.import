@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/mouseGreen.png-1da174c1b6c3ccdd8bb47bfd427f3251.stex"
+path="res://.import/mouseBlueWalk.png-3a3667fd4c3183efa62912125ec27683.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Custom Assets/mouseGreen.png"
-dest_files=[ "res://.import/mouseGreen.png-1da174c1b6c3ccdd8bb47bfd427f3251.stex" ]
+source_file="res://Custom Assets/MouseAnimations/mouseBlueWalk.png"
+dest_files=[ "res://.import/mouseBlueWalk.png-3a3667fd4c3183efa62912125ec27683.stex" ]
 
 [params]
 
