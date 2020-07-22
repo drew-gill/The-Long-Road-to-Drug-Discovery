@@ -125,3 +125,7 @@ func _on_OptionButton_item_selected(id):
 	if(id == 0):
 		id = currentPlayer.getCurrentLevel()
 	get_parent().SetActiveLevelNumber(id)
+
+
+func _on_MoreInfo_pressed():
+	OS.shell_open("https://www.google.com/")
