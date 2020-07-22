@@ -128,4 +128,13 @@ func _on_OptionButton_item_selected(id):
 
 
 func _on_MoreInfo_pressed():
-	OS.shell_open("https://www.google.com/")
+	var infoLevels = ["https://www.pfizer.com/health-wellness/healthy-living/brain-nervous-system",
+			"https://www.pfizer.com/health-wellness/healthy-living/heart-cardiovascular",
+			"https://www.pfizer.com/health-wellness/healthy-living/cold-and-flu",
+			"https://www.pfizer.com/health-wellness/healthy-living/digestive",
+			"https://www.pfizer.com/health-wellness/healthy-living/healthy-aging",
+			"https://www.pfizer.com/health-wellness/healthy-living/quit-smoking",
+			"https://www.pfizer.com/health-wellness/healthy-living/mens-health",
+			"https://www.pfizer.com/health-wellness/healthy-living/mental-health",
+			"https://www.pfizer.com/health-wellness/healthy-living/diet-exercise"]
+	OS.shell_open(infoLevels[currentPlayer.getCurrentLevel() - 1])
