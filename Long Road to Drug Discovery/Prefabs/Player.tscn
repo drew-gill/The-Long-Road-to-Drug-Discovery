@@ -17,9 +17,9 @@ animations = [ {
 "name": "moveGreen",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 9 ), ExtResource( 7 ) ],
+"frames": [ ExtResource( 4 ), ExtResource( 8 ) ],
 "loop": true,
-"name": "moveGray",
+"name": "moveBlue",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 4 ), ExtResource( 8 ) ],

@@ -79,7 +79,7 @@ LevelNumber = 2
 StartingTilePath = NodePath("StartingTile")
 
 [node name="StartingTile" parent="Level2" instance=ExtResource( 1 )]
-position = Vector2( 388.183, 346.459 )
+position = Vector2( 388.183, 349.459 )
 tileNumber = 0
 LandOnCost = 0
 LandOnTime = 0
@@ -119,7 +119,7 @@ LandOnLevelPath = NodePath("../../Level3")
 TileType = 3
 
 [node name="Tile5" parent="Level2" instance=ExtResource( 1 )]
-position = Vector2( 950.209, 538.718 )
+position = Vector2( 950.209, 541.718 )
 tileNumber = 5
 LandOnCost = -40000000
 NextTilePath = NodePath("../Tile6")
@@ -148,19 +148,24 @@ NextTilePath = NodePath("../Tile1")
 LandOnLevelPath = NodePath("..")
 
 [node name="Tile1" parent="Level3" instance=ExtResource( 1 )]
-position = Vector2( 483.855, 767.642 )
+position = Vector2( 483.855, 768.642 )
+LandOnCost = -100000000
 NextTilePath = NodePath("../Tile2")
-TileType = 1
+LandOnLevelPath = NodePath("../../Level1")
+TileType = 2
 
 [node name="Tile2" parent="Level3" instance=ExtResource( 1 )]
 position = Vector2( 619.591, 668.734 )
 tileNumber = 2
+LandOnCost = -100000000
 NextTilePath = NodePath("../Tile3")
-TileType = 1
+LandOnLevelPath = NodePath("../../Level1")
+TileType = 2
 
 [node name="Tile3" parent="Level3" instance=ExtResource( 1 )]
 position = Vector2( 707.312, 786.075 )
 tileNumber = 3
+LandOnCost = -100000000
 NextTilePath = NodePath("../Tile4")
 LandOnLevelPath = NodePath("../../Level1")
 TileType = 2
@@ -168,19 +173,25 @@ TileType = 2
 [node name="Tile4" parent="Level3" instance=ExtResource( 1 )]
 position = Vector2( 835.218, 665.912 )
 tileNumber = 4
+LandOnCost = -100000000
 NextTilePath = NodePath("../Tile5")
-TileType = 2
+LandOnLevelPath = NodePath("../../Level4")
+TileType = 1
 
 [node name="Tile5" parent="Level3" instance=ExtResource( 1 )]
 position = Vector2( 909.08, 795.622 )
 tileNumber = 5
+LandOnCost = -100000000
 NextTilePath = NodePath("../Tile6")
-TileType = 3
+LandOnLevelPath = NodePath("../../Level4")
+TileType = 1
 
 [node name="Tile6" parent="Level3" instance=ExtResource( 1 )]
 position = Vector2( 1045.05, 692.586 )
 tileNumber = 6
-TileType = 3
+LandOnCost = -100000000
+LandOnLevelPath = NodePath("../../Level1")
+TileType = 2
 
 [node name="Level4" type="Node2D" parent="."]
 position = Vector2( 5760, 0 )
@@ -198,38 +209,54 @@ LandOnLevelPath = NodePath("..")
 
 [node name="Tile1" parent="Level4" instance=ExtResource( 1 )]
 position = Vector2( 483.855, 767.642 )
+LandOnCost = -20000000
 NextTilePath = NodePath("../Tile2")
-TileType = 1
+LandOnLevelPath = NodePath("../../Level5")
+TileType = 3
 
 [node name="Tile2" parent="Level4" instance=ExtResource( 1 )]
 position = Vector2( 619.591, 668.734 )
 tileNumber = 2
+LandOnCost = -40000000
+LandOnTime = -2
 NextTilePath = NodePath("../Tile3")
-TileType = 1
+LandOnLevelPath = NodePath("../../Level5")
+TileType = 2
 
 [node name="Tile3" parent="Level4" instance=ExtResource( 1 )]
 position = Vector2( 707.312, 786.075 )
 tileNumber = 3
+LandOnCost = 0
+LandOnTime = 0
 NextTilePath = NodePath("../Tile4")
-LandOnLevelPath = NodePath("../../Level1")
-TileType = 2
+LandOnLevelPath = NodePath("../../Level5")
+TileType = 1
 
 [node name="Tile4" parent="Level4" instance=ExtResource( 1 )]
 position = Vector2( 835.218, 665.912 )
 tileNumber = 4
+LandOnCost = 0
+LandOnTime = 0
 NextTilePath = NodePath("../Tile5")
-TileType = 2
+LandOnLevelPath = NodePath("../../Level5")
+TileType = 1
 
 [node name="Tile5" parent="Level4" instance=ExtResource( 1 )]
 position = Vector2( 909.08, 795.622 )
 tileNumber = 5
+LandOnCost = 0
+LandOnTime = 0
 NextTilePath = NodePath("../Tile6")
-TileType = 3
+LandOnLevelPath = NodePath("../../Level5")
+TileType = 1
 
 [node name="Tile6" parent="Level4" instance=ExtResource( 1 )]
 position = Vector2( 1045.05, 692.586 )
 tileNumber = 6
-TileType = 3
+LandOnCost = 0
+LandOnTime = 0
+LandOnLevelPath = NodePath("../../Level5")
+TileType = 1
 
 [node name="Level5" type="Node2D" parent="."]
 position = Vector2( 7680, 0 )
@@ -247,17 +274,21 @@ LandOnLevelPath = NodePath("..")
 
 [node name="Tile1" parent="Level5" instance=ExtResource( 1 )]
 position = Vector2( 483.855, 767.642 )
+LandOnCost = -30000000
 NextTilePath = NodePath("../Tile2")
-TileType = 1
+LandOnLevelPath = NodePath("../../Level1")
+TileType = 2
 
 [node name="Tile2" parent="Level5" instance=ExtResource( 1 )]
 position = Vector2( 619.591, 668.734 )
 tileNumber = 2
+LandOnCost = -30000000
 NextTilePath = NodePath("../Tile3")
-TileType = 1
+LandOnLevelPath = NodePath("../../Level1")
+TileType = 2
 
 [node name="Tile3" parent="Level5" instance=ExtResource( 1 )]
-position = Vector2( 707.312, 786.075 )
+position = Vector2( 707.312, 787.075 )
 tileNumber = 3
 NextTilePath = NodePath("../Tile4")
 LandOnLevelPath = NodePath("../../Level1")
