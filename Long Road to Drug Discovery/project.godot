@@ -33,7 +33,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Long Road to Drug Discovery"
-run/main_scene="res://Scenes/StartupSequence/TitleScreen.tscn"
+run/main_scene="res://Scenes/GameBoardScrolling.tscn"
 config/icon="res://icon.png"
 
 [autoload]
