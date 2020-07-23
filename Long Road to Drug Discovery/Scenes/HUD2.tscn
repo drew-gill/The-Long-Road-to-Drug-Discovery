@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://External Assets/fonts/Xolonium-Regular.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Scripts/HUD2.gd" type="Script" id=2]
 [ext_resource path="res://Scripts/Dialogue.gd" type="Script" id=3]
 [ext_resource path="res://Custom Assets/MouseAnimations/mouseGray.png" type="Texture" id=4]
+[ext_resource path="res://fonts/FSAlbert_25.tres" type="DynamicFont" id=5]
 
 [sub_resource type="DynamicFont" id=1]
 size = 24
@@ -201,6 +202,17 @@ selected = 0
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="MoreInfo" type="Button" parent="."]
+margin_left = 28.6076
+margin_top = 699.06
+margin_right = 200.608
+margin_bottom = 731.06
+custom_fonts/font = ExtResource( 5 )
+text = "Get more info!"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="pressed" from="EndTurn" to="." method="_on_EndTurn_pressed"]
 [connection signal="pressed" from="RollDice" to="." method="_on_RollDice_pressed"]
 [connection signal="pressed" from="ToggleDialogue" to="." method="toggleDialogueBox"]
@@ -211,3 +223,4 @@ __meta__ = {
 [connection signal="pressed" from="Start" to="." method="_on_Start_pressed"]
 [connection signal="timeout" from="DialogueBox/Timer" to="DialogueBox/Dialogue" method="_on_Timer_timeout"]
 [connection signal="item_selected" from="OptionButton" to="." method="_on_OptionButton_item_selected"]
+[connection signal="pressed" from="MoreInfo" to="." method="_on_MoreInfo_pressed"]
