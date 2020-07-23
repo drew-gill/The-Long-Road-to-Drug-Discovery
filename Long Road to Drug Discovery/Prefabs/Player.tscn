@@ -12,9 +12,9 @@
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 9 ), ExtResource( 7 ) ],
+"frames": [ ExtResource( 6 ), ExtResource( 5 ) ],
 "loop": true,
-"name": "moveGray",
+"name": "moveGreen",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 4 ), ExtResource( 8 ) ],
@@ -22,9 +22,9 @@ animations = [ {
 "name": "moveBlue",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 6 ), ExtResource( 5 ) ],
+"frames": [ ExtResource( 4 ), ExtResource( 8 ) ],
 "loop": true,
-"name": "moveGreen",
+"name": "moveBlue",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 3 ), ExtResource( 2 ) ],

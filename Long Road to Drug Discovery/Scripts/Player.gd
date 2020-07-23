@@ -88,6 +88,7 @@ func _physics_process(delta):
 			if(position.distance_to(movementTarget) > 5):
 				movementVelocity = move_and_slide(movementVelocity)
 				$MouseSprite.play()
+				
 			else:
 				$MouseSprite.stop()
 		else:

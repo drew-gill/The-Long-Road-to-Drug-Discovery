@@ -8,6 +8,8 @@ export (NodePath) var LandOnLevelPath
 var NextTile
 var LandOnLevel
 
+
+
 enum tiletype {START, GOOD, BAD, NEUTRAL}
 export (tiletype) var TileType = tiletype.START
 
@@ -39,6 +41,8 @@ func _ready():
 		else:
 			$Sprite.texture = load("res://Custom Assets/TileSprites/laserBlue3.png")
 
+	
+
 func LandOn(player):
 	player.alterPlayerMoney(LandOnCost)
 	player.alterPlayerYears(LandOnTime)
@@ -66,13 +70,22 @@ func StopPlayer(player):
 	player.setMovementTarget(self.position) #set target with offset
 	
 func _on_Tile_player_entered(player):
+	get_node("Sprite/AnimationPlayer").play("UpAndDown")
 	if(player.getCurrentTile() == tileNumber):
 		if(TileType == tiletype.START):
 			StopPlayer(player)
+			yield(get_tree().create_timer(2.0), "timeout")
+			get_node("Sprite/AnimationPlayer").stop()
+			
 		else:
 			LandOn(player)
+			yield(get_tree().create_timer(2.0), "timeout")
+			get_node("Sprite/AnimationPlayer").stop()
 	else:
 		GoToNextTile(player)
+		yield(get_tree().create_timer(2.0), "timeout")
+		get_node("Sprite/AnimationPlayer").stop()
+		
 
 #The tile's position, with the level position accounted for.
 func _getTilePosition():
@@ -81,3 +94,4 @@ func _getTilePosition():
 func set_piece(player) -> void:
 	player.position = _getTilePosition() + Vector2(0,-50)
 	GoToNextTile(player)
+	
