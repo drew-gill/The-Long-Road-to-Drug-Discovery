@@ -44,12 +44,7 @@ func _ready():
 func LandOn(player):
 	
 	#Pause for 2 seconds- add animation
-	var t = Timer.new()
-	t.set_wait_time(2)
-	t.set_one_shot(true)
-	self.add_child(t)
-	t.start()
-	yield(t, "timeout")
+	yield(get_tree().create_timer(2.0), "timeout")
 	
 	updateDialogue(player,1)
 	
@@ -139,23 +134,13 @@ func levelUp(player):
 	player.alterCurrentLevel(1)
 	get_node("../../ScrollingCamera").SetActiveLevelNumber(player.getCurrentLevel())
 	
-
-	
 func tryAgain(player):
 	updateDialogue(player,0)
 	
-	var t = Timer.new()
-	t.set_wait_time(2)
-	t.set_one_shot(true)
-	self.add_child(t)
-	t.start()
-	yield(t, "timeout")
+	yield(get_tree().create_timer(2.0), "timeout")
 	
 	var starting = get_parent().getStartingTile()
 	starting.set_piece(player)
-	
-
-	
 
 func GoToNextTile(player):
 	if(NextTile != null):
@@ -165,13 +150,22 @@ func StopPlayer(player):
 	player.setMovementTarget(self.position) #set target with offset
 	
 func _on_Tile_player_entered(player):
+	get_node("Sprite/AnimationPlayer").play("UpAndDown")
 	if(player.getCurrentTile() == tileNumber):
 		if(TileType == tiletype.START):
 			StopPlayer(player)
+			yield(get_tree().create_timer(2.0), "timeout")
+			get_node("Sprite/AnimationPlayer").stop()
+			
 		else:
 			LandOn(player)
+			yield(get_tree().create_timer(2.0), "timeout")
+			get_node("Sprite/AnimationPlayer").stop()
 	else:
 		GoToNextTile(player)
+		yield(get_tree().create_timer(2.0), "timeout")
+		get_node("Sprite/AnimationPlayer").stop()
+		
 
 #The tile's position, with the level position accounted for.
 func _getTilePosition():
