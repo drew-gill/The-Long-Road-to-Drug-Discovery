@@ -47,18 +47,28 @@ func LandOn(player):
 	player.alterPlayerMoney(LandOnCost)
 	player.alterPlayerYears(LandOnTime)
 	if(TileType == tiletype.GOOD or TileType == tiletype.NEUTRAL):
+		get_node("Teleport/AnimationPlayer").play("Teleport")
+		yield(get_tree().create_timer(0.8), "timeout")
 		levelUp(player)
 	else:
+		get_node("Teleport/AnimationPlayer").play("Teleport")
+		yield(get_tree().create_timer(0.8), "timeout")
 		tryAgain(player)
+		
+		
+
 		
 func levelUp(player):
 	var starting = LandOnLevel.getStartingTile()
-	starting.set_piece(player)
+	
 	player.alterCurrentLevel(1)
 	get_node("../../ScrollingCamera").SetActiveLevelNumber(player.getCurrentLevel())
+	starting.get_node("Teleport/AnimationPlayer").play("TeleportIn")
+	starting.set_piece(player)
 	
 func tryAgain(player):
 	var starting = get_parent().getStartingTile()
+	starting.get_node("Teleport/AnimationPlayer").play("TeleportIn")
 	starting.set_piece(player)
 	
 
