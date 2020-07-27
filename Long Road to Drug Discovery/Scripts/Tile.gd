@@ -44,9 +44,9 @@ func _ready():
 func LandOn(player):
 	
 	#Pause for 2 seconds- add animation
-	yield(get_tree().create_timer(2.0), "timeout")
 	
 	updateDialogue(player,1)
+	yield(get_tree().create_timer(5.0), "timeout")
 	
 	#Alter money and years
 	player.alterPlayerMoney(LandOnCost)
@@ -120,25 +120,14 @@ func updateDialogue(player,num):
 	 
 
 func levelUp(player):
+	player.alterCurrentLevel(1)
 	updateDialogue(player,0)
-	
-	var t = Timer.new()
-	t.set_wait_time(2)
-	t.set_one_shot(true)
-	self.add_child(t)
-	t.start()
-	yield(t, "timeout")
-	
 	var starting = LandOnLevel.getStartingTile()
 	starting.set_piece(player)
-	player.alterCurrentLevel(1)
 	get_node("../../ScrollingCamera").SetActiveLevelNumber(player.getCurrentLevel())
 	
 func tryAgain(player):
 	updateDialogue(player,0)
-	
-	yield(get_tree().create_timer(2.0), "timeout")
-	
 	var starting = get_parent().getStartingTile()
 	starting.set_piece(player)
 
