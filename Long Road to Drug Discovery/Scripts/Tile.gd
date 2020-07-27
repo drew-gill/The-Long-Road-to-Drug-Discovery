@@ -8,10 +8,10 @@ export (NodePath) var LandOnLevelPath
 var NextTile
 var LandOnLevel
 
-
-
 enum tiletype {START, GOOD, BAD, NEUTRAL}
 export (tiletype) var TileType = tiletype.START
+
+signal transfer_phaseandroll
 
 
 
@@ -41,26 +41,95 @@ func _ready():
 		else:
 			$Sprite.texture = load("res://Custom Assets/TileSprites/laserBlue3.png")
 
-	
-
 func LandOn(player):
+	
+	#Pause for 2 seconds- add animation
+	
+	updateDialogue(player,1)
+	yield(get_tree().create_timer(5.0), "timeout")
+	
+	#Alter money and years
 	player.alterPlayerMoney(LandOnCost)
 	player.alterPlayerYears(LandOnTime)
-	if(TileType == tiletype.GOOD or TileType == tiletype.NEUTRAL):
-		levelUp(player)
-	else:
-		tryAgain(player)
+
+	if(LandOnLevel.getLevelNumber() == 1):
+		if(TileType == tiletype.GOOD or TileType == tiletype.NEUTRAL):
+			levelUp(player)
+		else:
+			tryAgain(player)
+			
+	if(LandOnLevel.getLevelNumber() == 2):
+		if(TileType == tiletype.GOOD or TileType == tiletype.NEUTRAL):
+			#INSERT CODE FOR PURCHASING BACK-UP FORMULATIONS
+			levelUp(player)
+		else:
+			tryAgain(player)
+			
+	if(LandOnLevel.getLevelNumber() == 3):
+		if(TileType == tiletype.GOOD or TileType == tiletype.NEUTRAL):
+			levelUp(player)
+		else:
+			tryAgain(player)
+			
+	if(LandOnLevel.getLevelNumber() == 4):
+		if(TileType == tiletype.GOOD or TileType == tiletype.NEUTRAL):
+			levelUp(player)
+		else:
+			tryAgain(player)
+			
+	if(LandOnLevel.getLevelNumber() == 5):
+		if(TileType == tiletype.GOOD or TileType == tiletype.NEUTRAL):
+			levelUp(player)
+		else:
+			tryAgain(player)
+			
+	if(LandOnLevel.getLevelNumber() == 6):
+		if(TileType == tiletype.GOOD or TileType == tiletype.NEUTRAL):
+			levelUp(player)
+		else:
+			tryAgain(player)
+			
+	if(LandOnLevel.getLevelNumber() == 7):
+		if(TileType == tiletype.GOOD or TileType == tiletype.NEUTRAL):
+			levelUp(player)
+		else:
+			tryAgain(player)
+			
+	if(LandOnLevel.getLevelNumber() == 8):
+		if(TileType == tiletype.GOOD or TileType == tiletype.NEUTRAL):
+			levelUp(player)
+		else:
+			tryAgain(player)
+			
+	if(LandOnLevel.getLevelNumber() == 9):
+		if(TileType == tiletype.GOOD or TileType == tiletype.NEUTRAL):
+			levelUp(player)
+		else:
+			tryAgain(player)
 		
+
+func updateDialogue(player,num):
+	var dialogue = get_tree().get_root().find_node("Dialogue",true,false)
+	connect("transfer_phaseandroll", dialogue, "_on_transfer_phaseandroll")
+	if num == 0:
+		emit_signal("transfer_phaseandroll", int(player.getCurrentLevel()), 0)
+	else:
+		emit_signal("transfer_phaseandroll", int(player.getCurrentLevel()), player.getCurrentTile())
+		
+		
+	 
+
 func levelUp(player):
+	player.alterCurrentLevel(1)
+	updateDialogue(player,0)
 	var starting = LandOnLevel.getStartingTile()
 	starting.set_piece(player)
-	player.alterCurrentLevel(1)
 	get_node("../../ScrollingCamera").SetActiveLevelNumber(player.getCurrentLevel())
 	
 func tryAgain(player):
+	updateDialogue(player,0)
 	var starting = get_parent().getStartingTile()
 	starting.set_piece(player)
-	
 
 func GoToNextTile(player):
 	if(NextTile != null):
@@ -94,4 +163,3 @@ func _getTilePosition():
 func set_piece(player) -> void:
 	player.position = _getTilePosition() + Vector2(0,-50)
 	GoToNextTile(player)
-	
