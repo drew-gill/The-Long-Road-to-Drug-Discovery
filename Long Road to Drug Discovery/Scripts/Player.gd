@@ -4,13 +4,20 @@ class_name Player
 var playerDisease = ""
 var playerDrugName = ""
 
+
 var money = 1000000000
 var years = 20
 var backups = 0
+
+
+#FINAL SCORE VARIABLES
+var livesSaved = 0
+var profitPerYear = 0
+
 var currentLevel = 1
 var currentTile = 4
 export var playerNumber = 1 #Player 1 vs Player 2, for example
-export (int) var movementSpeed = 75
+export (int) var movementSpeed = 125
 var movementTarget = Vector2()
 var movementVelocity = Vector2()
 
@@ -67,6 +74,9 @@ func setMovementTarget(location):
 func alterCurrentLevel(changeValue):
 	currentLevel += changeValue
 	
+func setCurrentLevel(newValue):
+	currentLevel = newValue
+	
 func getCurrentLevel():
 	return currentLevel
 	
@@ -76,7 +86,17 @@ func setCurrentTile(tileNumber):
 func getCurrentTile():
 	return currentTile
 
+func setLivesSaved(newValue):
+	livesSaved = newValue
+	
+func getLivesSaved():
+	return livesSaved
+	
+func setProfitPerYear(newValue):
+	profitPerYear = newValue
 
+func getProfitPerYear():
+	return profitPerYear
 	
 func _physics_process(delta):
 	if(playerNumber == get_node("../PlayerTracker").getCurrentPlayerNumber()):
@@ -111,3 +131,16 @@ func setAnimation():
 func _on_Button_pressed():
 	print("Money Spent: $" + str(money))
 	print("Time Spent: " + str(years))
+
+
+#score = ((Money * Years Left) + (LivesSaved * 5000) + money)/1000000
+#Example: 
+#$800 million/year for 8 years = 6.4 billion
+#800,000 lives saved * 5000 = 4 billion
+func getFinalScore():
+	var tempYears = years
+	
+	if(years < 0):
+		tempYears = 0
+		
+	return ((profitPerYear * tempYears) + (livesSaved * 5000) + money)/1000000

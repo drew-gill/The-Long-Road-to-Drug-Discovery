@@ -49,50 +49,6 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="AddMoney" type="Button" parent="."]
-margin_left = 72.0
-margin_top = 100.0
-margin_right = 101.0
-margin_bottom = 136.0
-custom_fonts/font = SubResource( 1 )
-text = "+"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="SubtractMoney" type="Button" parent="."]
-margin_left = 133.0
-margin_top = 91.0
-margin_right = 156.0
-margin_bottom = 127.0
-custom_fonts/font = SubResource( 1 )
-text = "-"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="SubtractYear" type="Button" parent="."]
-margin_left = 115.0
-margin_top = 204.0
-margin_right = 144.0
-margin_bottom = 240.0
-custom_fonts/font = SubResource( 1 )
-text = "-"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="AddYear" type="Button" parent="."]
-margin_left = 57.0
-margin_top = 205.0
-margin_right = 86.0
-margin_bottom = 241.0
-custom_fonts/font = SubResource( 1 )
-text = "+"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="Money" type="Label" parent="."]
 margin_left = 45.0
 margin_top = 55.0
@@ -192,12 +148,12 @@ __meta__ = {
 wait_time = 0.01
 autostart = true
 
-[node name="OptionButton" type="OptionButton" parent="."]
+[node name="MoveCameraDropdown" type="OptionButton" parent="."]
 margin_right = 29.0
 margin_bottom = 20.0
 text = "Current Player Position"
 icon = ExtResource( 4 )
-items = [ "Current Player Position", ExtResource( 4 ), false, 0, null, "Level 1", null, false, 1, null, "Level 2", null, false, 2, null, "Level 3", null, false, 3, null, "Level 4", null, false, 4, null, "Level 5", null, false, 5, null, "Level 6", null, false, 6, null, "Level 7", null, false, 7, null, "Level 8", null, false, 8, null, "Level 9", null, false, 9, null ]
+items = [ "Current Player Position", ExtResource( 4 ), false, 0, null, "Level 1", null, false, 1, null, "Level 2", null, false, 2, null, "Level 3", null, false, 3, null, "Level 4", null, false, 4, null, "Level 5", null, false, 5, null, "Level 6", null, false, 6, null, "Level 7", null, false, 7, null, "Level 8", null, false, 8, null, "Level 9", null, false, 9, null, "Level 10", null, false, 10, null, "Level 11", null, false, 11, null ]
 selected = 0
 __meta__ = {
 "_edit_use_anchors_": false
@@ -216,11 +172,7 @@ __meta__ = {
 [connection signal="pressed" from="EndTurn" to="." method="_on_EndTurn_pressed"]
 [connection signal="pressed" from="RollDice" to="." method="_on_RollDice_pressed"]
 [connection signal="pressed" from="ToggleDialogue" to="." method="toggleDialogueBox"]
-[connection signal="pressed" from="AddMoney" to="." method="_on_AddMoney_pressed"]
-[connection signal="pressed" from="SubtractMoney" to="." method="_on_SubtractMoney_pressed"]
-[connection signal="pressed" from="SubtractYear" to="." method="_on_SubtractYear_pressed"]
-[connection signal="pressed" from="AddYear" to="." method="_on_AddYear_pressed"]
 [connection signal="pressed" from="Start" to="." method="_on_Start_pressed"]
 [connection signal="timeout" from="DialogueBox/Timer" to="DialogueBox/Dialogue" method="_on_Timer_timeout"]
-[connection signal="item_selected" from="OptionButton" to="." method="_on_OptionButton_item_selected"]
+[connection signal="item_selected" from="MoveCameraDropdown" to="." method="_on_OptionButton_item_selected"]
 [connection signal="pressed" from="MoreInfo" to="." method="_on_MoreInfo_pressed"]

@@ -9,8 +9,8 @@ signal beginMoving
 signal transfer_phaseandroll
 
 func _ready():
-	_showAll(false)
-	$Start.show()
+	_showAll(true)
+	$Start.hide()
 	playerTracker = get_node(playerTrackerPath)
 	randomize() #used to reset seed for dice roll
 	
@@ -31,10 +31,6 @@ func toggleDialogueBox():
 func _showAll(boolean):
 	if(boolean == true):
 		$Start.show()
-		$AddYear.show()
-		$AddMoney.show()
-		$SubtractMoney.show()
-		$SubtractYear.show()
 		$Money.show()
 		$Years.show()
 		$BackupFormulations.show()
@@ -42,10 +38,6 @@ func _showAll(boolean):
 
 	else:
 		$Start.hide()
-		$AddYear.hide()
-		$AddMoney.hide()
-		$SubtractMoney.hide()
-		$SubtractYear.hide()
 		$Money.hide()
 		$Years.hide()
 		$BackupFormulations.hide()
