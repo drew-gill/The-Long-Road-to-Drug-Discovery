@@ -46,7 +46,6 @@ func _ready():
 func LandOn(player):
 	
 	#Pause for 2 seconds- add animation
-	
 	updateDialogue(player,1)
 	yield(get_tree().create_timer(5.0), "timeout")
 	
@@ -56,10 +55,9 @@ func LandOn(player):
 		#Alter money and years
 		player.alterPlayerMoney(LandOnCost)
 		player.alterPlayerYears(LandOnTime)
-		
-		
+			
 	var forwardMovement = (LandOnLevel.getLevelNumber() - get_parent().getLevelNumber() > 0)
-
+	
 	if(LandOnLevel.getLevelNumber() == 1):
 		if(forwardMovement):
 			levelUp(player)
@@ -133,18 +131,30 @@ func updateDialogue(player,num):
 	 
 
 func levelUp(player):
+	get_node("Teleport/AnimationPlayer").play("Teleport")
+	yield(get_tree().create_timer(0.8), "timeout")
 	player.alterCurrentLevel(1)
 	updateDialogue(player,0)
+	
+	var starting = LandOnLevel.getStartingTile()	
+	starting.set_piece(player)
+	get_node("../../ScrollingCamera").SetActiveLevelNumber(player.getCurrentLevel())
+	
+	starting.get_node("Teleport/AnimationPlayer").play("TeleportIn")
+	yield(get_tree().create_timer(0.8), "timeout")
+	
+func tryAgain(player):
+	get_node("Teleport/AnimationPlayer").play("Teleport")
+	yield(get_tree().create_timer(0.8), "timeout")
+	player.setCurrentLevel(LandOnLevel.getLevelNumber())
+	updateDialogue(player,0)
+	
 	var starting = LandOnLevel.getStartingTile()
 	starting.set_piece(player)
 	get_node("../../ScrollingCamera").SetActiveLevelNumber(player.getCurrentLevel())
 	
-func tryAgain(player):
-	player.setCurrentLevel(LandOnLevel.getLevelNumber())
-	updateDialogue(player,0)
-	var starting = LandOnLevel.getStartingTile()
-	starting.set_piece(player)
-	get_node("../../ScrollingCamera").SetActiveLevelNumber(player.getCurrentLevel())
+	starting.get_node("Teleport/AnimationPlayer").play("TeleportIn")
+	yield(get_tree().create_timer(0.8), "timeout")
 
 func GoToNextTile(player):
 	if(NextTile != null):
