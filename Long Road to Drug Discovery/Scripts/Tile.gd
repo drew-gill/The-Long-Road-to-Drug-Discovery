@@ -8,21 +8,23 @@ export (NodePath) var LandOnLevelPath
 var NextTile
 var LandOnLevel
 
-
-
 enum tiletype {START, GOOD, BAD, NEUTRAL}
 export (tiletype) var TileType = tiletype.START
+
+export var SpecialParameters = ""
+
+signal transfer_phaseandroll
 
 
 
 func _ready():
 	NextTile = get_node(NextTilePath)
 	LandOnLevel = get_node(LandOnLevelPath)
-	var LevelProgression = 0
+	var forwardMovement = false
 	if(LandOnLevel != null):
-		LevelProgression = LandOnLevel.getLevelNumber() - get_parent().getLevelNumber()
+		forwardMovement = (LandOnLevel.getLevelNumber() - get_parent().getLevelNumber() > 0)
 	
-	if(TileType == tiletype.GOOD or TileType == tiletype.NEUTRAL or TileType == tiletype.START):
+	if(forwardMovement):
 		if(TileType == tiletype.GOOD):
 			$Sprite.texture = load("res://Custom Assets/TileSprites/shipGreen.png")
 		elif(TileType == tiletype.BAD):
@@ -41,36 +43,118 @@ func _ready():
 		else:
 			$Sprite.texture = load("res://Custom Assets/TileSprites/laserBlue3.png")
 
-	
-
 func LandOn(player):
-	player.alterPlayerMoney(LandOnCost)
-	player.alterPlayerYears(LandOnTime)
-	if(TileType == tiletype.GOOD or TileType == tiletype.NEUTRAL):
-		get_node("Teleport/AnimationPlayer").play("Teleport")
-		yield(get_tree().create_timer(0.8), "timeout")
-		levelUp(player)
-	else:
-		get_node("Teleport/AnimationPlayer").play("Teleport")
-		yield(get_tree().create_timer(0.8), "timeout")
-		tryAgain(player)
-		
-		
-
-		
-func levelUp(player):
-	var starting = LandOnLevel.getStartingTile()
 	
+	#Pause for 2 seconds- add animation
+	updateDialogue(player,1)
+	yield(get_tree().create_timer(5.0), "timeout")
+	
+	if(SpecialParameters != ""):
+		_EndOfGame(player)
+	else:
+		#Alter money and years
+		player.alterPlayerMoney(LandOnCost)
+		player.alterPlayerYears(LandOnTime)
+			
+	var forwardMovement = (LandOnLevel.getLevelNumber() - get_parent().getLevelNumber() > 0)
+	
+	if(LandOnLevel.getLevelNumber() == 1):
+		if(forwardMovement):
+			levelUp(player)
+		else:
+			tryAgain(player)
+			
+	if(LandOnLevel.getLevelNumber() == 2):
+		if(forwardMovement):
+			#INSERT CODE FOR PURCHASING BACK-UP FORMULATIONS
+			levelUp(player)
+		else:
+			tryAgain(player)
+			
+	if(LandOnLevel.getLevelNumber() == 3):
+		if(forwardMovement):
+			levelUp(player)
+		else:
+			tryAgain(player)
+			
+	if(LandOnLevel.getLevelNumber() == 4):
+		if(forwardMovement):
+			levelUp(player)
+		else:
+			tryAgain(player)
+			
+	if(LandOnLevel.getLevelNumber() == 5):
+		if(forwardMovement):
+			levelUp(player)
+		else:
+			tryAgain(player)
+			
+	if(LandOnLevel.getLevelNumber() == 6):
+		if(forwardMovement):
+			levelUp(player)
+		else:
+			tryAgain(player)
+			
+	if(LandOnLevel.getLevelNumber() == 7):
+		if(forwardMovement):
+			levelUp(player)
+		else:
+			tryAgain(player)
+			
+	if(LandOnLevel.getLevelNumber() == 8):
+		if(forwardMovement):
+			levelUp(player)
+		else:
+			tryAgain(player)
+			
+	if(LandOnLevel.getLevelNumber() == 9):
+		if(forwardMovement):
+			levelUp(player)
+		else:
+			tryAgain(player)
+		
+	if(LandOnLevel.getLevelNumber() == 10):
+		if(forwardMovement):
+			levelUp(player)
+		else:
+			tryAgain(player)
+
+func updateDialogue(player,num):
+	var dialogue = get_tree().get_root().find_node("Dialogue",true,false)
+	connect("transfer_phaseandroll", dialogue, "_on_transfer_phaseandroll")
+	if num == 0:
+		emit_signal("transfer_phaseandroll", int(player.getCurrentLevel()), 0)
+	else:
+		emit_signal("transfer_phaseandroll", int(player.getCurrentLevel()), player.getCurrentTile())
+		
+		
+	 
+
+func levelUp(player):
+	get_node("Teleport/AnimationPlayer").play("Teleport")
+	yield(get_tree().create_timer(0.8), "timeout")
 	player.alterCurrentLevel(1)
-	get_node("../../ScrollingCamera").SetActiveLevelNumber(player.getCurrentLevel())
+	updateDialogue(player,0)
+	
+	var starting = LandOnLevel.getStartingTile()	
 	starting.set_piece(player)
+	get_node("../../ScrollingCamera").SetActiveLevelNumber(player.getCurrentLevel())
+	
 	starting.get_node("Teleport/AnimationPlayer").play("TeleportIn")
 	yield(get_tree().create_timer(0.8), "timeout")
 	
 func tryAgain(player):
-	var starting = get_parent().getStartingTile()
+	get_node("Teleport/AnimationPlayer").play("Teleport")
+	yield(get_tree().create_timer(0.8), "timeout")
+	player.setCurrentLevel(LandOnLevel.getLevelNumber())
+	updateDialogue(player,0)
+	
+	var starting = LandOnLevel.getStartingTile()
 	starting.set_piece(player)
+	get_node("../../ScrollingCamera").SetActiveLevelNumber(player.getCurrentLevel())
+	
 	starting.get_node("Teleport/AnimationPlayer").play("TeleportIn")
+	yield(get_tree().create_timer(0.8), "timeout")
 
 func GoToNextTile(player):
 	if(NextTile != null):
@@ -105,3 +189,11 @@ func set_piece(player) -> void:
 	player.position = _getTilePosition() + Vector2(0,-50)
 	GoToNextTile(player)
 	
+func _EndOfGame(player):
+	#use the landOnCost to set the profit per year
+	if(SpecialParameters == "ProfitPerYear"):
+		player.setProfitPerYear(LandOnCost)
+	#use LandOnCost to set lives saved
+	elif(SpecialParameters == "LivesSaved"):
+		player.setLivesSaved(LandOnCost)
+		print("Player score: " + str(player.getFinalScore()))
