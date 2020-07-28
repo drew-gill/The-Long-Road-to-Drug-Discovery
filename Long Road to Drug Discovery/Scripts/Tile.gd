@@ -131,7 +131,17 @@ func updateDialogue(player,num):
 	 
 
 func levelUp(player):
-	get_node("Teleport/AnimationPlayer").play("Teleport")
+	
+	#Teleport Out
+	if(TileType == tiletype.GOOD):
+		teleportOut(tiletype.GOOD)
+	elif(TileType == tiletype.BAD):
+		teleportOut(tiletype.BAD)
+	elif(TileType == tiletype.NEUTRAL):
+		teleportOut(tiletype.NEUTRAL)
+	else:
+		teleportOut(tiletype.NEUTRAL)
+
 	yield(get_tree().create_timer(0.8), "timeout")
 	player.alterCurrentLevel(1)
 	updateDialogue(player,0)
@@ -140,11 +150,30 @@ func levelUp(player):
 	starting.set_piece(player)
 	get_node("../../ScrollingCamera").SetActiveLevelNumber(player.getCurrentLevel())
 	
-	starting.get_node("Teleport/AnimationPlayer").play("TeleportIn")
+	#Teleport In
+	if(TileType == tiletype.GOOD):
+		teleportIn(tiletype.GOOD, starting)
+	elif(TileType == tiletype.BAD):
+		teleportIn(tiletype.BAD, starting)
+	elif(TileType == tiletype.NEUTRAL):
+		teleportIn(tiletype.NEUTRAL, starting)
+	else:
+		teleportIn(tiletype.NEUTRAL, starting)
+	
 	yield(get_tree().create_timer(0.8), "timeout")
 	
 func tryAgain(player):
-	get_node("Teleport/AnimationPlayer").play("Teleport")
+	
+	#Teleport Out
+	if(TileType == tiletype.GOOD):
+		teleportOut(tiletype.GOOD)
+	elif(TileType == tiletype.BAD):
+		teleportOut(tiletype.BAD)
+	elif(TileType == tiletype.NEUTRAL):
+		teleportOut(tiletype.NEUTRAL)
+	else:
+		teleportOut(tiletype.NEUTRAL)
+	
 	yield(get_tree().create_timer(0.8), "timeout")
 	player.setCurrentLevel(LandOnLevel.getLevelNumber())
 	updateDialogue(player,0)
@@ -153,7 +182,16 @@ func tryAgain(player):
 	starting.set_piece(player)
 	get_node("../../ScrollingCamera").SetActiveLevelNumber(player.getCurrentLevel())
 	
-	starting.get_node("Teleport/AnimationPlayer").play("TeleportIn")
+	#Teleport In
+	if(TileType == tiletype.GOOD):
+		teleportIn(tiletype.GOOD, starting)
+	elif(TileType == tiletype.BAD):
+		teleportIn(tiletype.BAD, starting)
+	elif(TileType == tiletype.NEUTRAL):
+		teleportIn(tiletype.NEUTRAL, starting)
+	else:
+		teleportIn(tiletype.NEUTRAL, starting)
+	
 	yield(get_tree().create_timer(0.8), "timeout")
 
 func GoToNextTile(player):
@@ -180,6 +218,32 @@ func _on_Tile_player_entered(player):
 		yield(get_tree().create_timer(2.0), "timeout")
 		get_node("Sprite/AnimationPlayer").stop()
 		
+
+func teleportOut(type):
+	if(type == tiletype.GOOD):
+		get_node("Good Teleport/AnimationPlayer").play("Teleport")
+	elif(type == tiletype.NEUTRAL):
+		get_node("Neutral Teleport/AnimationPlayer").play("Teleport")
+	elif(type == tiletype.BAD):
+		get_node("Bad Teleport/AnimationPlayer").play("Teleport")
+	else:
+		get_node("Good Teleport/AnimationPlayer").play("Teleport")
+		
+func teleportIn(type, starting):
+	if(type == tiletype.GOOD):
+		starting.get_node("Good Teleport/AnimationPlayer").play("TeleportIn")
+	elif(type == tiletype.NEUTRAL):
+		starting.get_node("Neutral Teleport/AnimationPlayer").play("TeleportIn")
+	elif(type == tiletype.BAD):
+		starting.get_node("Bad Teleport/AnimationPlayer").play("TeleportIn")
+	else:
+		starting.get_node("Good Teleport/AnimationPlayer").play("TeleportIn")
+
+func greenTeleIn(starting):
+	starting.get_node("Green Teleport/AnimationPlayer").play("TeleportIn")
+	
+func greenTeleOut():
+	get_node("Green Teleport/AnimationPlayer").play("Teleport")
 
 #The tile's position, with the level position accounted for.
 func _getTilePosition():
