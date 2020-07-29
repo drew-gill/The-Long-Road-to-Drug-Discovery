@@ -46,7 +46,10 @@ func _ready():
 func LandOn(player):
 	
 	#Pause for 2 seconds- add animation
+	
 	updateDialogue(player,1)
+	#change from Move to Confirm state
+	get_node("../../PlayerTracker").nextInTurnSequence()
 	yield(get_tree().create_timer(5.0), "timeout")
 	
 	if(SpecialParameters != ""):
@@ -118,6 +121,8 @@ func LandOn(player):
 			levelUp(player)
 		else:
 			tryAgain(player)
+			
+	get_node("../../PlayerTracker").nextInTurnSequence()
 
 func updateDialogue(player,num):
 	var dialogue = get_tree().get_root().find_node("Dialogue",true,false)

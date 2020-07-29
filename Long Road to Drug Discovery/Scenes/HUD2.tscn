@@ -17,10 +17,10 @@ font_data = ExtResource( 1 )
 script = ExtResource( 2 )
 
 [node name="EndTurn" type="Button" parent="."]
-margin_left = 444.0
-margin_top = 35.0
-margin_right = 578.0
-margin_bottom = 71.0
+margin_left = 1594.47
+margin_top = 641.531
+margin_right = 1728.47
+margin_bottom = 677.531
 custom_fonts/font = SubResource( 1 )
 text = "End Turn"
 __meta__ = {
@@ -34,17 +34,6 @@ margin_right = 226.918
 margin_bottom = 466.082
 custom_fonts/font = SubResource( 1 )
 text = "Roll the Dice"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ToggleDialogue" type="Button" parent="."]
-margin_left = 1534.92
-margin_top = 252.716
-margin_right = 1763.92
-margin_bottom = 288.716
-custom_fonts/font = SubResource( 1 )
-text = "Toggle Dialogue"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -171,7 +160,6 @@ __meta__ = {
 }
 [connection signal="pressed" from="EndTurn" to="." method="_on_EndTurn_pressed"]
 [connection signal="pressed" from="RollDice" to="." method="_on_RollDice_pressed"]
-[connection signal="pressed" from="ToggleDialogue" to="." method="toggleDialogueBox"]
 [connection signal="pressed" from="Start" to="." method="_on_Start_pressed"]
 [connection signal="timeout" from="DialogueBox/Timer" to="DialogueBox/Dialogue" method="_on_Timer_timeout"]
 [connection signal="item_selected" from="MoveCameraDropdown" to="." method="_on_OptionButton_item_selected"]

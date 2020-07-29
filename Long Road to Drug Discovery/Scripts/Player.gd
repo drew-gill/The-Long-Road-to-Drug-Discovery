@@ -101,7 +101,7 @@ func getProfitPerYear():
 func _physics_process(delta):
 	if(playerNumber == get_node("../PlayerTracker").getCurrentPlayerNumber()):
 		
-		if (Input.is_action_pressed("ui_right")):
+		if (get_node("../PlayerTracker").getCurrentTurnSequence() == "Move"):
 			movementVelocity = position.direction_to(movementTarget) * movementSpeed
 			$MouseSprite.flip_h = movementVelocity.x > 0
 				
