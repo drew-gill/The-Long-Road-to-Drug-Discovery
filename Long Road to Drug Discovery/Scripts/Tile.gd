@@ -51,7 +51,7 @@ func LandOn(player):
 	#Alter money and years
 	player.alterPlayerMoney(LandOnCost)
 	player.alterPlayerYears(LandOnTime)
-
+	print(LandOnLevelPath)
 	if(LandOnLevel.getLevelNumber() == 1):
 		if(TileType == tiletype.GOOD or TileType == tiletype.NEUTRAL):
 			levelUp(player)
@@ -125,7 +125,7 @@ func levelUp(player):
 	var starting = LandOnLevel.getStartingTile()
 	starting.set_piece(player)
 	get_node("../../ScrollingCamera").SetActiveLevelNumber(player.getCurrentLevel())
-	
+
 func tryAgain(player):
 	updateDialogue(player,0)
 	var starting = get_parent().getStartingTile()

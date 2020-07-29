@@ -1,6 +1,7 @@
 extends Node
 
 var num_players = 1
+var allplayersfinished = 0
 
 #Player 1 Attributes
 var Disease1 = ""
