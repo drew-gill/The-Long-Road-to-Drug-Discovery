@@ -16,7 +16,7 @@ var backups = 0
 var livesSaved = 0
 var profitPerYear = 0
 
-var currentLevel = 9
+var currentLevel = 1
 var currentTile = 4
 export var playerNumber = 1 #Player 1 vs Player 2, for example
 export (int) var movementSpeed = 125
