@@ -18,6 +18,8 @@ func endTurn():
 		
 	nextInTurnSequence()
 	get_node("../ScrollingCamera").SetActiveLevelNumber(getCurrentPlayerNode().getCurrentLevel())
+	yield(get_tree().create_timer(5.0), "timeout")
+	get_node("../ScrollingCamera").SetActiveLevelNumber(getCurrentPlayerNode().getCurrentLevel())
 
 func nextInTurnSequence():
 	if(turnSequenceNumber + 1 >= len(turnSequence)):

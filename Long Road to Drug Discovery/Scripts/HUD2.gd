@@ -67,6 +67,7 @@ func _on_BackUp_pressed():
 	currentPlayer = playerTracker.getCurrentPlayerNode()
 	if currentPlayer.getPlayerBackups()<3:
 		currentPlayer.alterPlayerBackups(1)
+		currentPlayer.alterPlayerMoney(-80000000)
 
 
 func _on_Phase1_pressed():
