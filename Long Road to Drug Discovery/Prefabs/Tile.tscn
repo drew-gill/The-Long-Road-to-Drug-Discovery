@@ -1,10 +1,74 @@
+<<<<<<< Updated upstream
 [gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Custom Assets/TileSprites/shipBeige.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/Tile.gd" type="Script" id=2]
+=======
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://Custom Assets/TileSprites/shipBeige.png" type="Texture" id=1]
+[ext_resource path="res://Scripts/Tile.gd" type="Script" id=2]
+[ext_resource path="res://External Assets/Kenney Game Assets/2D assets/Alien Spaceship Pack/PNG/laserGreen_burst.png" type="Texture" id=3]
+[ext_resource path="res://External Assets/Kenney Game Assets/Audio/Digital sounds (60 sounds)/phaserUp3.ogg" type="AudioStream" id=4]
+[ext_resource path="res://External Assets/Kenney Game Assets/Audio/Digital sounds (60 sounds)/lowDown.ogg" type="AudioStream" id=5]
+[ext_resource path="res://External Assets/Kenney Game Assets/Audio/Digital sounds (60 sounds)/zapThreeToneUp.ogg" type="AudioStream" id=6]
 
 [sub_resource type="Animation" id=1]
-resource_name = "UpAndDown"
+resource_name = "Teleport"
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 180.0, 360.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 1, 1 ), Vector2( 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "TeleportIn"
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, -180.0, -360.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1e-05, 1e-05 ), Vector2( 1, 1 ), Vector2( 0, 0 ) ]
+}
+>>>>>>> Stashed changes
+
+[sub_resource type="Animation" id=3]
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:position")
@@ -33,22 +97,45 @@ tracks/1/keys = {
 } ]
 }
 
-[sub_resource type="CapsuleShape2D" id=2]
+[sub_resource type="CapsuleShape2D" id=4]
 radius = 7.70219
 height = 15.2519
 
 [node name="Tile" type="Area2D"]
 script = ExtResource( 2 )
 
+<<<<<<< Updated upstream
+=======
+[node name="Teleport" type="Sprite" parent="."]
+position = Vector2( -4.02435e-06, -7.0364e-13 )
+rotation = -6.28319
+scale = Vector2( 1e-05, 1e-05 )
+texture = ExtResource( 3 )
+offset = Vector2( 0, 50 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Teleport"]
+anims/Teleport = SubResource( 1 )
+anims/TeleportIn = SubResource( 2 )
+
+>>>>>>> Stashed changes
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( -1.52588e-05, 0.22094 )
 texture = ExtResource( 1 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite"]
-anims/UpAndDown = SubResource( 1 )
+anims/UpAndDown = SubResource( 3 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0, -50 )
 rotation = 1.5708
-shape = SubResource( 2 )
+shape = SubResource( 4 )
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 4 )
+
+[node name="tryAgainAudio" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 5 )
+
+[node name="levelUpAudio" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 6 )
 [connection signal="body_entered" from="." to="." method="_on_Tile_player_entered"]

@@ -120,13 +120,31 @@ func updateDialogue(player,num):
 	 
 
 func levelUp(player):
+<<<<<<< Updated upstream
 	player.alterCurrentLevel(1)
 	updateDialogue(player,0)
 	var starting = LandOnLevel.getStartingTile()
+=======
+	$levelUpAudio.play()
+	get_node("Teleport/AnimationPlayer").play("Teleport")
+	yield(get_tree().create_timer(0.8), "timeout")
+	player.alterCurrentLevel(1)
+	updateDialogue(player,0)
+	
+	
+	var starting = LandOnLevel.getStartingTile()	
+>>>>>>> Stashed changes
 	starting.set_piece(player)
 	get_node("../../ScrollingCamera").SetActiveLevelNumber(player.getCurrentLevel())
 	
 func tryAgain(player):
+<<<<<<< Updated upstream
+=======
+	$tryAgainAudio.play()
+	get_node("Teleport/AnimationPlayer").play("Teleport")
+	yield(get_tree().create_timer(0.8), "timeout")
+	player.setCurrentLevel(LandOnLevel.getLevelNumber())
+>>>>>>> Stashed changes
 	updateDialogue(player,0)
 	var starting = get_parent().getStartingTile()
 	starting.set_piece(player)
@@ -139,6 +157,7 @@ func StopPlayer(player):
 	player.setMovementTarget(self.position) #set target with offset
 	
 func _on_Tile_player_entered(player):
+	
 	get_node("Sprite/AnimationPlayer").play("UpAndDown")
 	if(player.getCurrentTile() == tileNumber):
 		if(TileType == tiletype.START):
@@ -151,6 +170,7 @@ func _on_Tile_player_entered(player):
 			yield(get_tree().create_timer(2.0), "timeout")
 			get_node("Sprite/AnimationPlayer").stop()
 	else:
+		$AudioStreamPlayer2D.play()
 		GoToNextTile(player)
 		yield(get_tree().create_timer(2.0), "timeout")
 		get_node("Sprite/AnimationPlayer").stop()
