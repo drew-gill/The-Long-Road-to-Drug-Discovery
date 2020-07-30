@@ -17,7 +17,6 @@ func endTurn():
 		currentPlayer += 1
 		
 	nextInTurnSequence()
-	get_node("../ScrollingCamera").SetActiveLevelNumber(getCurrentPlayerNode().getCurrentLevel())
 	yield(get_tree().create_timer(5.0), "timeout")
 	get_node("../ScrollingCamera").SetActiveLevelNumber(getCurrentPlayerNode().getCurrentLevel())
 
