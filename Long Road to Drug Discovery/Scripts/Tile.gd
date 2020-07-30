@@ -43,14 +43,15 @@ func _ready():
 		else:
 			$Sprite.texture = load("res://Custom Assets/TileSprites/laserBlue3.png")
 
+
 func LandOn(player):
 	
 	#Pause for 2 seconds- add animation
 	
 	updateDialogue(player,1)
-	#change from Move to Confirm state
+	#change from Move to Dialogue state
 	get_node("../../PlayerTracker").nextInTurnSequence()
-	yield(get_tree().create_timer(5.0), "timeout")
+	#yield(get_tree().create_timer(5.0), "timeout")
 	
 	if(SpecialParameters != ""):
 		_EndOfGame(player)
@@ -59,9 +60,11 @@ func LandOn(player):
 		player.alterPlayerMoney(LandOnCost)
 		player.alterPlayerYears(LandOnTime)
 			
+	get_node("../../PlayerTracker").nextInTurnSequence()
 	var forwardMovement = (LandOnLevel.getLevelNumber() - get_parent().getLevelNumber() > 0)
 	
-	if(LandOnLevel.getLevelNumber() == 1):
+	if(get_parent().getLevelNumber() == 1):
+		yield(get_tree().get_root().find_node("HUD2",true,false), "selectionMade")
 		if(forwardMovement):
 			levelUp(player)
 		else:
@@ -122,7 +125,6 @@ func LandOn(player):
 		else:
 			tryAgain(player)
 			
-	get_node("../../PlayerTracker").nextInTurnSequence()
 
 func updateDialogue(player,num):
 	var dialogue = get_tree().get_root().find_node("Dialogue",true,false)
@@ -136,6 +138,7 @@ func updateDialogue(player,num):
 	 
 
 func levelUp(player):
+	#yield(get_tree().get_root().find_node("HUD2",true,false), "selectionMade")
 	get_node("Teleport/AnimationPlayer").play("Teleport")
 	yield(get_tree().create_timer(0.8), "timeout")
 	player.alterCurrentLevel(1)
@@ -149,6 +152,7 @@ func levelUp(player):
 	yield(get_tree().create_timer(0.8), "timeout")
 	
 func tryAgain(player):
+	#yield(get_tree().get_root().find_node("HUD2",true,false), "selectionMade")
 	get_node("Teleport/AnimationPlayer").play("Teleport")
 	yield(get_tree().create_timer(0.8), "timeout")
 	player.setCurrentLevel(LandOnLevel.getLevelNumber())
