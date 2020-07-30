@@ -19,24 +19,23 @@ func _ready():
 func _on_Start_pressed():
 	_showAll(true)
 	$Start.hide()
-	
-func toggleDialogueBox():
-	if(!$DialogueBox.visible):
-		$DialogueBox.show()
-		$DialogueBox/Dialogue.resetText()
-	else:
-		$DialogueBox.hide()
 		
 		
 func _showAll(boolean):
 	if(boolean == true):
 		$Start.show()
 		$VBoxContainer.show()
+		$Money.show()
+		$Years.show()
+		$BackupFormulations.show()
 		$DialogueBox.show()
 
 	else:
 		$Start.hide()
 		$VBoxContainer.hide()
+		$Money.hide()
+		$Years.hide()
+		$BackupFormulations.hide()
 		$DialogueBox.hide()
 	#always hide the warning, only want this when specifically called.
 	$Warning.hide()
@@ -75,6 +74,22 @@ func _process(delta):
 		else:
 			$LevelText.text = "Level: " + str(currentPlayer.getCurrentLevel()) + "\n Roll: " + str(currentPlayer.getCurrentTile())
 		
+		if(playerTracker.getCurrentTurnSequence() != "Roll"):
+			$RollDice.hide()
+		else:
+			$RollDice.show()
+		
+		if(playerTracker.getCurrentTurnSequence() == "Dialogue" or playerTracker.getCurrentTurnSequence() == "Confirm"):
+			$DialogueBox.show()
+		else:
+			$DialogueBox.hide()
+		
+		
+		if(playerTracker.getCurrentTurnSequence() != "Confirm"):
+			$EndTurn.hide()
+		else:
+			$EndTurn.show()
+		
 	else:
 		_showAll(false)
 		_showWarning("Warning! No players found in the scene.")
@@ -85,9 +100,9 @@ func _process(delta):
 func _on_RollDice_pressed():
 	var roll = randi()%6 + 1
 	currentPlayer.setCurrentTile(roll)
-	emit_signal("beginMoving")
 	connect("transfer_phaseandroll", get_node("DialogueBox/Dialogue"), "_on_transfer_phaseandroll")
 	emit_signal("transfer_phaseandroll", int(currentPlayer.getCurrentLevel()), int(currentPlayer.getCurrentTile()))
+	playerTracker.nextInTurnSequence()
 	
 
 

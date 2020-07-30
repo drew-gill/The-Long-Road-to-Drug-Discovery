@@ -176,15 +176,17 @@ __meta__ = {
 wait_time = 0.01
 autostart = true
 
-[node name="OptionButton" type="OptionButton" parent="."]
+[node name="MoveCameraDropdown" type="OptionButton" parent="."]
 margin_left = 75.017
 margin_top = 108.411
 margin_right = 438.017
 margin_bottom = 150.411
 custom_fonts/font = ExtResource( 5 )
+margin_right = 29.0
+margin_bottom = 20.0
 text = "Current Player Position"
 icon = ExtResource( 4 )
-items = [ "Current Player Position", ExtResource( 4 ), false, 0, null, "Level 1", null, false, 1, null, "Level 2", null, false, 2, null, "Level 3", null, false, 3, null, "Level 4", null, false, 4, null, "Level 5", null, false, 5, null, "Level 6", null, false, 6, null, "Level 7", null, false, 7, null, "Level 8", null, false, 8, null, "Level 9", null, false, 9, null ]
+items = [ "Current Player Position", ExtResource( 4 ), false, 0, null, "Level 1", null, false, 1, null, "Level 2", null, false, 2, null, "Level 3", null, false, 3, null, "Level 4", null, false, 4, null, "Level 5", null, false, 5, null, "Level 6", null, false, 6, null, "Level 7", null, false, 7, null, "Level 8", null, false, 8, null, "Level 9", null, false, 9, null, "Level 10", null, false, 10, null, "Level 11", null, false, 11, null ]
 selected = 0
 __meta__ = {
 "_edit_use_anchors_": false
@@ -205,5 +207,5 @@ __meta__ = {
 [connection signal="pressed" from="EndTurn" to="." method="_on_EndTurn_pressed"]
 [connection signal="pressed" from="ToggleDialogue" to="." method="toggleDialogueBox"]
 [connection signal="timeout" from="DialogueBox/Timer" to="DialogueBox/Dialogue" method="_on_Timer_timeout"]
-[connection signal="item_selected" from="OptionButton" to="." method="_on_OptionButton_item_selected"]
+[connection signal="item_selected" from="MoveCameraDropdown" to="." method="_on_OptionButton_item_selected"]
 [connection signal="pressed" from="MoreInfo" to="." method="_on_MoreInfo_pressed"]

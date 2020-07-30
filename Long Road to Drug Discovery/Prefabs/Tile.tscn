@@ -1,7 +1,62 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Custom Assets/TileSprites/shipBeige.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/Tile.gd" type="Script" id=2]
+[ext_resource path="res://External Assets/Kenney Game Assets/2D assets/Alien Spaceship Pack/PNG/laserGreen_burst.png" type="Texture" id=3]
+
+[sub_resource type="Animation" id=3]
+resource_name = "Teleport"
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 180.0, 360.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 1, 1 ), Vector2( 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "TeleportIn"
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, -180.0, -360.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1e-05, 1e-05 ), Vector2( 1, 1 ), Vector2( 0, 0 ) ]
+}
 
 [sub_resource type="Animation" id=1]
 resource_name = "UpAndDown"
@@ -39,6 +94,17 @@ height = 15.2519
 
 [node name="Tile" type="Area2D"]
 script = ExtResource( 2 )
+
+[node name="Teleport" type="Sprite" parent="."]
+position = Vector2( -4.02435e-06, -7.0364e-13 )
+rotation = -6.28319
+scale = Vector2( 1e-05, 1e-05 )
+texture = ExtResource( 3 )
+offset = Vector2( 0, 50 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Teleport"]
+anims/Teleport = SubResource( 3 )
+anims/TeleportIn = SubResource( 4 )
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( -1.52588e-05, 0.22094 )
