@@ -6,7 +6,6 @@ var currentPlayer
 var playerTracker
 
 signal beginMoving
-signal selectionMade
 signal transfer_phaseandroll
 
 func _ready():
@@ -41,29 +40,6 @@ func _showWarning(text):
 
 func _on_EndTurn_pressed():
 	playerTracker.endTurn()
-	emit_signal("selectionMade")
-
-func _on_BackUp_pressed():
-	currentPlayer = playerTracker.getCurrentPlayerNode()
-	if currentPlayer.getPlayerBackups()<3:
-		currentPlayer.alterPlayerBackups(1)
-		currentPlayer.alterPlayerMoney(-80000000)
-
-
-func _on_Phase1_pressed():
-	playerTracker.endTurn()
-
-
-func _on_UseBackUp_pressed():
-	playerTracker.endTurn()
-
-
-func _on_CoLicense_pressed():
-	playerTracker.endTurn()
-
-func _on_Phase2_pressed():
-	playerTracker.endTurn()
-
 	
 
 func addCommas(value):
@@ -105,80 +81,14 @@ func _process(delta):
 		
 		if(playerTracker.getCurrentTurnSequence() != "Confirm"):
 			$EndTurn.hide()
-			$BackUp.hide()
-			$Phase1.hide()
-			$UseBackUp.hide()
-			$CoLicense.hide()
-			$Phase2.hide()
 		else:
-			#EndTurn.show()
-			showButtons()
+			$EndTurn.show()
 		
 	else:
 		_showAll(false)
 		_showWarning("Warning! No players found in the scene.")
 
 
-func showButtons():
-	match currentPlayer.getCurrentLevel():
-		1:
-			$EndTurn.show()
-		2:
-			match currentPlayer.getCurrentTile():
-				1,2,3:
-					$EndTurn.show()
-				4,5,6:
-					$EndTurn.show()
-					$BackUp.show()
-		3:
-			match currentPlayer.getCurrentTile():
-				1,2,3,6:
-					$Phase1.show()
-					$UseBackUp.show()
-				4,5:
-					$EndTurn.show()
-		4:
-			$EndTurn.show()
-		5:
-			match currentPlayer.getCurrentTile():
-				1 , 2:
-					$Phase1.show()
-					$UseBackUp.show()
-				3,4,5,6:
-					$EndTurn.show()
-		6:
-			match currentPlayer.getCurrentTile():
-				1,2,6:
-					$EndTurn.show()
-				3,4,5:
-					$Phase1.show()
-					$UseBackUp.show()
-					$CoLicense.show()
-		7:
-			match currentPlayer.getCurrentTile():
-				1,3,4,5:
-					$EndTurn.show()
-				2:
-					$Phase1.show()
-					$UseBackUp.show()
-					$CoLicense.show()
-				6:
-					$EndTurn.show()
-		8:
-			match currentPlayer.getCurrentTile():
-				1,3,4:
-					$EndTurn.show()
-				2:
-					$Phase1.show()
-					$UseBackUp.show()
-					$CoLicense.show()
-				5,6:
-					$Phase2.show()
-		9:
-			$EndTurn.show()
-		10:
-			$EndTurn.show()
-	$EndTurn.show()
 
 
 func _on_RollDice_pressed():

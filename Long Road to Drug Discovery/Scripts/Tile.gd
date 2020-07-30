@@ -43,15 +43,14 @@ func _ready():
 		else:
 			$Sprite.texture = load("res://Custom Assets/TileSprites/laserBlue3.png")
 
-
 func LandOn(player):
 	
 	#Pause for 2 seconds- add animation
 	
 	updateDialogue(player,1)
-	#change from Move to Dialogue state
+	#change from Move to Confirm state
 	get_node("../../PlayerTracker").nextInTurnSequence()
-	#yield(get_tree().create_timer(5.0), "timeout")
+	yield(get_tree().create_timer(5.0), "timeout")
 	
 	if(SpecialParameters != ""):
 		_EndOfGame(player)
@@ -60,74 +59,70 @@ func LandOn(player):
 		player.alterPlayerMoney(LandOnCost)
 		player.alterPlayerYears(LandOnTime)
 			
-	get_node("../../PlayerTracker").nextInTurnSequence()
-	var currentLevelNumber = get_parent().getLevelNumber()
-	 
-	var forwardMovement = (LandOnLevel.getLevelNumber() - currentLevelNumber > 0)
+	var forwardMovement = (LandOnLevel.getLevelNumber() - get_parent().getLevelNumber() > 0)
 	
-	yield(get_tree().get_root().find_node("HUD2",true,false), "selectionMade")
-	
-	if(currentLevelNumber == 1):
+	if(LandOnLevel.getLevelNumber() == 1):
 		if(forwardMovement):
 			levelUp(player)
 		else:
 			tryAgain(player)
 			
-	if(currentLevelNumber == 2):
+	if(LandOnLevel.getLevelNumber() == 2):
 		if(forwardMovement):
 			#INSERT CODE FOR PURCHASING BACK-UP FORMULATIONS
 			levelUp(player)
 		else:
 			tryAgain(player)
 			
-	if(currentLevelNumber == 3):
+	if(LandOnLevel.getLevelNumber() == 3):
 		if(forwardMovement):
 			levelUp(player)
 		else:
 			tryAgain(player)
 			
-	if(currentLevelNumber == 4):
+	if(LandOnLevel.getLevelNumber() == 4):
 		if(forwardMovement):
 			levelUp(player)
 		else:
 			tryAgain(player)
 			
-	if(currentLevelNumber == 5):
+	if(LandOnLevel.getLevelNumber() == 5):
 		if(forwardMovement):
 			levelUp(player)
 		else:
 			tryAgain(player)
 			
-	if(currentLevelNumber == 6):
+	if(LandOnLevel.getLevelNumber() == 6):
 		if(forwardMovement):
 			levelUp(player)
 		else:
 			tryAgain(player)
 			
-	if(currentLevelNumber == 7):
+	if(LandOnLevel.getLevelNumber() == 7):
 		if(forwardMovement):
 			levelUp(player)
 		else:
 			tryAgain(player)
 			
-	if(currentLevelNumber == 8):
+	if(LandOnLevel.getLevelNumber() == 8):
 		if(forwardMovement):
 			levelUp(player)
 		else:
 			tryAgain(player)
 			
-	if(currentLevelNumber == 9):
+	if(LandOnLevel.getLevelNumber() == 9):
 		if(forwardMovement):
 			levelUp(player)
 		else:
 			tryAgain(player)
 		
-	if(currentLevelNumber == 10):
+	if(LandOnLevel.getLevelNumber() == 10):
 		if(forwardMovement):
 			levelUp(player)
 		else:
 			tryAgain(player)
 			
+	get_node("../../PlayerTracker").nextInTurnSequence()
 
 func updateDialogue(player,num):
 	var dialogue = get_tree().get_root().find_node("Dialogue",true,false)
@@ -141,7 +136,6 @@ func updateDialogue(player,num):
 	 
 
 func levelUp(player):
-	#yield(get_tree().get_root().find_node("HUD2",true,false), "selectionMade")
 	get_node("Teleport/AnimationPlayer").play("Teleport")
 	yield(get_tree().create_timer(0.8), "timeout")
 	player.alterCurrentLevel(1)
@@ -155,7 +149,6 @@ func levelUp(player):
 	yield(get_tree().create_timer(0.8), "timeout")
 	
 func tryAgain(player):
-	#yield(get_tree().get_root().find_node("HUD2",true,false), "selectionMade")
 	get_node("Teleport/AnimationPlayer").play("Teleport")
 	yield(get_tree().create_timer(0.8), "timeout")
 	player.setCurrentLevel(LandOnLevel.getLevelNumber())
