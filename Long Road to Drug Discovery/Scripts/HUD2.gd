@@ -25,17 +25,11 @@ func _showAll(boolean):
 	if(boolean == true):
 		$Start.show()
 		$VBoxContainer.show()
-		$Money.show()
-		$Years.show()
-		$BackupFormulations.show()
 		$DialogueBox.show()
 
 	else:
 		$Start.hide()
 		$VBoxContainer.hide()
-		$Money.hide()
-		$Years.hide()
-		$BackupFormulations.hide()
 		$DialogueBox.hide()
 	#always hide the warning, only want this when specifically called.
 	$Warning.hide()

@@ -810,23 +810,6 @@ LandOnLevelPath = NodePath("../../Level11")
 TileType = 1
 SpecialParameters = "LivesSaved"
 
-[node name="Level11" type="Node2D" parent="."]
-position = Vector2( 19200, 0 )
-script = ExtResource( 4 )
-LevelNumber = 11
-StartingTilePath = NodePath("StartingTile")
-
-[node name="StartingTile" parent="Level11" instance=ExtResource( 1 )]
-position = Vector2( 381.648, 658.312 )
-tileNumber = 0
-LandOnCost = 0
-LandOnTime = 0
-LandOnLevelPath = NodePath("..")
-
-[node name="Level10" type="Node2D" parent="."]
-position = Vector2( 17280, 0 )
-script = ExtResource( 16 )
-
 [node name="Winner" type="VBoxContainer" parent="Level10"]
 margin_left = 478.5
 margin_top = 121.0
@@ -912,6 +895,23 @@ margin_right = 1155.0
 margin_bottom = 179.0
 custom_fonts/font = SubResource( 8 )
 text = "4. Drug Name: 10,000 lives saved and made $10,000 in profit"
+
+[node name="Level11" type="Node2D" parent="."]
+position = Vector2( 19200, 0 )
+script = ExtResource( 4 )
+LevelNumber = 11
+StartingTilePath = NodePath("StartingTile")
+
+[node name="StartingTile" parent="Level11" instance=ExtResource( 1 )]
+position = Vector2( 381.648, 658.312 )
+tileNumber = 0
+LandOnCost = 0
+LandOnTime = 0
+LandOnLevelPath = NodePath("..")
+
+[node name="Level10" type="Node2D" parent="."]
+position = Vector2( 17280, 0 )
+script = ExtResource( 16 )
 
 [node name="PlayerTracker" type="Node2D" parent="."]
 script = ExtResource( 3 )
