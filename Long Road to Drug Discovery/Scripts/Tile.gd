@@ -18,8 +18,10 @@ signal transfer_phaseandroll
 
 
 func _ready():
-	NextTile = get_node(NextTilePath)
-	LandOnLevel = get_node(LandOnLevelPath)
+	if(get_node(NextTilePath) != null):
+		NextTile = get_node(NextTilePath)
+	if(get_node(LandOnLevelPath) != null):
+		LandOnLevel = get_node(LandOnLevelPath)
 	var forwardMovement = false
 	if(LandOnLevel != null):
 		forwardMovement = (LandOnLevel.getLevelNumber() - get_parent().getLevelNumber() > 0)
@@ -43,11 +45,15 @@ func _ready():
 		else:
 			$Sprite.texture = load("res://Custom Assets/TileSprites/laserBlue3.png")
 
+
 func LandOn(player):
 	
 	#Pause for 2 seconds- add animation
+	
 	updateDialogue(player,1)
-	yield(get_tree().create_timer(5.0), "timeout")
+	#change from Move to Dialogue state
+	get_node("../../PlayerTracker").nextInTurnSequence()
+	#yield(get_tree().create_timer(5.0), "timeout")
 	
 	if(SpecialParameters != ""):
 		_EndOfGame(player)
@@ -56,68 +62,74 @@ func LandOn(player):
 		player.alterPlayerMoney(LandOnCost)
 		player.alterPlayerYears(LandOnTime)
 			
-	var forwardMovement = (LandOnLevel.getLevelNumber() - get_parent().getLevelNumber() > 0)
+	get_node("../../PlayerTracker").nextInTurnSequence()
+	var currentLevelNumber = get_parent().getLevelNumber()
+	 
+	var forwardMovement = (LandOnLevel.getLevelNumber() - currentLevelNumber > 0)
 	
-	if(LandOnLevel.getLevelNumber() == 1):
+	yield(get_tree().get_root().find_node("HUD2",true,false), "selectionMade")
+	
+	if(currentLevelNumber == 1):
 		if(forwardMovement):
 			levelUp(player)
 		else:
 			tryAgain(player)
 			
-	if(LandOnLevel.getLevelNumber() == 2):
+	if(currentLevelNumber == 2):
 		if(forwardMovement):
 			#INSERT CODE FOR PURCHASING BACK-UP FORMULATIONS
 			levelUp(player)
 		else:
 			tryAgain(player)
 			
-	if(LandOnLevel.getLevelNumber() == 3):
+	if(currentLevelNumber == 3):
 		if(forwardMovement):
 			levelUp(player)
 		else:
 			tryAgain(player)
 			
-	if(LandOnLevel.getLevelNumber() == 4):
+	if(currentLevelNumber == 4):
 		if(forwardMovement):
 			levelUp(player)
 		else:
 			tryAgain(player)
 			
-	if(LandOnLevel.getLevelNumber() == 5):
+	if(currentLevelNumber == 5):
 		if(forwardMovement):
 			levelUp(player)
 		else:
 			tryAgain(player)
 			
-	if(LandOnLevel.getLevelNumber() == 6):
+	if(currentLevelNumber == 6):
 		if(forwardMovement):
 			levelUp(player)
 		else:
 			tryAgain(player)
 			
-	if(LandOnLevel.getLevelNumber() == 7):
+	if(currentLevelNumber == 7):
 		if(forwardMovement):
 			levelUp(player)
 		else:
 			tryAgain(player)
 			
-	if(LandOnLevel.getLevelNumber() == 8):
+	if(currentLevelNumber == 8):
 		if(forwardMovement):
 			levelUp(player)
 		else:
 			tryAgain(player)
 			
-	if(LandOnLevel.getLevelNumber() == 9):
+	if(currentLevelNumber == 9):
 		if(forwardMovement):
 			levelUp(player)
 		else:
 			tryAgain(player)
 		
-	if(LandOnLevel.getLevelNumber() == 10):
+	if(currentLevelNumber == 10):
 		if(forwardMovement):
 			levelUp(player)
 		else:
 			tryAgain(player)
+			
 
 func updateDialogue(player,num):
 	var dialogue = get_tree().get_root().find_node("Dialogue",true,false)
