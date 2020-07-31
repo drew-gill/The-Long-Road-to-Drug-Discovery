@@ -11,53 +11,25 @@ signal transfer_phaseandroll
 
 func _ready():
 	_showAll(true)
-	$Start.hide()
 	playerTracker = get_node(playerTrackerPath)
 	randomize() #used to reset seed for dice roll
 	
-	
-
-func _on_Start_pressed():
-	_showAll(true)
-	$Start.hide()
 		
 		
 func _showAll(boolean):
 	if(boolean == true):
-		$Start.show()
-		$Money.show()
-		$Years.show()
-		$BackupFormulations.show()
+		$VBoxContainer.show()
 		$DialogueBox.show()
 
 	else:
-		$Start.hide()
-		$Money.hide()
-		$Years.hide()
-		$BackupFormulations.hide()
+		$VBoxContainer.hide()
 		$DialogueBox.hide()
-
-	
 	#always hide the warning, only want this when specifically called.
 	$Warning.hide()
 	
 func _showWarning(text):
 	$Warning.text = text
 	$Warning.show()
-
-func _on_AddMoney_pressed():
-	currentPlayer.alterPlayerMoney(1000)
-
-func _on_SubtractMoney_pressed():
-	currentPlayer.alterPlayerMoney(-1000)
-
-
-func _on_AddYear_pressed():
-	currentPlayer.alterPlayerYears(1)
-
-
-func _on_SubtractYear_pressed():
-	currentPlayer.alterPlayerYears(-1)
 
 func _on_EndTurn_pressed():
 	playerTracker.endTurn()
@@ -103,9 +75,9 @@ func addCommas(value):
 func _process(delta):
 	currentPlayer = playerTracker.getCurrentPlayerNode()
 	if(currentPlayer != null):
-		$Money.text = "Money: $" + addCommas(currentPlayer.getPlayerMoney())
-		$Years.text = "Years left: " + str(currentPlayer.getPlayerYears())
-		$BackupFormulations.text = "Backup Formulations: " + str(currentPlayer.getPlayerBackups())
+		$VBoxContainer/Money.text = "Money: $" + addCommas(currentPlayer.getPlayerMoney())
+		$VBoxContainer/Years.text = "Years left: " + str(currentPlayer.getPlayerYears())
+		$VBoxContainer/BackupFormulations.text = "Backup Formulations: " + str(currentPlayer.getPlayerBackups())
 		$PlayerTurn.text = "Player " + str(currentPlayer.getPlayerNumber()) +"'s Turn!"
 		if(currentPlayer.getCurrentTile() < 1):
 			$LevelText.text = "Level: " + str(currentPlayer.getCurrentLevel()) + "\n Please roll the dice!"

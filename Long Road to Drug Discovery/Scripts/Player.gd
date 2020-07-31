@@ -1,6 +1,8 @@
 extends KinematicBody2D
 class_name Player
 
+signal player_finished
+
 var playerDisease = ""
 var playerDrugName = ""
 
@@ -25,6 +27,7 @@ var movementVelocity = Vector2()
 func _ready():
 	setAnimation()
 	movementTarget = self.position
+	connect("player_finished", get_node("/root/GameBoard/Level10"), "_on_player_finished")
 	
 func setPlayerDisease(disease):
 	playerDisease = disease
@@ -70,6 +73,10 @@ func alterPlayerBackups(changeValue):
 
 func setMovementTarget(location):
 	movementTarget = location
+	if currentLevel == 10:
+		GlobalVar.allplayersfinished += 1
+		emit_signal("player_finished")
+	
 	
 func alterCurrentLevel(changeValue):
 	currentLevel += changeValue
