@@ -11,25 +11,17 @@ signal transfer_phaseandroll
 
 func _ready():
 	_showAll(true)
-	$Start.hide()
 	playerTracker = get_node(playerTrackerPath)
 	randomize() #used to reset seed for dice roll
 	
-	
-
-func _on_Start_pressed():
-	_showAll(true)
-	$Start.hide()
 		
 		
 func _showAll(boolean):
 	if(boolean == true):
-		$Start.show()
 		$VBoxContainer.show()
 		$DialogueBox.show()
 
 	else:
-		$Start.hide()
 		$VBoxContainer.hide()
 		$DialogueBox.hide()
 	#always hide the warning, only want this when specifically called.

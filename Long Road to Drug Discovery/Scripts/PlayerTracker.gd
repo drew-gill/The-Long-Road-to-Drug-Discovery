@@ -17,9 +17,11 @@ func endTurn():
 		currentPlayer += 1
 		
 	nextInTurnSequence()
+	get_node("../ScrollingCamera/HUD2").hide()
 	yield(get_tree().create_timer(5.0), "timeout")
 	get_node("../ScrollingCamera").SetActiveLevelNumber(getCurrentPlayerNode().getCurrentLevel())
-
+	get_node("../ScrollingCamera/HUD2").show()
+	
 func nextInTurnSequence():
 	if(turnSequenceNumber + 1 >= len(turnSequence)):
 		turnSequenceNumber = 0

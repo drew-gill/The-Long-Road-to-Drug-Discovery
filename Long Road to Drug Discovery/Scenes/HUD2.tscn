@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://External Assets/fonts/Xolonium-Regular.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Scripts/HUD2.gd" type="Script" id=2]
@@ -10,15 +10,22 @@
 [ext_resource path="res://fonts/FSAlbert_35.tres" type="DynamicFont" id=8]
 
 [sub_resource type="DynamicFont" id=1]
-size = 55
-font_data = ExtResource( 7 )
-
-[sub_resource type="DynamicFont" id=2]
 size = 45
 font_data = ExtResource( 7 )
 
+[sub_resource type="DynamicFont" id=2]
+size = 55
+font_data = ExtResource( 7 )
+
 [sub_resource type="DynamicFont" id=3]
+size = 32
 font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 18
+extra_spacing_top = 1
+extra_spacing_bottom = 1
+font_data = ExtResource( 7 )
 
 [node name="HUD2" type="Node2D"]
 script = ExtResource( 2 )
@@ -28,83 +35,61 @@ margin_left = 723.112
 margin_top = 39.4678
 margin_right = 1105.11
 margin_bottom = 95.4678
-
-[node name="EndTurn" type="Button" parent="."]
-margin_left = 1475.98
-margin_top = 641.531
-margin_right = 1609.98
-margin_bottom = 677.531
 custom_fonts/font = SubResource( 1 )
-custom_colors/font_color_shadow = Color( 0, 0.67451, 0.92549, 1 )
-custom_constants/shadow_offset_x = 0
-custom_constants/shadow_offset_y = 5
-text = "Player 1's Turn!"
-align = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Start" type="Button" parent="."]
-margin_left = 773.47
-margin_top = 882.0
-margin_right = 1092.47
-margin_bottom = 991.0
-custom_fonts/font = ExtResource( 6 )
-text = "Start"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Phase1" type="Button" parent="."]
-margin_left = 1475.54
-margin_top = 696.276
-margin_right = 1609.54
-margin_bottom = 732.276
-custom_fonts/font = SubResource( 1 )
+margin_left = 31.958
+margin_top = 917.735
+margin_right = 236.958
+margin_bottom = 979.735
+custom_fonts/font = SubResource( 2 )
 text = "Phase 1"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Phase2" type="Button" parent="."]
-margin_left = 1474.6
-margin_top = 748.189
-margin_right = 1608.6
-margin_bottom = 784.189
-custom_fonts/font = SubResource( 1 )
+margin_left = 33.0669
+margin_top = 998.356
+margin_right = 238.067
+margin_bottom = 1060.36
+custom_fonts/font = SubResource( 2 )
 text = "Phase 2"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="BackUp" type="Button" parent="."]
-margin_left = 1651.67
-margin_top = 695.497
-margin_right = 1821.67
-margin_bottom = 731.497
-custom_fonts/font = SubResource( 1 )
+margin_left = 320.861
+margin_top = 908.754
+margin_right = 624.861
+margin_bottom = 970.754
+custom_fonts/font = SubResource( 2 )
 text = "Buy Backup"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="UseBackUp" type="Button" parent="."]
-margin_left = 1651.1
-margin_top = 747.245
-margin_right = 1821.1
-margin_bottom = 783.245
-custom_fonts/font = SubResource( 1 )
+margin_left = 320.29
+margin_top = 993.311
+margin_right = 621.29
+margin_bottom = 1055.31
+custom_fonts/font = SubResource( 2 )
 text = "Use Backup"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="CoLicense" type="Button" parent="."]
-margin_left = 1653.78
-margin_top = 643.901
-margin_right = 1823.78
-margin_bottom = 679.901
-custom_fonts/font = SubResource( 1 )
+margin_left = 320.611
+margin_top = 822.701
+margin_right = 611.611
+margin_bottom = 884.701
+custom_fonts/font = SubResource( 2 )
 text = "CoLicense"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -122,23 +107,12 @@ __meta__ = {
 }
 
 [node name="EndTurn" type="Button" parent="."]
-margin_left = 787.475
-margin_top = 107.0
-margin_right = 1050.47
-margin_bottom = 168.0
-custom_fonts/font = ExtResource( 8 )
+margin_left = 16.4719
+margin_top = 826.743
+margin_right = 279.462
+margin_bottom = 888.743
+custom_fonts/font = SubResource( 2 )
 text = "End Turn"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ToggleDialogue" type="Button" parent="."]
-margin_left = 94.5236
-margin_top = 469.861
-margin_right = 365.524
-margin_bottom = 511.861
-custom_fonts/font = ExtResource( 8 )
-text = "Toggle Dialogue"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -156,7 +130,7 @@ __meta__ = {
 [node name="PlayerInfo" type="Label" parent="VBoxContainer"]
 margin_right = 464.0
 margin_bottom = 46.0
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 1 )
 custom_colors/font_color_shadow = Color( 0, 0.67451, 0.92549, 1 )
 custom_constants/shadow_offset_x = 0
 custom_constants/shadow_offset_y = 5
@@ -207,10 +181,10 @@ __meta__ = {
 }
 
 [node name="Warning" type="Label" parent="."]
-margin_left = 1641.18
-margin_top = 24.8454
-margin_right = 1892.18
-margin_bottom = 44.8454
+margin_left = 882.477
+margin_top = 395.995
+margin_right = 1271.48
+margin_bottom = 434.995
 custom_fonts/font = SubResource( 3 )
 text = "Warning! Put text here."
 align = 1
@@ -219,7 +193,8 @@ __meta__ = {
 }
 
 [node name="DialogueBox" type="Polygon2D" parent="."]
-position = Vector2( -335, 455 )
+position = Vector2( -311.831, 459.213 )
+scale = Vector2( 1.02869, 1.03576 )
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 polygon = PoolVector2Array( 371.443, 77.8848, 777.731, 79.4481, 778.031, 338.101, 373.565, 338.808 )
 
@@ -228,6 +203,11 @@ margin_left = 387.0
 margin_top = 94.0
 margin_right = 758.0
 margin_bottom = 323.0
+custom_fonts/mono_font = SubResource( 4 )
+custom_fonts/bold_italics_font = SubResource( 4 )
+custom_fonts/italics_font = SubResource( 4 )
+custom_fonts/bold_font = SubResource( 4 )
+custom_fonts/normal_font = SubResource( 4 )
 script = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -252,26 +232,22 @@ __meta__ = {
 }
 
 [node name="MoreInfo" type="Button" parent="."]
-margin_left = 159.925
-margin_top = 818.647
-margin_right = 331.926
-margin_bottom = 850.647
+margin_left = 180.43
+margin_top = 488.508
+margin_right = 352.431
+margin_bottom = 520.508
 custom_fonts/font = ExtResource( 5 )
 text = "Get more info!"
 __meta__ = {
 "_edit_use_anchors_": false
 }
-[connection signal="pressed" from="EndTurn" to="." method="_on_EndTurn_pressed"]
 [connection signal="pressed" from="Phase1" to="." method="_on_Phase1_pressed"]
 [connection signal="pressed" from="Phase2" to="." method="_on_Phase2_pressed"]
 [connection signal="pressed" from="BackUp" to="." method="_on_BackUp_pressed"]
 [connection signal="pressed" from="UseBackUp" to="." method="_on_UseBackUp_pressed"]
 [connection signal="pressed" from="CoLicense" to="." method="_on_CoLicense_pressed"]
 [connection signal="pressed" from="RollDice" to="." method="_on_RollDice_pressed"]
-[connection signal="pressed" from="Start" to="." method="_on_Start_pressed"]
-[connection signal="pressed" from="RollDice" to="." method="_on_RollDice_pressed"]
 [connection signal="pressed" from="EndTurn" to="." method="_on_EndTurn_pressed"]
-[connection signal="pressed" from="ToggleDialogue" to="." method="toggleDialogueBox"]
 [connection signal="timeout" from="DialogueBox/Timer" to="DialogueBox/Dialogue" method="_on_Timer_timeout"]
 [connection signal="item_selected" from="MoveCameraDropdown" to="." method="_on_OptionButton_item_selected"]
 [connection signal="pressed" from="MoreInfo" to="." method="_on_MoreInfo_pressed"]

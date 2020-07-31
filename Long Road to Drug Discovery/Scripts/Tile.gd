@@ -18,8 +18,10 @@ signal transfer_phaseandroll
 
 
 func _ready():
-	NextTile = get_node(NextTilePath)
-	LandOnLevel = get_node(LandOnLevelPath)
+	if(get_node(NextTilePath) != null):
+		NextTile = get_node(NextTilePath)
+	if(get_node(LandOnLevelPath) != null):
+		LandOnLevel = get_node(LandOnLevelPath)
 	var forwardMovement = false
 	if(LandOnLevel != null):
 		forwardMovement = (LandOnLevel.getLevelNumber() - get_parent().getLevelNumber() > 0)
