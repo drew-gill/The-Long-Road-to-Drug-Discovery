@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/you_lose.ogg-7390c379be27f992dec8559722ea49fc.oggstr"
+
+[deps]
+
+source_file="res://External Assets/Kenney Game Assets/Audio/Voiceover pack (90 sounds)/Male/you_lose.ogg"
+dest_files=[ "res://.import/you_lose.ogg-7390c379be27f992dec8559722ea49fc.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

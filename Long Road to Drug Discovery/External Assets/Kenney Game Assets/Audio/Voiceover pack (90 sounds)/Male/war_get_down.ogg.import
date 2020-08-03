@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/war_get_down.ogg-9243cca0ee24eabfd8307f007be94ace.oggstr"
+
+[deps]
+
+source_file="res://External Assets/Kenney Game Assets/Audio/Voiceover pack (90 sounds)/Male/war_get_down.ogg"
+dest_files=[ "res://.import/war_get_down.ogg-9243cca0ee24eabfd8307f007be94ace.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

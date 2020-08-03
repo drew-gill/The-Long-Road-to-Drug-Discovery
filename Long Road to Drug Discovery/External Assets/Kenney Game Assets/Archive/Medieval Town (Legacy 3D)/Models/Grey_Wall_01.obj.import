@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/Grey_Wall_01.obj-877f2f74e80ae1e22b202494529158f9.mesh"
+
+[deps]
+
+files=[ "res://.import/Grey_Wall_01.obj-877f2f74e80ae1e22b202494529158f9.mesh" ]
+
+source_file="res://External Assets/Kenney Game Assets/Archive/Medieval Town (Legacy 3D)/Models/Grey_Wall_01.obj"
+dest_files=[ "res://.import/Grey_Wall_01.obj-877f2f74e80ae1e22b202494529158f9.mesh", "res://.import/Grey_Wall_01.obj-877f2f74e80ae1e22b202494529158f9.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

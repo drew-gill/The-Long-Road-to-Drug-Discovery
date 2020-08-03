@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/war_fire_in_the_hole.ogg-b8dcfacad08f1631fe916d6b4e6b2e7d.oggstr"
+
+[deps]
+
+source_file="res://External Assets/Kenney Game Assets/Audio/Voiceover pack (90 sounds)/Female/war_fire_in_the_hole.ogg"
+dest_files=[ "res://.import/war_fire_in_the_hole.ogg-b8dcfacad08f1631fe916d6b4e6b2e7d.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

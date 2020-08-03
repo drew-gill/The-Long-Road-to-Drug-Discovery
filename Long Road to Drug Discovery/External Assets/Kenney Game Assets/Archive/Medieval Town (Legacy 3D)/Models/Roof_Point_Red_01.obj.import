@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/Roof_Point_Red_01.obj-7265359990c0b9ab1d09ba26ca766a23.mesh"
+
+[deps]
+
+files=[ "res://.import/Roof_Point_Red_01.obj-7265359990c0b9ab1d09ba26ca766a23.mesh" ]
+
+source_file="res://External Assets/Kenney Game Assets/Archive/Medieval Town (Legacy 3D)/Models/Roof_Point_Red_01.obj"
+dest_files=[ "res://.import/Roof_Point_Red_01.obj-7265359990c0b9ab1d09ba26ca766a23.mesh", "res://.import/Roof_Point_Red_01.obj-7265359990c0b9ab1d09ba26ca766a23.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

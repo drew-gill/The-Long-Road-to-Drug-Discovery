@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/Block_01.obj-935830452aac91ac9ddef6410cde4c54.mesh"
+
+[deps]
+
+files=[ "res://.import/Block_01.obj-935830452aac91ac9ddef6410cde4c54.mesh" ]
+
+source_file="res://External Assets/Kenney Game Assets/Archive/Minigolf Pack (Legacy 3D)/Models/Block_01.obj"
+dest_files=[ "res://.import/Block_01.obj-935830452aac91ac9ddef6410cde4c54.mesh", "res://.import/Block_01.obj-935830452aac91ac9ddef6410cde4c54.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/war_look_out.ogg-f33464e9a9b378277d7c5b97ed234ce2.oggstr"
+
+[deps]
+
+source_file="res://External Assets/Kenney Game Assets/Audio/Voiceover pack (90 sounds)/Female/war_look_out.ogg"
+dest_files=[ "res://.import/war_look_out.ogg-f33464e9a9b378277d7c5b97ed234ce2.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
