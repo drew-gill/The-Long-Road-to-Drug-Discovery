@@ -1,13 +1,27 @@
+<<<<<<< Updated upstream
 [gd_scene load_steps=13 format=2]
+=======
+[gd_scene load_steps=16 format=2]
+>>>>>>> Stashed changes
 
 [ext_resource path="res://External Assets/fonts/Xolonium-Regular.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Scripts/HUD2.gd" type="Script" id=2]
 [ext_resource path="res://Scripts/Dialogue.gd" type="Script" id=3]
 [ext_resource path="res://Custom Assets/MouseAnimations/mouseGray.png" type="Texture" id=4]
 [ext_resource path="res://fonts/FSAlbert_25.tres" type="DynamicFont" id=5]
+<<<<<<< Updated upstream
 [ext_resource path="res://fonts/FSAlbert_40.tres" type="DynamicFont" id=6]
 [ext_resource path="res://fonts/FSAlbertPro-ExtraBold.ttf" type="DynamicFontData" id=7]
 [ext_resource path="res://fonts/FSAlbert_35.tres" type="DynamicFont" id=8]
+=======
+[ext_resource path="res://Graphics/dice/1.png" type="Texture" id=6]
+[ext_resource path="res://Graphics/dice/4.png" type="Texture" id=7]
+[ext_resource path="res://Graphics/dice/3.png" type="Texture" id=8]
+[ext_resource path="res://Graphics/dice/2.png" type="Texture" id=9]
+[ext_resource path="res://Graphics/dice/6.png" type="Texture" id=10]
+[ext_resource path="res://Graphics/dice/5.png" type="Texture" id=11]
+[ext_resource path="res://External Assets/Kenney Game Assets/Audio/UI sounds (50 sounds)/click1.ogg" type="AudioStream" id=12]
+>>>>>>> Stashed changes
 
 [sub_resource type="DynamicFont" id=1]
 size = 45
@@ -21,11 +35,21 @@ font_data = ExtResource( 7 )
 size = 32
 font_data = ExtResource( 1 )
 
+<<<<<<< Updated upstream
 [sub_resource type="DynamicFont" id=4]
 size = 18
 extra_spacing_top = 1
 extra_spacing_bottom = 1
 font_data = ExtResource( 7 )
+=======
+[sub_resource type="SpriteFrames" id=3]
+animations = [ {
+"frames": [ ExtResource( 11 ), ExtResource( 6 ), ExtResource( 9 ), ExtResource( 8 ), ExtResource( 7 ), ExtResource( 11 ), ExtResource( 10 ) ],
+"loop": false,
+"name": "default",
+"speed": 5.0
+} ]
+>>>>>>> Stashed changes
 
 [node name="HUD2" type="Node2D"]
 script = ExtResource( 2 )
@@ -96,16 +120,25 @@ __meta__ = {
 }
 
 [node name="RollDice" type="Button" parent="."]
+<<<<<<< Updated upstream
 margin_left = 1551.63
 margin_top = 104.648
 margin_right = 1814.63
 margin_bottom = 165.648
 custom_fonts/font = ExtResource( 8 )
+=======
+margin_left = 44.6591
+margin_top = 534.777
+margin_right = 222.659
+margin_bottom = 570.777
+custom_fonts/font = SubResource( 1 )
+>>>>>>> Stashed changes
 text = "Roll the Dice"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
+<<<<<<< Updated upstream
 [node name="EndTurn" type="Button" parent="."]
 margin_left = 16.4719
 margin_top = 826.743
@@ -113,23 +146,50 @@ margin_right = 279.462
 margin_bottom = 888.743
 custom_fonts/font = SubResource( 2 )
 text = "End Turn"
+=======
+[node name="Money" type="Label" parent="."]
+margin_left = 13.538
+margin_top = 55.0
+margin_right = 151.538
+margin_bottom = 85.0
+custom_fonts/font = SubResource( 1 )
+text = "Money: $0"
+>>>>>>> Stashed changes
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
+<<<<<<< Updated upstream
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 margin_left = 47.0
 margin_top = 194.0
 margin_right = 511.0
 margin_bottom = 442.0
 custom_constants/separation = 21
+=======
+[node name="Years" type="Label" parent="."]
+margin_left = 15.6075
+margin_top = 88.7982
+margin_right = 123.607
+margin_bottom = 118.798
+custom_fonts/font = SubResource( 1 )
+text = "Years: 0"
+>>>>>>> Stashed changes
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
+<<<<<<< Updated upstream
 [node name="PlayerInfo" type="Label" parent="VBoxContainer"]
 margin_right = 464.0
 margin_bottom = 46.0
+=======
+[node name="Start" type="Button" parent="."]
+margin_left = 1600.97
+margin_top = 233.163
+margin_right = 1677.97
+margin_bottom = 269.163
+>>>>>>> Stashed changes
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color_shadow = Color( 0, 0.67451, 0.92549, 1 )
 custom_constants/shadow_offset_x = 0
@@ -147,6 +207,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+<<<<<<< Updated upstream
 [node name="Years" type="Label" parent="VBoxContainer"]
 margin_top = 129.0
 margin_right = 464.0
@@ -162,17 +223,33 @@ margin_top = 191.0
 margin_right = 464.0
 margin_bottom = 232.0
 custom_fonts/font = ExtResource( 6 )
+=======
+[node name="BackupFormulations" type="Label" parent="."]
+margin_left = 17.1632
+margin_top = 127.617
+margin_right = 329.163
+margin_bottom = 157.617
+custom_fonts/font = SubResource( 1 )
+>>>>>>> Stashed changes
 text = "Backup Formulations: 0"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="LevelText" type="Label" parent="."]
+<<<<<<< Updated upstream
 margin_left = 1610.81
 margin_top = 188.708
 margin_right = 1746.81
 margin_bottom = 273.708
 custom_fonts/font = ExtResource( 6 )
+=======
+margin_left = 24.8368
+margin_top = 220.308
+margin_right = 336.837
+margin_bottom = 283.308
+custom_fonts/font = SubResource( 1 )
+>>>>>>> Stashed changes
 text = "Level: 1
 Roll: 1"
 align = 1
@@ -232,20 +309,39 @@ __meta__ = {
 }
 
 [node name="MoreInfo" type="Button" parent="."]
+<<<<<<< Updated upstream
 margin_left = 180.43
 margin_top = 488.508
 margin_right = 352.431
 margin_bottom = 520.508
+=======
+margin_left = 1562.94
+margin_top = 282.83
+margin_right = 1734.94
+margin_bottom = 314.83
+>>>>>>> Stashed changes
 custom_fonts/font = ExtResource( 5 )
 text = "Get more info!"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+<<<<<<< Updated upstream
 [connection signal="pressed" from="Phase1" to="." method="_on_Phase1_pressed"]
 [connection signal="pressed" from="Phase2" to="." method="_on_Phase2_pressed"]
 [connection signal="pressed" from="BackUp" to="." method="_on_BackUp_pressed"]
 [connection signal="pressed" from="UseBackUp" to="." method="_on_UseBackUp_pressed"]
 [connection signal="pressed" from="CoLicense" to="." method="_on_CoLicense_pressed"]
+=======
+
+[node name="Dice" type="AnimatedSprite" parent="."]
+position = Vector2( 126.182, 450.71 )
+scale = Vector2( 0.125, 0.125 )
+frames = SubResource( 3 )
+
+[node name="clickSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 12 )
+[connection signal="pressed" from="EndTurn" to="." method="_on_EndTurn_pressed"]
+>>>>>>> Stashed changes
 [connection signal="pressed" from="RollDice" to="." method="_on_RollDice_pressed"]
 [connection signal="pressed" from="EndTurn" to="." method="_on_EndTurn_pressed"]
 [connection signal="timeout" from="DialogueBox/Timer" to="DialogueBox/Dialogue" method="_on_Timer_timeout"]

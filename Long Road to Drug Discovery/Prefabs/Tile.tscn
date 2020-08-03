@@ -1,13 +1,23 @@
+<<<<<<< Updated upstream
 [gd_scene load_steps=14 format=2]
+=======
+[gd_scene load_steps=11 format=2]
+>>>>>>> Stashed changes
 
 [ext_resource path="res://Custom Assets/TileSprites/shipBeige.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/Tile.gd" type="Script" id=2]
 [ext_resource path="res://External Assets/Kenney Game Assets/2D assets/Alien Spaceship Pack/PNG/laserGreen_burst.png" type="Texture" id=3]
+<<<<<<< Updated upstream
 [ext_resource path="res://External Assets/Kenney Game Assets/2D assets/Alien Spaceship Pack/PNG/laserYellow_burst.png" type="Texture" id=4]
 [ext_resource path="res://External Assets/Kenney Game Assets/2D assets/Alien Spaceship Pack/PNG/laserPink_burst.png" type="Texture" id=5]
 [ext_resource path="res://External Assets/Kenney Game Assets/Audio/Digital sounds (60 sounds)/phaserUp3.ogg" type="AudioStream" id=4]
 [ext_resource path="res://External Assets/Kenney Game Assets/Audio/Digital sounds (60 sounds)/lowDown.ogg" type="AudioStream" id=5]
 [ext_resource path="res://External Assets/Kenney Game Assets/Audio/Digital sounds (60 sounds)/zapThreeToneUp.ogg" type="AudioStream" id=6]
+=======
+[ext_resource path="res://External Assets/Kenney Game Assets/Audio/Digital sounds (60 sounds)/zapThreeToneUp.ogg" type="AudioStream" id=4]
+[ext_resource path="res://External Assets/Kenney Game Assets/Audio/Digital sounds (60 sounds)/lowDown.ogg" type="AudioStream" id=5]
+[ext_resource path="res://External Assets/Kenney Game Assets/Audio/Digital sounds (60 sounds)/phaseJump1.ogg" type="AudioStream" id=6]
+>>>>>>> Stashed changes
 
 [sub_resource type="Animation" id=1]
 resource_name = "Teleport"
@@ -89,6 +99,7 @@ tracks/1/keys = {
 "values": [ Vector2( 0, 0 ), Vector2( 1, 1 ), Vector2( 0, 0 ) ]
 }
 
+<<<<<<< Updated upstream
 [sub_resource type="Animation" id=6]
 resource_name = "TeleportIn"
 tracks/0/type = "value"
@@ -172,6 +183,9 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id=3]
 length = 2.0
+=======
+[sub_resource type="Animation" id=3]
+>>>>>>> Stashed changes
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:position")
@@ -217,6 +231,7 @@ scale = Vector2( 1e-05, 1e-05 )
 texture = ExtResource( 3 )
 offset = Vector2( 0, 50 )
 
+<<<<<<< Updated upstream
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Good Teleport"]
 anims/Teleport = SubResource( 1 )
 anims/TeleportIn = SubResource( 2 )
@@ -241,6 +256,11 @@ offset = Vector2( 0, 50 )
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Bad Teleport"]
 anims/Teleport = SubResource( 7 )
 anims/TeleportIn = SubResource( 8 )
+=======
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Teleport"]
+anims/Teleport = SubResource( 1 )
+anims/TeleportIn = SubResource( 2 )
+>>>>>>> Stashed changes
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( -1.34282e-05, 2.59388 )
@@ -254,6 +274,7 @@ position = Vector2( 0, -50 )
 rotation = 1.5708
 shape = SubResource( 4 )
 
+<<<<<<< Updated upstream
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 4 )
 
@@ -262,4 +283,14 @@ stream = ExtResource( 5 )
 
 [node name="levelUpAudio" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 6 )
+=======
+[node name="passTile" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+
+[node name="tryAgain" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+
+[node name="levelUp" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+>>>>>>> Stashed changes
 [connection signal="body_entered" from="." to="." method="_on_Tile_player_entered"]

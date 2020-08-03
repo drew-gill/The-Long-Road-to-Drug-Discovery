@@ -2,23 +2,16 @@
 
 importer="texture"
 type="StreamTexture"
-<<<<<<< Updated upstream
-path="res://.import/LRDDbackground.png-c9fd47876003f99d9a154e376d018a7f.stex"
+path="res://.import/2.png-eadd056b18d0ca78a344885863b9b6c1.stex"
 metadata={
 "vram_texture": false
 }
-=======
-valid=false
->>>>>>> Stashed changes
 
 [deps]
 
-source_file="res://Graphics/LRDDbackground.png"
-<<<<<<< Updated upstream
-dest_files=[ "res://.import/LRDDbackground.png-c9fd47876003f99d9a154e376d018a7f.stex" ]
+source_file="res://Graphics/dice/2.png"
+dest_files=[ "res://.import/2.png-eadd056b18d0ca78a344885863b9b6c1.stex" ]
 
-=======
->>>>>>> Stashed changes
 [params]
 
 compress/mode=0

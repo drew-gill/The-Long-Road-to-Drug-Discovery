@@ -14,6 +14,15 @@ func _ready():
 	playerTracker = get_node(playerTrackerPath)
 	randomize() #used to reset seed for dice roll
 	
+<<<<<<< Updated upstream
+=======
+	
+
+func _on_Start_pressed():
+	$clickSound.play()
+	_showAll(true)
+	$Start.hide()
+>>>>>>> Stashed changes
 		
 		
 func _showAll(boolean):
@@ -31,6 +40,7 @@ func _showWarning(text):
 	$Warning.text = text
 	$Warning.show()
 
+<<<<<<< Updated upstream
 func _on_EndTurn_pressed():
 	playerTracker.endTurn()
 	emit_signal("selectionMade")
@@ -54,6 +64,28 @@ func _on_CoLicense_pressed():
 	playerTracker.endTurn()
 
 func _on_Phase2_pressed():
+=======
+func _on_AddMoney_pressed():
+	$clickSound.play()
+	currentPlayer.alterPlayerMoney(1000)
+
+func _on_SubtractMoney_pressed():
+	$clickSound.play()
+	currentPlayer.alterPlayerMoney(-1000)
+
+
+func _on_AddYear_pressed():
+	$clickSound.play()
+	currentPlayer.alterPlayerYears(1)
+
+
+func _on_SubtractYear_pressed():
+	$clickSound.play()
+	currentPlayer.alterPlayerYears(-1)
+
+func _on_EndTurn_pressed():
+	$clickSound.play()
+>>>>>>> Stashed changes
 	playerTracker.endTurn()
 
 	
@@ -174,7 +206,12 @@ func showButtons():
 
 
 func _on_RollDice_pressed():
+	$clickSound.play()
 	var roll = randi()%6 + 1
+	for i in range(7):
+		$Dice.frame = i
+		yield(get_tree().create_timer(0.25), "timeout")
+	$Dice.frame = roll
 	currentPlayer.setCurrentTile(roll)
 	connect("transfer_phaseandroll", get_node("DialogueBox/Dialogue"), "_on_transfer_phaseandroll")
 	emit_signal("transfer_phaseandroll", int(currentPlayer.getCurrentLevel()), int(currentPlayer.getCurrentTile()))
@@ -191,6 +228,7 @@ func _on_OptionButton_item_selected(id):
 
 
 func _on_MoreInfo_pressed():
+	$clickSound.play()
 	var infoLevels = ["https://www.pfizer.com/health-wellness/healthy-living/brain-nervous-system",
 			"https://www.pfizer.com/health-wellness/healthy-living/heart-cardiovascular",
 			"https://www.pfizer.com/health-wellness/healthy-living/cold-and-flu",

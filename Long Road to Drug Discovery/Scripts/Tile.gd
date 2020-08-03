@@ -143,6 +143,7 @@ func updateDialogue(player,num):
 	 
 
 func levelUp(player):
+<<<<<<< Updated upstream
 	$levelUpAudio.play()
 
 	#Teleport Out
@@ -155,6 +156,10 @@ func levelUp(player):
 	else:
 		teleportOut(tiletype.NEUTRAL)
 
+=======
+	$levelUp.play()
+	get_node("Teleport/AnimationPlayer").play("Teleport")
+>>>>>>> Stashed changes
 	yield(get_tree().create_timer(0.8), "timeout")
 	player.alterCurrentLevel(1)
 	updateDialogue(player,0)
@@ -176,6 +181,7 @@ func levelUp(player):
 	yield(get_tree().create_timer(0.8), "timeout")
 	
 func tryAgain(player):
+<<<<<<< Updated upstream
 	$tryAgainAudio.play()
 	#Teleport Out
 	if(TileType == tiletype.GOOD):
@@ -187,6 +193,10 @@ func tryAgain(player):
 	else:
 		teleportOut(tiletype.NEUTRAL)
 	
+=======
+	$tryAgain.play()
+	get_node("Teleport/AnimationPlayer").play("Teleport")
+>>>>>>> Stashed changes
 	yield(get_tree().create_timer(0.8), "timeout")
 	player.setCurrentLevel(LandOnLevel.getLevelNumber())
 	updateDialogue(player,0)
@@ -208,6 +218,7 @@ func tryAgain(player):
 	yield(get_tree().create_timer(0.8), "timeout")
 
 func GoToNextTile(player):
+	$passTile.play()
 	if(NextTile != null):
 		player.setMovementTarget(NextTile._getTilePosition() + Vector2(0,-50))
 		
