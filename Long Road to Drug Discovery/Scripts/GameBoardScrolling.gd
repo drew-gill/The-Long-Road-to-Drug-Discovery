@@ -35,5 +35,3 @@ func generate_pieces() -> void:
 			new_piece.setPlayerYears(GlobalVar.Time4)
 			new_piece.setPlayerDisease(GlobalVar.Disease4)
 			new_piece.setPlayerDrugName(GlobalVar.DrugName4)
-
-
