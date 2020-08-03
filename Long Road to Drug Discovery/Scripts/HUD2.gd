@@ -4,6 +4,7 @@ class_name HUD2
 export (NodePath) var playerTrackerPath
 var currentPlayer
 var playerTracker
+var cheatRoll = -1
 
 signal beginMoving
 signal selectionMade
@@ -79,10 +80,10 @@ func _process(delta):
 		$VBoxContainer/Years.text = "Years left: " + str(currentPlayer.getPlayerYears())
 		$VBoxContainer/BackupFormulations.text = "Backup Formulations: " + str(currentPlayer.getPlayerBackups())
 		$PlayerTurn.text = "Player " + str(currentPlayer.getPlayerNumber()) +"'s Turn!"
-		if(currentPlayer.getCurrentTile() < 1):
-			$LevelText.text = "Level: " + str(currentPlayer.getCurrentLevel()) + "\n Please roll the dice!"
+		if(currentPlayer.getCurrentTile() < 1 or playerTracker.getCurrentTurnSequence() == "Roll"):
+			$LevelText.text = "Level: " + str(currentPlayer.getCurrentLevel()) + "\nRoll the dice!"
 		else:
-			$LevelText.text = "Level: " + str(currentPlayer.getCurrentLevel()) + "\n Roll: " + str(currentPlayer.getCurrentTile())
+			$LevelText.text = "Level: " + str(currentPlayer.getCurrentLevel()) + "\nRoll: " + str(currentPlayer.getCurrentTile())
 		
 		if(playerTracker.getCurrentTurnSequence() != "Roll"):
 			$RollDice.hide()
@@ -174,12 +175,16 @@ func showButtons():
 
 
 func _on_RollDice_pressed():
-	var roll = randi()%6 + 1
+	var roll
+	if(cheatRoll > 0):
+		roll = cheatRoll
+	else:
+		roll = randi()%6 + 1
 	currentPlayer.setCurrentTile(roll)
 	connect("transfer_phaseandroll", get_node("DialogueBox/Dialogue"), "_on_transfer_phaseandroll")
 	emit_signal("transfer_phaseandroll", int(currentPlayer.getCurrentLevel()), int(currentPlayer.getCurrentTile()))
 	playerTracker.nextInTurnSequence()
-	
+	cheatRoll = -1
 
 
 
@@ -201,3 +206,7 @@ func _on_MoreInfo_pressed():
 			"https://www.pfizer.com/health-wellness/healthy-living/mental-health",
 			"https://www.pfizer.com/health-wellness/healthy-living/diet-exercise"]
 	OS.shell_open(infoLevels[currentPlayer.getCurrentLevel() - 1])
+
+
+func _on_cheatRoll_pressed(extra_arg_0):
+	cheatRoll = extra_arg_0

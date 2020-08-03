@@ -272,4 +272,5 @@ func _EndOfGame(player):
 	#use LandOnCost to set lives saved
 	elif(SpecialParameters == "LivesSaved"):
 		player.setLivesSaved(LandOnCost)
+		GlobalVar.allplayersfinished += 1
 		print("Player score: " + str(player.getFinalScore()))

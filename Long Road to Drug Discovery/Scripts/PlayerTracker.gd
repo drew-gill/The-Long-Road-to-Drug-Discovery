@@ -11,16 +11,32 @@ func _ready():
 
 
 func endTurn():
-	if(currentPlayer + 1 > GlobalVar.num_players):
+	#if all players are finished, go to the final screen
+	if(GlobalVar.allplayersfinished == GlobalVar.num_players):
 		currentPlayer = 1
+		get_node("/root/GameBoard").allPlayersFinished()
 	else:
-		currentPlayer += 1
-		
+		#keep iterating to get the next player who is NOT finished
+		while true:  
+			if(currentPlayer + 1 > GlobalVar.num_players):
+				currentPlayer = 1
+			else:
+				currentPlayer += 1
+			if(not getCurrentPlayerNode().isFinished()):  
+				break  
+	
+	
+	
+	
 	nextInTurnSequence()
 	get_node("../ScrollingCamera/HUD2").hide()
 	yield(get_tree().create_timer(5.0), "timeout")
 	get_node("../ScrollingCamera").SetActiveLevelNumber(getCurrentPlayerNode().getCurrentLevel())
-	get_node("../ScrollingCamera/HUD2").show()
+	
+	if(GlobalVar.allplayersfinished == GlobalVar.num_players):
+		get_node("../ScrollingCamera/HUD2").hide()
+	else:
+		get_node("../ScrollingCamera/HUD2").show()
 	
 func nextInTurnSequence():
 	if(turnSequenceNumber + 1 >= len(turnSequence)):
@@ -36,4 +52,3 @@ func getCurrentPlayerNumber():
 
 func getCurrentPlayerNode():
 	return get_node("../Player" + str(currentPlayer))
-	

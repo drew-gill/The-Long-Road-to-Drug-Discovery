@@ -168,14 +168,13 @@ __meta__ = {
 }
 
 [node name="LevelText" type="Label" parent="."]
-margin_left = 1610.81
-margin_top = 188.708
-margin_right = 1746.81
-margin_bottom = 273.708
+margin_left = 1554.0
+margin_top = 189.0
+margin_right = 1747.0
+margin_bottom = 274.0
 custom_fonts/font = ExtResource( 6 )
 text = "Level: 1
 Roll: 1"
-align = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -241,6 +240,69 @@ text = "Get more info!"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="CheatButtons" type="Control" parent="."]
+margin_left = -1739.39
+margin_top = 485.739
+margin_right = -1699.39
+margin_bottom = 525.739
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="1" type="Button" parent="CheatButtons"]
+margin_left = 1933.25
+margin_top = -409.471
+margin_right = 1945.25
+margin_bottom = -389.471
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="2" type="Button" parent="CheatButtons"]
+margin_left = 1955.25
+margin_top = -409.471
+margin_right = 1967.25
+margin_bottom = -389.471
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="3" type="Button" parent="CheatButtons"]
+margin_left = 1976.25
+margin_top = -409.471
+margin_right = 1988.25
+margin_bottom = -389.471
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="4" type="Button" parent="CheatButtons"]
+margin_left = 1997.25
+margin_top = -409.471
+margin_right = 2009.25
+margin_bottom = -389.471
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="5" type="Button" parent="CheatButtons"]
+margin_left = 2019.25
+margin_top = -409.471
+margin_right = 2031.25
+margin_bottom = -389.471
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="6" type="Button" parent="CheatButtons"]
+margin_left = 2041.68
+margin_top = -409.328
+margin_right = 2053.68
+margin_bottom = -389.328
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="pressed" from="Phase1" to="." method="_on_Phase1_pressed"]
 [connection signal="pressed" from="Phase2" to="." method="_on_Phase2_pressed"]
 [connection signal="pressed" from="BackUp" to="." method="_on_BackUp_pressed"]
@@ -251,3 +313,9 @@ __meta__ = {
 [connection signal="timeout" from="DialogueBox/Timer" to="DialogueBox/Dialogue" method="_on_Timer_timeout"]
 [connection signal="item_selected" from="MoveCameraDropdown" to="." method="_on_OptionButton_item_selected"]
 [connection signal="pressed" from="MoreInfo" to="." method="_on_MoreInfo_pressed"]
+[connection signal="pressed" from="CheatButtons/1" to="." method="_on_cheatRoll_pressed" binds= [ 1 ]]
+[connection signal="pressed" from="CheatButtons/2" to="." method="_on_cheatRoll_pressed" binds= [ 2 ]]
+[connection signal="pressed" from="CheatButtons/3" to="." method="_on_cheatRoll_pressed" binds= [ 3 ]]
+[connection signal="pressed" from="CheatButtons/4" to="." method="_on_cheatRoll_pressed" binds= [ 4 ]]
+[connection signal="pressed" from="CheatButtons/5" to="." method="_on_cheatRoll_pressed" binds= [ 5 ]]
+[connection signal="pressed" from="CheatButtons/6" to="." method="_on_cheatRoll_pressed" binds= [ 6 ]]
