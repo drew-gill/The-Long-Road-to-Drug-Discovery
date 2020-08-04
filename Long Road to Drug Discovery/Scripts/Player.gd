@@ -10,6 +10,7 @@ var playerDrugName = ""
 var money = 1000000000
 var years = 20
 var backups = 0
+var CL = false
 
 
 #FINAL SCORE VARIABLES
@@ -73,9 +74,6 @@ func alterPlayerBackups(changeValue):
 
 func setMovementTarget(location):
 	movementTarget = location
-	if currentLevel == 10:
-		GlobalVar.allplayersfinished += 1
-		emit_signal("player_finished")
 	
 	
 func alterCurrentLevel(changeValue):
@@ -101,9 +99,17 @@ func getLivesSaved():
 	
 func setProfitPerYear(newValue):
 	profitPerYear = newValue
+	if(CL == true):
+		profitPerYear *= 0.5
 
 func getProfitPerYear():
 	return profitPerYear
+
+func colicense():
+	CL = true
+#if the player livesSaved != 0, then they have finished the game.
+func isFinished():
+	return (livesSaved != 0)
 	
 func _physics_process(delta):
 	if(playerNumber == get_node("../PlayerTracker").getCurrentPlayerNumber()):
