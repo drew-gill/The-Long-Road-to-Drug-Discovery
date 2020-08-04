@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://Prefabs/Tile.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scripts/GameBoardScrolling.gd" type="Script" id=2]
@@ -17,6 +17,10 @@
 [ext_resource path="res://Graphics/c057bb0f340652a920d8f1a514d0bc03-dna-chain-illustration-by-vexels.png" type="Texture" id=15]
 [ext_resource path="res://fonts/FSAlbertPro-ExtraBold.ttf" type="DynamicFontData" id=17]
 
+[sub_resource type="DynamicFont" id=5]
+size = 55
+font_data = ExtResource( 17 )
+
 [sub_resource type="DynamicFont" id=1]
 size = 80
 font_data = ExtResource( 17 )
@@ -33,7 +37,7 @@ font_data = ExtResource( 17 )
 size = 60
 font_data = ExtResource( 17 )
 
-[sub_resource type="DynamicFont" id=5]
+[sub_resource type="DynamicFont" id=9]
 size = 50
 font_data = ExtResource( 17 )
 
@@ -161,6 +165,19 @@ script = ExtResource( 4 )
 LevelNumber = 1
 StartingTilePath = NodePath("StartingTile")
 
+[node name="Label" type="Label" parent="Level1"]
+margin_left = 768.617
+margin_top = 897.241
+margin_right = 1160.62
+margin_bottom = 953.241
+custom_fonts/font = SubResource( 5 )
+custom_colors/font_color_shadow = Color( 0.0470588, 0.384314, 0.564706, 1 )
+custom_constants/shadow_offset_x = -3
+text = "In Vitro Studies"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="StartingTile" parent="Level1" instance=ExtResource( 1 )]
 position = Vector2( 624.081, 446.939 )
 tileNumber = 0
@@ -224,6 +241,19 @@ script = ExtResource( 4 )
 LevelNumber = 2
 StartingTilePath = NodePath("StartingTile")
 
+[node name="Label" type="Label" parent="Level2"]
+margin_left = 1519.15
+margin_top = 886.969
+margin_right = 1911.15
+margin_bottom = 942.969
+custom_fonts/font = SubResource( 5 )
+custom_colors/font_color_shadow = Color( 0.0470588, 0.384314, 0.564706, 1 )
+custom_constants/shadow_offset_x = -3
+text = "In Vivo Studies"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="StartingTile" parent="Level2" instance=ExtResource( 1 )]
 position = Vector2( 953.869, 309.861 )
 tileNumber = 0
@@ -285,6 +315,19 @@ script = ExtResource( 4 )
 LevelNumber = 3
 StartingTilePath = NodePath("StartingTile")
 
+[node name="Label" type="Label" parent="Level3"]
+margin_left = 849.567
+margin_top = 893.864
+margin_right = 1536.57
+margin_bottom = 949.864
+custom_fonts/font = SubResource( 5 )
+custom_colors/font_color_shadow = Color( 0.0470588, 0.384314, 0.564706, 1 )
+custom_constants/shadow_offset_x = -3
+text = "Safety and Toxicity Testing"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="StartingTile" parent="Level3" instance=ExtResource( 1 )]
 position = Vector2( 560.801, 486.476 )
 tileNumber = 0
@@ -344,6 +387,19 @@ position = Vector2( 5760, 0 )
 script = ExtResource( 4 )
 LevelNumber = 4
 StartingTilePath = NodePath("StartingTile")
+
+[node name="Label" type="Label" parent="Level4"]
+margin_left = 530.49
+margin_top = 965.117
+margin_right = 1732.49
+margin_bottom = 1021.12
+custom_fonts/font = SubResource( 5 )
+custom_colors/font_color_shadow = Color( 0.0470588, 0.384314, 0.564706, 1 )
+custom_constants/shadow_offset_x = -3
+text = "File IND (Investigational New Drug) Application"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="StartingTile" parent="Level4" instance=ExtResource( 1 )]
 position = Vector2( 583.838, 363.905 )
@@ -410,6 +466,19 @@ script = ExtResource( 4 )
 LevelNumber = 5
 StartingTilePath = NodePath("StartingTile")
 
+[node name="Label" type="Label" parent="Level5"]
+margin_left = 728.687
+margin_top = 853.215
+margin_right = 1930.69
+margin_bottom = 909.215
+custom_fonts/font = SubResource( 5 )
+custom_colors/font_color_shadow = Color( 0.0470588, 0.384314, 0.564706, 1 )
+custom_constants/shadow_offset_x = -3
+text = "Phase 1 Testing -- First in Human"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="StartingTile" parent="Level5" instance=ExtResource( 1 )]
 position = Vector2( 659.273, 566.672 )
 tileNumber = 0
@@ -472,6 +541,19 @@ script = ExtResource( 4 )
 LevelNumber = 6
 StartingTilePath = NodePath("StartingTile")
 
+[node name="Label" type="Label" parent="Level6"]
+margin_left = 748.517
+margin_top = 929.042
+margin_right = 1950.52
+margin_bottom = 985.042
+custom_fonts/font = SubResource( 5 )
+custom_colors/font_color_shadow = Color( 0.0470588, 0.384314, 0.564706, 1 )
+custom_constants/shadow_offset_x = -3
+text = "Phase 2 Clinical Trials"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="StartingTile" parent="Level6" instance=ExtResource( 1 )]
 position = Vector2( 637.253, 326.919 )
 tileNumber = 0
@@ -513,7 +595,7 @@ LandOnLevelPath = NodePath("../../Level1")
 TileType = 2
 
 [node name="Tile5" parent="Level6" instance=ExtResource( 1 )]
-position = Vector2( 1758.85, 700.485 )
+position = Vector2( 1302.89, 648.709 )
 tileNumber = 5
 LandOnCost = -50000000
 LandOnTime = -3
@@ -522,7 +604,7 @@ LandOnLevelPath = NodePath("../../Level1")
 TileType = 2
 
 [node name="Tile6" parent="Level6" instance=ExtResource( 1 )]
-position = Vector2( 1296.86, 658.958 )
+position = Vector2( 1759.5, 694.032 )
 tileNumber = 6
 LandOnCost = -50000000
 LandOnTime = -3
@@ -534,6 +616,19 @@ position = Vector2( 11520, 0 )
 script = ExtResource( 4 )
 LevelNumber = 7
 StartingTilePath = NodePath("StartingTile")
+
+[node name="Label" type="Label" parent="Level7"]
+margin_left = 768.432
+margin_top = 875.228
+margin_right = 1970.43
+margin_bottom = 931.228
+custom_fonts/font = SubResource( 5 )
+custom_colors/font_color_shadow = Color( 0.0470588, 0.384314, 0.564706, 1 )
+custom_constants/shadow_offset_x = -3
+text = "Phase 3 Clinical Trials"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="StartingTile" parent="Level7" instance=ExtResource( 1 )]
 position = Vector2( 598.648, 507.312 )
@@ -601,6 +696,19 @@ script = ExtResource( 4 )
 LevelNumber = 8
 StartingTilePath = NodePath("StartingTile")
 
+[node name="Label" type="Label" parent="Level8"]
+margin_left = 1272.41
+margin_top = 993.627
+margin_right = 2474.41
+margin_bottom = 1049.63
+custom_fonts/font = SubResource( 5 )
+custom_colors/font_color_shadow = Color( 0.0470588, 0.384314, 0.564706, 1 )
+custom_constants/shadow_offset_x = -3
+text = "File NDA for Approval"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="StartingTile" parent="Level8" instance=ExtResource( 1 )]
 position = Vector2( 598.198, 726.656 )
 tileNumber = 0
@@ -660,6 +768,19 @@ position = Vector2( 15360, 0 )
 script = ExtResource( 4 )
 LevelNumber = 9
 StartingTilePath = NodePath("StartingTile")
+
+[node name="Label" type="Label" parent="Level9"]
+margin_left = 875.262
+margin_top = 850.811
+margin_right = 2077.26
+margin_bottom = 906.811
+custom_fonts/font = SubResource( 5 )
+custom_colors/font_color_shadow = Color( 0.0470588, 0.384314, 0.564706, 1 )
+custom_constants/shadow_offset_x = -3
+text = "Launch your new medicine!"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="StartingTile" parent="Level9" instance=ExtResource( 1 )]
 position = Vector2( 517.22, 601.231 )
@@ -733,6 +854,19 @@ script = ExtResource( 4 )
 LevelNumber = 10
 StartingTilePath = NodePath("StartingTile")
 
+[node name="Label" type="Label" parent="Level10"]
+margin_left = 202.264
+margin_top = 894.465
+margin_right = 1786.26
+margin_bottom = 950.465
+custom_fonts/font = SubResource( 5 )
+custom_colors/font_color_shadow = Color( 0.0470588, 0.384314, 0.564706, 1 )
+custom_constants/shadow_offset_x = -3
+text = "How many lives were saved or improved by your medicine?"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="StartingTile" parent="Level10" instance=ExtResource( 1 )]
 position = Vector2( 381.648, 658.312 )
 tileNumber = 0
@@ -805,6 +939,19 @@ script = ExtResource( 4 )
 LevelNumber = 11
 StartingTilePath = NodePath("StartingTile")
 
+[node name="Label" type="Label" parent="Level11"]
+margin_left = 129.863
+margin_top = 764.013
+margin_right = 1721.86
+margin_bottom = 820.013
+custom_fonts/font = SubResource( 5 )
+custom_colors/font_color_shadow = Color( 0.0470588, 0.384314, 0.564706, 1 )
+custom_constants/shadow_offset_x = -3
+text = "You've launched your medicine! Waiting until all players finish..."
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="StartingTile" parent="Level11" instance=ExtResource( 1 )]
 position = Vector2( 381.648, 658.312 )
 tileNumber = 0
@@ -873,7 +1020,7 @@ align = 1
 margin_top = 69.0
 margin_right = 1381.0
 margin_bottom = 120.0
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 9 )
 text = "1. Drug Name: 10,000 lives saved and made $10,000 in profit"
 
 [node name="Player2" type="Label" parent="ScoreBoard"]
