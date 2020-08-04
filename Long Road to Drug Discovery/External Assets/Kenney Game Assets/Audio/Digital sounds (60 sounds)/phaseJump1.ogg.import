@@ -11,5 +11,5 @@ dest_files=[ "res://.import/phaseJump1.ogg-fd3a0987117677841a21ed5e6e4ca9ac.oggs
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0
