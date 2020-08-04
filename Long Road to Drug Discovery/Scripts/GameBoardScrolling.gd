@@ -35,3 +35,43 @@ func generate_pieces() -> void:
 			new_piece.setPlayerYears(GlobalVar.Time4)
 			new_piece.setPlayerDisease(GlobalVar.Disease4)
 			new_piece.setPlayerDrugName(GlobalVar.DrugName4)
+
+
+func allPlayersFinished():
+	$Winner.show()
+	$ScoreBoard.show()	
+	
+	var scores = []
+	for i in range(GlobalVar.num_players):
+		var player = get_node("/root/GameBoard/Player" + str(i + 1))
+		scores.append(player.getFinalScore())
+	
+	var scoresUnsorted = scores.duplicate()
+	scores.sort()
+	scores.invert()
+	
+	var playerPositions = []
+	
+	for i in range(GlobalVar.num_players):
+		for j in range(len(scoresUnsorted)):
+			if(scores[i] == scoresUnsorted[j]):
+				playerPositions.append(j+1)
+				break
+	
+	for i in range(GlobalVar.num_players):
+		var player = playerPositions[i]
+		var player_node = get_node("/root/GameBoard/Player" + str(player))
+		if i == 0:
+			get_node("Winner/PlayerWins").text = "Player " + str(player) + " WINS"
+			get_node("Winner/LivesSaved").text = player_node.getPlayerDrugName() + " saved " + str(player_node.getLivesSaved()) + " lives!"
+			get_node("Winner/Profit").text = player_node.getPlayerDrugName() + " made $" + str(player_node.getProfitPerYear() * player_node.getPlayerYears()) + " in profit!"
+			get_node("ScoreBoard/Player1").text = "First: " + player_node.getPlayerDrugName() + " saved " + str(player_node.getLivesSaved()) + " lives and made $" + str(player_node.getProfitPerYear() * player_node.getPlayerYears()) + " in profit!"
+		elif i == 1:
+			get_node("ScoreBoard/Player2").text = "Second: " + player_node.getPlayerDrugName() + " saved " + str(player_node.getLivesSaved()) + " lives and made $" + str(player_node.getProfitPerYear() * player_node.getPlayerYears()) + " in profit!"
+			get_node("ScoreBoard/Player2").show()
+		elif i == 2:
+			get_node("ScoreBoard/Player3").text = "Third: " + player_node.getPlayerDrugName() + " saved " + str(player_node.getLivesSaved()) + " lives and made $" + str(player_node.getProfitPerYear() * player_node.getPlayerYears()) + " in profit!"
+			get_node("ScoreBoard/Player3").show()
+		else:
+			get_node("ScoreBoard/Player4").text = "Fourth: " + player_node.getPlayerDrugName() + " saved " + str(player_node.getLivesSaved()) + " lives and made $" + str(player_node.getProfitPerYear() * player_node.getPlayerYears()) + " in profit!"
+			get_node("ScoreBoard/Player4").show()

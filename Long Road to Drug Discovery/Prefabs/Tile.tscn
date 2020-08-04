@@ -1,10 +1,13 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Custom Assets/TileSprites/shipBeige.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/Tile.gd" type="Script" id=2]
 [ext_resource path="res://External Assets/Kenney Game Assets/2D assets/Alien Spaceship Pack/PNG/laserGreen_burst.png" type="Texture" id=3]
 [ext_resource path="res://External Assets/Kenney Game Assets/2D assets/Alien Spaceship Pack/PNG/laserYellow_burst.png" type="Texture" id=4]
 [ext_resource path="res://External Assets/Kenney Game Assets/2D assets/Alien Spaceship Pack/PNG/laserPink_burst.png" type="Texture" id=5]
+[ext_resource path="res://External Assets/Kenney Game Assets/Audio/Digital sounds (60 sounds)/zapThreeToneUp.ogg" type="AudioStream" id=6]
+[ext_resource path="res://External Assets/Kenney Game Assets/Audio/Digital sounds (60 sounds)/phaseJump1.ogg" type="AudioStream" id=7]
+[ext_resource path="res://External Assets/Kenney Game Assets/Audio/Digital sounds (60 sounds)/lowDown.ogg" type="AudioStream" id=8]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Teleport"
@@ -251,4 +254,13 @@ anims/UpAndDown = SubResource( 7 )
 position = Vector2( 0, -50 )
 rotation = 1.5708
 shape = SubResource( 8 )
+
+[node name="passTile" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 7 )
+
+[node name="levelUp" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 6 )
+
+[node name="tryAgain" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 8 )
 [connection signal="body_entered" from="." to="." method="_on_Tile_player_entered"]

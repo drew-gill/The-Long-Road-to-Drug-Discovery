@@ -240,6 +240,8 @@ func useColicense(player):
 
 func levelUp(player):
 	
+	$levelUp.play()
+	
 	#Teleport Out
 	if(TileType == tiletype.GOOD):
 		teleportOut(tiletype.GOOD)
@@ -271,7 +273,7 @@ func levelUp(player):
 	yield(get_tree().create_timer(0.8), "timeout")
 	
 func tryAgain(player):
-	
+	$tryAgain.play()
 	#Teleport Out
 	if(TileType == tiletype.GOOD):
 		teleportOut(tiletype.GOOD)
@@ -310,6 +312,7 @@ func StopPlayer(player):
 	player.setMovementTarget(self.position) #set target with offset
 	
 func _on_Tile_player_entered(player):
+	$passTile.play()
 	get_node("Sprite/AnimationPlayer").play("UpAndDown")
 	if(player.getCurrentTile() == tileNumber):
 		if(TileType == tiletype.START):
@@ -368,4 +371,5 @@ func _EndOfGame(player):
 	#use LandOnCost to set lives saved
 	elif(SpecialParameters == "LivesSaved"):
 		player.setLivesSaved(LandOnCost)
+		GlobalVar.allplayersfinished += 1
 		print("Player score: " + str(player.getFinalScore()))
