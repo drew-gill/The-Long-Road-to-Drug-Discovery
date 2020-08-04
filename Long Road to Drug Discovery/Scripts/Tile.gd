@@ -14,7 +14,8 @@ export (tiletype) var TileType = tiletype.START
 export var SpecialParameters = ""
 
 signal transfer_phaseandroll
-
+var usedBackup = false
+var colicense = false
 
 
 func _ready():
@@ -45,6 +46,11 @@ func _ready():
 		else:
 			$Sprite.texture = load("res://Custom Assets/TileSprites/laserBlue3.png")
 
+func _on_UseBackUp():
+	usedBackup = true
+
+func _on_colicense():
+	colicense = true
 
 func LandOn(player):
 	
@@ -68,68 +74,74 @@ func LandOn(player):
 	var forwardMovement = (LandOnLevel.getLevelNumber() - currentLevelNumber > 0)
 	
 	yield(get_tree().get_root().find_node("HUD2",true,false), "selectionMade")
-	
-	if(currentLevelNumber == 1):
-		if(forwardMovement):
-			levelUp(player)
-		else:
-			tryAgain(player)
+	if (usedBackup==false and colicense == false):
+		if(currentLevelNumber == 1):
+			if(forwardMovement):
+				levelUp(player)
+			else:
+				tryAgain(player)
+				
+		if(currentLevelNumber == 2):
+			if(forwardMovement):
+				levelUp(player)
+			else:
+				tryAgain(player)
+				
+		if(currentLevelNumber == 3):
+			if(forwardMovement):
+				levelUp(player)
+			else:
+				tryAgain(player)
+				
+		if(currentLevelNumber == 4):
+			if(forwardMovement):
+				levelUp(player)
+			else:
+				tryAgain(player)
+				
+		if(currentLevelNumber == 5):
+			if(forwardMovement):
+				levelUp(player)
+			else:
+				tryAgain(player)
+				
+		if(currentLevelNumber == 6):
+			if(forwardMovement):
+				levelUp(player)
+			else:
+				tryAgain(player)
 			
-	if(currentLevelNumber == 2):
-		if(forwardMovement):
-			#INSERT CODE FOR PURCHASING BACK-UP FORMULATIONS
-			levelUp(player)
-		else:
-			tryAgain(player)
+		if(currentLevelNumber == 7):
+			if(forwardMovement):
+				levelUp(player)
+			else:
+				tryAgain(player)
+				
+		if(currentLevelNumber == 8):
+			if(forwardMovement):
+				levelUp(player)
+			else:
+				tryAgain(player)
+				
+		if(currentLevelNumber == 9):
+			if(forwardMovement):
+				levelUp(player)
+			else:
+				tryAgain(player)
 			
-	if(currentLevelNumber == 3):
-		if(forwardMovement):
-			levelUp(player)
-		else:
-			tryAgain(player)
-			
-	if(currentLevelNumber == 4):
-		if(forwardMovement):
-			levelUp(player)
-		else:
-			tryAgain(player)
-			
-	if(currentLevelNumber == 5):
-		if(forwardMovement):
-			levelUp(player)
-		else:
-			tryAgain(player)
-			
-	if(currentLevelNumber == 6):
-		if(forwardMovement):
-			levelUp(player)
-		else:
-			tryAgain(player)
-			
-	if(currentLevelNumber == 7):
-		if(forwardMovement):
-			levelUp(player)
-		else:
-			tryAgain(player)
-			
-	if(currentLevelNumber == 8):
-		if(forwardMovement):
-			levelUp(player)
-		else:
-			tryAgain(player)
-			
-	if(currentLevelNumber == 9):
-		if(forwardMovement):
-			levelUp(player)
-		else:
-			tryAgain(player)
-		
-	if(currentLevelNumber == 10):
-		if(forwardMovement):
-			levelUp(player)
-		else:
-			tryAgain(player)
-			
+		if(currentLevelNumber == 10):
+			if(forwardMovement):
+				levelUp(player)
+			else:
+				tryAgain(player)
+	elif usedBackup == true and colicense == false:
+		usedBackup = false
+		useBackupFunction(player)
+	elif usedBackup == false and colicense == true:
+		colicense = false
+		player.alterPlayerMoney(-1*LandOnCost)
+		player.alterPlayerYears(-1*LandOnTime)
+		useColicense(player)
 
 func updateDialogue(player,num):
 	var dialogue = get_tree().get_root().find_node("Dialogue",true,false)
@@ -138,11 +150,97 @@ func updateDialogue(player,num):
 		emit_signal("transfer_phaseandroll", int(player.getCurrentLevel()), 0)
 	else:
 		emit_signal("transfer_phaseandroll", int(player.getCurrentLevel()), player.getCurrentTile())
-		
-		
-	 
+ 
+func useBackupFunction(player):
+	#Teleport Out
+	if(TileType == tiletype.GOOD):
+		teleportOut(tiletype.GOOD)
+	elif(TileType == tiletype.BAD):
+		teleportOut(tiletype.BAD)
+	elif(TileType == tiletype.NEUTRAL):
+		teleportOut(tiletype.NEUTRAL)
+	else:
+		teleportOut(tiletype.NEUTRAL)
+
+	yield(get_tree().create_timer(0.8), "timeout")
+	
+	# define where it's teleporting
+	var level
+	var starting
+	if(player.getCurrentLevel() == 3):
+		updateDialogue(player,0)
+		level = get_tree().get_root().find_node("Level3",true,false)
+		starting = level.getStartingTile()
+		starting.set_piece(player)
+	if(player.getCurrentLevel() == 5 or player.getCurrentLevel() == 6
+	or player.getCurrentLevel() == 7 or player.getCurrentLevel() == 8):
+		player.setCurrentLevel(4)
+		updateDialogue(player,0)
+		level = get_tree().get_root().find_node("Level4",true,false)
+		starting = level.getStartingTile()
+		starting.set_piece(player)
+	get_node("../../ScrollingCamera").SetActiveLevelNumber(player.getCurrentLevel())
+	
+	#Teleport In
+	if(TileType == tiletype.GOOD):
+		teleportIn(tiletype.GOOD, starting)
+	elif(TileType == tiletype.BAD):
+		teleportIn(tiletype.BAD, starting)
+	elif(TileType == tiletype.NEUTRAL):
+		teleportIn(tiletype.NEUTRAL, starting)
+	else:
+		teleportIn(tiletype.NEUTRAL, starting)
+	yield(get_tree().create_timer(0.8), "timeout")
+
+func useColicense(player):
+	
+	#Teleport Out
+	if(TileType == tiletype.GOOD):
+		teleportOut(tiletype.GOOD)
+	elif(TileType == tiletype.BAD):
+		teleportOut(tiletype.BAD)
+	elif(TileType == tiletype.NEUTRAL):
+		teleportOut(tiletype.NEUTRAL)
+	else:
+		teleportOut(tiletype.NEUTRAL)
+
+	yield(get_tree().create_timer(0.8), "timeout")
+	player.alterCurrentLevel(1)
+	updateDialogue(player,0)
+	
+	var level
+	var starting
+	if(player.getCurrentLevel() == 6):
+		level = get_tree().get_root().find_node("Level7",true,false)
+		starting = level.getStartingTile()
+		starting.set_piece(player)
+	if(player.getCurrentLevel() == 7):
+		level = get_tree().get_root().find_node("Level8",true,false)
+		starting = level.getStartingTile()
+		starting.set_piece(player)
+	if (player.getCurrentLevel() == 8):
+		level = get_tree().get_root().find_node("Level9",true,false)
+		starting = level.getStartingTile()
+		starting.set_piece(player)
+	get_node("../../ScrollingCamera").SetActiveLevelNumber(player.getCurrentLevel())
+	
+	#Teleport In
+	if(TileType == tiletype.GOOD):
+		teleportIn(tiletype.GOOD, starting)
+	elif(TileType == tiletype.BAD):
+		teleportIn(tiletype.BAD, starting)
+	elif(TileType == tiletype.NEUTRAL):
+		teleportIn(tiletype.NEUTRAL, starting)
+	else:
+		teleportIn(tiletype.NEUTRAL, starting)
+	
+	yield(get_tree().create_timer(0.8), "timeout")
+
+
 
 func levelUp(player):
+	
+	$levelUp.play()
 	
 	#Teleport Out
 	if(TileType == tiletype.GOOD):
@@ -175,7 +273,7 @@ func levelUp(player):
 	yield(get_tree().create_timer(0.8), "timeout")
 	
 func tryAgain(player):
-	
+	$tryAgain.play()
 	#Teleport Out
 	if(TileType == tiletype.GOOD):
 		teleportOut(tiletype.GOOD)
@@ -214,6 +312,7 @@ func StopPlayer(player):
 	player.setMovementTarget(self.position) #set target with offset
 	
 func _on_Tile_player_entered(player):
+	$passTile.play()
 	get_node("Sprite/AnimationPlayer").play("UpAndDown")
 	if(player.getCurrentTile() == tileNumber):
 		if(TileType == tiletype.START):
