@@ -35,6 +35,7 @@ func endTurn():
 	
 	if(GlobalVar.allplayersfinished == GlobalVar.num_players):
 		get_node("../ScrollingCamera/HUD2").hide()
+		get_node("../Level11/Label").hide()
 	else:
 		get_node("../ScrollingCamera/HUD2").show()
 	
