@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://Prefabs/Tile.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scripts/GameBoardScrolling.gd" type="Script" id=2]
@@ -15,30 +15,27 @@
 [ext_resource path="res://Graphics/stethoscope png hd doctor - 4411x3127.png" type="Texture" id=13]
 [ext_resource path="res://Graphics/imageedit_16_4949407495.png" type="Texture" id=14]
 [ext_resource path="res://Graphics/c057bb0f340652a920d8f1a514d0bc03-dna-chain-illustration-by-vexels.png" type="Texture" id=15]
+[ext_resource path="res://Graphics/imageedit_12_7303490012.png" type="Texture" id=16]
 [ext_resource path="res://fonts/FSAlbertPro-ExtraBold.ttf" type="DynamicFontData" id=17]
 
-[sub_resource type="DynamicFont" id=5]
+[sub_resource type="DynamicFont" id=1]
 size = 55
 font_data = ExtResource( 17 )
 
-[sub_resource type="DynamicFont" id=1]
+[sub_resource type="DynamicFont" id=2]
 size = 80
 font_data = ExtResource( 17 )
 
-[sub_resource type="DynamicFont" id=2]
-size = 59
-font_data = ExtResource( 17 )
-
 [sub_resource type="DynamicFont" id=3]
-size = 60
+size = 59
 font_data = ExtResource( 17 )
 
 [sub_resource type="DynamicFont" id=4]
 size = 60
 font_data = ExtResource( 17 )
 
-[sub_resource type="DynamicFont" id=9]
-size = 50
+[sub_resource type="DynamicFont" id=5]
+size = 60
 font_data = ExtResource( 17 )
 
 [sub_resource type="DynamicFont" id=6]
@@ -50,6 +47,10 @@ size = 50
 font_data = ExtResource( 17 )
 
 [sub_resource type="DynamicFont" id=8]
+size = 50
+font_data = ExtResource( 17 )
+
+[sub_resource type="DynamicFont" id=9]
 size = 50
 font_data = ExtResource( 17 )
 
@@ -150,10 +151,21 @@ __meta__ = {
 }
 
 [node name="Level9Background" type="TextureRect" parent="."]
-margin_left = 15739.0
-margin_top = -208.0
-margin_right = 17334.0
-margin_bottom = 1370.0
+margin_left = 15750.0
+margin_top = 176.0
+margin_right = 17292.0
+margin_bottom = 939.0
+texture = ExtResource( 16 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Level10Background" type="TextureRect" parent="."]
+margin_left = 17678.0
+margin_top = -199.0
+margin_right = 19270.0
+margin_bottom = 1395.0
 texture = ExtResource( 12 )
 expand = true
 __meta__ = {
@@ -170,7 +182,7 @@ margin_left = 768.617
 margin_top = 897.241
 margin_right = 1160.62
 margin_bottom = 953.241
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 1 )
 custom_colors/font_color_shadow = Color( 0.0470588, 0.384314, 0.564706, 1 )
 custom_constants/shadow_offset_x = -3
 text = "In Vitro Studies"
@@ -246,7 +258,7 @@ margin_left = 1519.15
 margin_top = 886.969
 margin_right = 1911.15
 margin_bottom = 942.969
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 1 )
 custom_colors/font_color_shadow = Color( 0.0470588, 0.384314, 0.564706, 1 )
 custom_constants/shadow_offset_x = -3
 text = "In Vivo Studies"
@@ -316,11 +328,11 @@ LevelNumber = 3
 StartingTilePath = NodePath("StartingTile")
 
 [node name="Label" type="Label" parent="Level3"]
-margin_left = 849.567
-margin_top = 893.864
-margin_right = 1536.57
-margin_bottom = 949.864
-custom_fonts/font = SubResource( 5 )
+margin_left = 829.408
+margin_top = 830.868
+margin_right = 1516.41
+margin_bottom = 886.868
+custom_fonts/font = SubResource( 1 )
 custom_colors/font_color_shadow = Color( 0.0470588, 0.384314, 0.564706, 1 )
 custom_constants/shadow_offset_x = -3
 text = "Safety and Toxicity Testing"
@@ -389,11 +401,11 @@ LevelNumber = 4
 StartingTilePath = NodePath("StartingTile")
 
 [node name="Label" type="Label" parent="Level4"]
-margin_left = 530.49
-margin_top = 965.117
-margin_right = 1732.49
-margin_bottom = 1021.12
-custom_fonts/font = SubResource( 5 )
+margin_left = 475.053
+margin_top = 967.637
+margin_right = 1677.05
+margin_bottom = 1023.64
+custom_fonts/font = SubResource( 1 )
 custom_colors/font_color_shadow = Color( 0.0470588, 0.384314, 0.564706, 1 )
 custom_constants/shadow_offset_x = -3
 text = "File IND (Investigational New Drug) Application"
@@ -467,14 +479,14 @@ LevelNumber = 5
 StartingTilePath = NodePath("StartingTile")
 
 [node name="Label" type="Label" parent="Level5"]
-margin_left = 728.687
-margin_top = 853.215
-margin_right = 1930.69
-margin_bottom = 909.215
-custom_fonts/font = SubResource( 5 )
+margin_left = 817.194
+margin_top = 787.484
+margin_right = 1642.19
+margin_bottom = 843.484
+custom_fonts/font = SubResource( 1 )
 custom_colors/font_color_shadow = Color( 0.0470588, 0.384314, 0.564706, 1 )
 custom_constants/shadow_offset_x = -3
-text = "Phase 1 Testing -- First in Human"
+text = "Phase 1 Testing - First in Human"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -546,7 +558,7 @@ margin_left = 748.517
 margin_top = 929.042
 margin_right = 1950.52
 margin_bottom = 985.042
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 1 )
 custom_colors/font_color_shadow = Color( 0.0470588, 0.384314, 0.564706, 1 )
 custom_constants/shadow_offset_x = -3
 text = "Phase 2 Clinical Trials"
@@ -622,7 +634,7 @@ margin_left = 768.432
 margin_top = 875.228
 margin_right = 1970.43
 margin_bottom = 931.228
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 1 )
 custom_colors/font_color_shadow = Color( 0.0470588, 0.384314, 0.564706, 1 )
 custom_constants/shadow_offset_x = -3
 text = "Phase 3 Clinical Trials"
@@ -701,7 +713,7 @@ margin_left = 1272.41
 margin_top = 993.627
 margin_right = 2474.41
 margin_bottom = 1049.63
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 1 )
 custom_colors/font_color_shadow = Color( 0.0470588, 0.384314, 0.564706, 1 )
 custom_constants/shadow_offset_x = -3
 text = "File NDA for Approval"
@@ -770,11 +782,11 @@ LevelNumber = 9
 StartingTilePath = NodePath("StartingTile")
 
 [node name="Label" type="Label" parent="Level9"]
-margin_left = 875.262
-margin_top = 850.811
-margin_right = 2077.26
-margin_bottom = 906.811
-custom_fonts/font = SubResource( 5 )
+margin_left = 860.0
+margin_top = 885.0
+margin_right = 1537.0
+margin_bottom = 941.0
+custom_fonts/font = SubResource( 1 )
 custom_colors/font_color_shadow = Color( 0.0470588, 0.384314, 0.564706, 1 )
 custom_constants/shadow_offset_x = -3
 text = "Launch your new medicine!"
@@ -783,7 +795,7 @@ __meta__ = {
 }
 
 [node name="StartingTile" parent="Level9" instance=ExtResource( 1 )]
-position = Vector2( 517.22, 601.231 )
+position = Vector2( 520.379, 466.383 )
 tileNumber = 0
 LandOnCost = 0
 LandOnTime = 0
@@ -791,7 +803,7 @@ NextTilePath = NodePath("../Tile1")
 LandOnLevelPath = NodePath("..")
 
 [node name="Tile1" parent="Level9" instance=ExtResource( 1 )]
-position = Vector2( 717.836, 510.335 )
+position = Vector2( 832.227, 579.257 )
 LandOnCost = 800000000
 LandOnTime = 0
 NextTilePath = NodePath("../Tile2")
@@ -800,7 +812,7 @@ TileType = 2
 SpecialParameters = "ProfitPerYear"
 
 [node name="Tile2" parent="Level9" instance=ExtResource( 1 )]
-position = Vector2( 921.216, 638.157 )
+position = Vector2( 998.415, 751.316 )
 tileNumber = 2
 LandOnCost = 1000000000
 LandOnTime = 0
@@ -810,7 +822,7 @@ TileType = 2
 SpecialParameters = "ProfitPerYear"
 
 [node name="Tile3" parent="Level9" instance=ExtResource( 1 )]
-position = Vector2( 1175.97, 478.493 )
+position = Vector2( 1141.23, 483.612 )
 tileNumber = 3
 LandOnCost = 1500000000
 LandOnTime = 0
@@ -820,7 +832,7 @@ TileType = 3
 SpecialParameters = "ProfitPerYear"
 
 [node name="Tile4" parent="Level9" instance=ExtResource( 1 )]
-position = Vector2( 1433.06, 647.918 )
+position = Vector2( 1407.13, 677.884 )
 tileNumber = 4
 LandOnCost = 2000000000
 LandOnTime = 0
@@ -830,7 +842,7 @@ TileType = 3
 SpecialParameters = "ProfitPerYear"
 
 [node name="Tile5" parent="Level9" instance=ExtResource( 1 )]
-position = Vector2( 1633.16, 510.335 )
+position = Vector2( 1640.72, 630.005 )
 tileNumber = 5
 LandOnCost = 3500000000
 LandOnTime = 0
@@ -840,7 +852,7 @@ TileType = 1
 SpecialParameters = "ProfitPerYear"
 
 [node name="Tile6" parent="Level9" instance=ExtResource( 1 )]
-position = Vector2( 1816.24, 588.927 )
+position = Vector2( 1769.17, 446.321 )
 tileNumber = 6
 LandOnCost = 5000000000
 LandOnTime = 0
@@ -855,11 +867,11 @@ LevelNumber = 10
 StartingTilePath = NodePath("StartingTile")
 
 [node name="Label" type="Label" parent="Level10"]
-margin_left = 202.264
-margin_top = 894.465
-margin_right = 1786.26
-margin_bottom = 950.465
-custom_fonts/font = SubResource( 5 )
+margin_left = 483.09
+margin_top = 818.59
+margin_right = 1941.09
+margin_bottom = 874.59
+custom_fonts/font = SubResource( 1 )
 custom_colors/font_color_shadow = Color( 0.0470588, 0.384314, 0.564706, 1 )
 custom_constants/shadow_offset_x = -3
 text = "How many lives were saved or improved by your medicine?"
@@ -868,7 +880,7 @@ __meta__ = {
 }
 
 [node name="StartingTile" parent="Level10" instance=ExtResource( 1 )]
-position = Vector2( 381.648, 658.312 )
+position = Vector2( 536.916, 611.881 )
 tileNumber = 0
 LandOnCost = 0
 LandOnTime = 0
@@ -876,7 +888,7 @@ NextTilePath = NodePath("../../Level10/Tile1")
 LandOnLevelPath = NodePath("..")
 
 [node name="Tile1" parent="Level10" instance=ExtResource( 1 )]
-position = Vector2( 504.167, 767.642 )
+position = Vector2( 739.954, 535.075 )
 LandOnCost = 100000
 LandOnTime = 0
 NextTilePath = NodePath("../../Level10/Tile2")
@@ -885,7 +897,7 @@ TileType = 2
 SpecialParameters = "LivesSaved"
 
 [node name="Tile2" parent="Level10" instance=ExtResource( 1 )]
-position = Vector2( 619.591, 668.734 )
+position = Vector2( 943.255, 654.983 )
 tileNumber = 2
 LandOnCost = 250000
 LandOnTime = 0
@@ -895,7 +907,7 @@ TileType = 2
 SpecialParameters = "LivesSaved"
 
 [node name="Tile3" parent="Level10" instance=ExtResource( 1 )]
-position = Vector2( 707.312, 786.075 )
+position = Vector2( 1198.3, 520.981 )
 tileNumber = 3
 LandOnCost = 400000
 LandOnTime = 0
@@ -905,7 +917,7 @@ TileType = 3
 SpecialParameters = "LivesSaved"
 
 [node name="Tile4" parent="Level10" instance=ExtResource( 1 )]
-position = Vector2( 835.218, 665.912 )
+position = Vector2( 1450.82, 654.15 )
 tileNumber = 4
 LandOnCost = 800000
 LandOnTime = 0
@@ -915,7 +927,7 @@ TileType = 3
 SpecialParameters = "LivesSaved"
 
 [node name="Tile5" parent="Level10" instance=ExtResource( 1 )]
-position = Vector2( 921.443, 795.622 )
+position = Vector2( 1650.89, 534.938 )
 tileNumber = 5
 LandOnCost = 1200000
 LandOnTime = 0
@@ -925,7 +937,7 @@ TileType = 1
 SpecialParameters = "LivesSaved"
 
 [node name="Tile6" parent="Level10" instance=ExtResource( 1 )]
-position = Vector2( 1045.05, 692.586 )
+position = Vector2( 1851.84, 611.809 )
 tileNumber = 6
 LandOnCost = 5000000
 LandOnTime = 0
@@ -944,7 +956,7 @@ margin_left = 129.863
 margin_top = 764.013
 margin_right = 1721.86
 margin_bottom = 820.013
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 1 )
 custom_colors/font_color_shadow = Color( 0.0470588, 0.384314, 0.564706, 1 )
 custom_constants/shadow_offset_x = -3
 text = "You've launched your medicine! Waiting until all players finish..."
@@ -960,10 +972,9 @@ LandOnTime = 0
 LandOnLevelPath = NodePath("..")
 
 [node name="Winner" type="VBoxContainer" parent="."]
-visible = false
-margin_left = 19460.1
-margin_top = 95.7646
-margin_right = 20423.1
+margin_left = 19478.5
+margin_top = 95.765
+margin_right = 20441.5
 margin_bottom = 305.765
 __meta__ = {
 "_edit_use_anchors_": false
@@ -972,7 +983,8 @@ __meta__ = {
 [node name="PlayerWins" type="Label" parent="Winner"]
 margin_right = 963.0
 margin_bottom = 81.0
-custom_fonts/font = SubResource( 1 )
+grow_horizontal = 2
+custom_fonts/font = SubResource( 2 )
 custom_colors/font_color_shadow = Color( 0, 0.67451, 0.92549, 1 )
 custom_constants/shadow_offset_x = 0
 custom_constants/shadow_offset_y = 5
@@ -986,7 +998,8 @@ __meta__ = {
 margin_top = 85.0
 margin_right = 963.0
 margin_bottom = 145.0
-custom_fonts/font = SubResource( 2 )
+grow_horizontal = 2
+custom_fonts/font = SubResource( 3 )
 text = "Drug Name saved 10,000 Lives!"
 align = 1
 
@@ -994,15 +1007,15 @@ align = 1
 margin_top = 149.0
 margin_right = 963.0
 margin_bottom = 210.0
-custom_fonts/font = SubResource( 3 )
+grow_horizontal = 2
+custom_fonts/font = SubResource( 4 )
 text = "Drug Name made $10,000 in profit!"
 align = 1
 
 [node name="ScoreBoard" type="VBoxContainer" parent="."]
-visible = false
-margin_left = 19251.1
+margin_left = 19269.5
 margin_top = 368.765
-margin_right = 20632.1
+margin_right = 20650.5
 margin_bottom = 665.765
 custom_constants/separation = 8
 __meta__ = {
@@ -1012,7 +1025,7 @@ __meta__ = {
 [node name="Score" type="Label" parent="ScoreBoard"]
 margin_right = 1381.0
 margin_bottom = 61.0
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 5 )
 text = "SCORE BOARD"
 align = 1
 
@@ -1020,7 +1033,7 @@ align = 1
 margin_top = 69.0
 margin_right = 1381.0
 margin_bottom = 120.0
-custom_fonts/font = SubResource( 9 )
+custom_fonts/font = SubResource( 6 )
 text = "1. Drug Name: 10,000 lives saved and made $10,000 in profit"
 
 [node name="Player2" type="Label" parent="ScoreBoard"]
@@ -1028,7 +1041,7 @@ visible = false
 margin_top = 128.0
 margin_right = 1155.0
 margin_bottom = 179.0
-custom_fonts/font = SubResource( 6 )
+custom_fonts/font = SubResource( 7 )
 text = "2. Drug Name: 10,000 lives saved and made $10,000 in profit"
 
 [node name="Player3" type="Label" parent="ScoreBoard"]
@@ -1036,7 +1049,7 @@ visible = false
 margin_top = 128.0
 margin_right = 1155.0
 margin_bottom = 179.0
-custom_fonts/font = SubResource( 7 )
+custom_fonts/font = SubResource( 8 )
 text = "3. Drug Name: 10,000 lives saved and made $10,000 in profit"
 
 [node name="Player4" type="Label" parent="ScoreBoard"]
@@ -1044,7 +1057,7 @@ visible = false
 margin_top = 128.0
 margin_right = 1155.0
 margin_bottom = 179.0
-custom_fonts/font = SubResource( 8 )
+custom_fonts/font = SubResource( 9 )
 text = "4. Drug Name: 10,000 lives saved and made $10,000 in profit"
 
 [node name="PlayerTracker" type="Node2D" parent="."]

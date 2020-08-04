@@ -183,13 +183,14 @@ __meta__ = {
 }
 
 [node name="LevelText" type="Label" parent="."]
-margin_left = 1554.0
-margin_top = 189.0
-margin_right = 1747.0
-margin_bottom = 274.0
+margin_left = 1587.98
+margin_top = 181.449
+margin_right = 1780.98
+margin_bottom = 266.449
 custom_fonts/font = ExtResource( 6 )
 text = "Level: 1
 Roll: 1"
+align = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -323,7 +324,7 @@ __meta__ = {
 stream = ExtResource( 15 )
 
 [node name="Dice" type="AnimatedSprite" parent="."]
-position = Vector2( 1622.68, 397.031 )
+position = Vector2( 1685.09, 339.939 )
 scale = Vector2( 0.146556, 0.146556 )
 frames = SubResource( 5 )
 [connection signal="pressed" from="Phase1" to="." method="_on_Phase1_pressed"]
