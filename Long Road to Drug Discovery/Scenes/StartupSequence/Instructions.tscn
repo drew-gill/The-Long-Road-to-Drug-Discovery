@@ -12,7 +12,7 @@ size = 60
 font_data = ExtResource( 2 )
 
 [sub_resource type="DynamicFont" id=3]
-size = 40
+size = 25
 font_data = ExtResource( 2 )
 
 [node name="Control" type="Control"]
@@ -23,10 +23,10 @@ __meta__ = {
 }
 
 [node name="Back" type="Button" parent="."]
-margin_left = 490.0
-margin_top = 575.0
-margin_right = 790.0
-margin_bottom = 664.0
+margin_left = 488.413
+margin_top = 682.943
+margin_right = 788.413
+margin_bottom = 771.943
 custom_fonts/font = SubResource( 1 )
 text = "BACK"
 script = ExtResource( 1 )
@@ -35,10 +35,10 @@ __meta__ = {
 }
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
-margin_left = 98.0
-margin_top = 78.0
-margin_right = 1202.0
-margin_bottom = 543.0
+margin_left = 158.613
+margin_top = 61.1631
+margin_right = 1262.61
+margin_bottom = 588.163
 custom_constants/separation = 16
 __meta__ = {
 "_edit_use_anchors_": false
@@ -56,10 +56,73 @@ text = "INSTRUCTIONS"
 [node name="InstructionList" type="Label" parent="VBoxContainer"]
 margin_top = 77.0
 margin_right = 1104.0
-margin_bottom = 465.0
+margin_bottom = 527.0
 size_flags_vertical = 3
 custom_fonts/font = SubResource( 3 )
-text = "1. blah blah blah
-2. blah blah blah
-3. blah blah blah"
+text = "[ Setup ]"
+
+[node name="InstructionList3" type="Label" parent="VBoxContainer/InstructionList"]
+margin_left = 35.0
+margin_top = 34.0
+margin_right = 1127.0
+margin_bottom = 222.0
+size_flags_vertical = 3
+custom_fonts/font = SubResource( 3 )
+text = "- To Start playing the game, select \"New game\"
+          - Select the number of players
+		                    - From 1 to 4
+							          - Identify Player Disease and Drug Name
+									                    - Select Player (mouse)
+														                    -Use drop down to select disease
+																			                            - Breast Cancer
+																																													                            - Covid-19
+																																													                            - Alzheimer's
+																		 														                    - Type drug name for disease
+																																                    - Select continue"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="InstructionList2" type="Label" parent="."]
+margin_left = 789.437
+margin_top = 136.569
+margin_right = 1893.44
+margin_bottom = 353.569
+size_flags_vertical = 3
+custom_fonts/font = SubResource( 3 )
+text = "[ Gameplay ]"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="InstructionList3" type="Label" parent="InstructionList2"]
+margin_left = -7.3786
+margin_top = 29.762
+margin_right = 1084.62
+margin_bottom = 506.762
+size_flags_vertical = 3
+custom_fonts/font = SubResource( 3 )
+text = "          - By Default
+                  - Money: $1B
+                  - Years: 20
+                  - Backup formulations: 0
+                  - Player 1's turn
+         - During Turn
+                  - Roll the dice by selecting the \"Roll the Dice\" button
+                           - Player (mouse) will move automatically
+                           - Message will be displayed about your progression or regression in the drug discovery process. 
+                                    - Can result in a subtraction of money
+                                    - Can reuslt in a subtraction in years
+                  - To end turn, select \"End Turn\" button 
+                           - Player (mouse) will be teleported to the respecive tile piece
+                                    - If you land on green tile,  you will advance to the next phase
+                                    - If you land on yellow tile,  you will advance to the next phase
+                                    - If you land on a red tile, you will regress to the begining of the phase.
+                           - Screen will transition (if neccesary) to the respective phase.
+                           - Screen wll transition (if necceary) to the next player's phase
+         - Next Player Turn Starts
+		"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="pressed" from="Back" to="Back" method="_on_Back_pressed"]
