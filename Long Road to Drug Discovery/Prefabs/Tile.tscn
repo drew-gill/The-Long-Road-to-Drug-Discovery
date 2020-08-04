@@ -60,6 +60,60 @@ tracks/1/keys = {
 "values": [ Vector2( 1e-05, 1e-05 ), Vector2( 1, 1 ), Vector2( 0, 0 ) ]
 }
 
+[sub_resource type="Animation" id=3]
+resource_name = "Teleport"
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 180.0, 360.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 1, 1 ), Vector2( 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "TeleportIn"
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, -180.0, -360.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1e-05, 1e-05 ), Vector2( 1, 1 ), Vector2( 0, 0 ) ]
+}
+
 [sub_resource type="Animation" id=5]
 resource_name = "Teleport"
 tracks/0/type = "value"
@@ -115,60 +169,6 @@ tracks/1/keys = {
 }
 
 [sub_resource type="Animation" id=7]
-resource_name = "Teleport"
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:rotation_degrees")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.5, 1 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
-"update": 0,
-"values": [ 0.0, 180.0, 360.0 ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath(".:scale")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0, 0.5, 1 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
-"update": 0,
-"values": [ Vector2( 0, 0 ), Vector2( 1, 1 ), Vector2( 0, 0 ) ]
-}
-
-[sub_resource type="Animation" id=8]
-resource_name = "TeleportIn"
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:rotation_degrees")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.5, 1 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
-"update": 0,
-"values": [ 0.0, -180.0, -360.0 ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath(".:scale")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0, 0.5, 1 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
-"update": 0,
-"values": [ Vector2( 1e-05, 1e-05 ), Vector2( 1, 1 ), Vector2( 0, 0 ) ]
-}
-
-[sub_resource type="Animation" id=3]
 length = 2.0
 loop = true
 tracks/0/type = "value"
@@ -201,7 +201,7 @@ tracks/1/keys = {
 } ]
 }
 
-[sub_resource type="CapsuleShape2D" id=4]
+[sub_resource type="CapsuleShape2D" id=8]
 radius = 7.70219
 height = 15.2519
 
@@ -227,8 +227,8 @@ texture = ExtResource( 4 )
 offset = Vector2( 0, 50 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Neutral Teleport"]
-anims/Teleport = SubResource( 5 )
-anims/TeleportIn = SubResource( 6 )
+anims/Teleport = SubResource( 3 )
+anims/TeleportIn = SubResource( 4 )
 
 [node name="Bad Teleport" type="Sprite" parent="."]
 position = Vector2( -4.02435e-06, -7.0364e-13 )
@@ -237,18 +237,18 @@ texture = ExtResource( 5 )
 offset = Vector2( 0, 50 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Bad Teleport"]
-anims/Teleport = SubResource( 7 )
-anims/TeleportIn = SubResource( 8 )
+anims/Teleport = SubResource( 5 )
+anims/TeleportIn = SubResource( 6 )
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( -1.34282e-05, 2.59388 )
 texture = ExtResource( 1 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite"]
-anims/UpAndDown = SubResource( 3 )
+anims/UpAndDown = SubResource( 7 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0, -50 )
 rotation = 1.5708
-shape = SubResource( 4 )
+shape = SubResource( 8 )
 [connection signal="body_entered" from="." to="." method="_on_Tile_player_entered"]

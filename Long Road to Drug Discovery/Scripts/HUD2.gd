@@ -7,6 +7,7 @@ var playerTracker
 
 signal beginMoving
 signal selectionMade
+signal useBackup
 signal transfer_phaseandroll
 
 func _ready():
@@ -44,18 +45,33 @@ func _on_BackUp_pressed():
 
 func _on_Phase1_pressed():
 	playerTracker.endTurn()
+	emit_signal("selectionMade")
 
 
 func _on_UseBackUp_pressed():
-	playerTracker.endTurn()
+	if currentPlayer.getPlayerBackups()>0:
+		var level = get_tree().get_root().find_node("Level"+str(currentPlayer.getCurrentLevel()),true,false)
+		var tile = level.get_node("Tile"+str(currentPlayer.getCurrentTile()))
+		connect("useBackup", tile, "_on_UseBackUp")
+		emit_signal("useBackup")
+		currentPlayer.alterPlayerBackups(-1)
+		playerTracker.endTurn()
+		emit_signal("selectionMade")
 
 
 func _on_CoLicense_pressed():
+	currentPlayer.colicense()
+	currentPlayer.alterPlayerYears(-1)
+	var level = get_tree().get_root().find_node("Level"+str(currentPlayer.getCurrentLevel()),true,false)
+	var tile = level.get_node("Tile"+str(currentPlayer.getCurrentTile()))
+	connect("colicense", tile, "_on_colicense")
+	emit_signal("colicense")
 	playerTracker.endTurn()
+	emit_signal("selectionMade")
 
 func _on_Phase2_pressed():
 	playerTracker.endTurn()
-
+	emit_signal("selectionMade")
 	
 
 func addCommas(value):
@@ -126,7 +142,8 @@ func showButtons():
 			match currentPlayer.getCurrentTile():
 				1,2,3,6:
 					$Phase1.show()
-					$UseBackUp.show()
+					if currentPlayer.getPlayerBackups()>0:
+						$UseBackUp.show()
 				4,5:
 					$EndTurn.show()
 		4:
@@ -135,7 +152,8 @@ func showButtons():
 			match currentPlayer.getCurrentTile():
 				1 , 2:
 					$Phase1.show()
-					$UseBackUp.show()
+					if currentPlayer.getPlayerBackups()>0:
+						$UseBackUp.show()
 				3,4,5,6:
 					$EndTurn.show()
 		6:
@@ -144,7 +162,8 @@ func showButtons():
 					$EndTurn.show()
 				3,4,5:
 					$Phase1.show()
-					$UseBackUp.show()
+					if currentPlayer.getPlayerBackups()>0:
+						$UseBackUp.show()
 					$CoLicense.show()
 		7:
 			match currentPlayer.getCurrentTile():
@@ -152,7 +171,8 @@ func showButtons():
 					$EndTurn.show()
 				2:
 					$Phase1.show()
-					$UseBackUp.show()
+					if currentPlayer.getPlayerBackups()>0:
+						$UseBackUp.show()
 					$CoLicense.show()
 				6:
 					$EndTurn.show()
@@ -162,7 +182,8 @@ func showButtons():
 					$EndTurn.show()
 				2:
 					$Phase1.show()
-					$UseBackUp.show()
+					if currentPlayer.getPlayerBackups()>0:
+						$UseBackUp.show()
 					$CoLicense.show()
 				5,6:
 					$Phase2.show()
@@ -170,7 +191,6 @@ func showButtons():
 			$EndTurn.show()
 		10:
 			$EndTurn.show()
-	$EndTurn.show()
 
 
 func _on_RollDice_pressed():

@@ -10,6 +10,7 @@ var playerDrugName = ""
 var money = 1000000000
 var years = 20
 var backups = 0
+var CL = false
 
 
 #FINAL SCORE VARIABLES
@@ -104,6 +105,9 @@ func setProfitPerYear(newValue):
 
 func getProfitPerYear():
 	return profitPerYear
+
+func colicense():
+	CL = true
 	
 func _physics_process(delta):
 	if(playerNumber == get_node("../PlayerTracker").getCurrentPlayerNumber()):
