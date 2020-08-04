@@ -33,10 +33,12 @@ func _showWarning(text):
 	$Warning.show()
 
 func _on_EndTurn_pressed():
+	$clickSound.play()
 	playerTracker.endTurn()
 	emit_signal("selectionMade")
 
 func _on_BackUp_pressed():
+	$clickSound.play()
 	currentPlayer = playerTracker.getCurrentPlayerNode()
 	if currentPlayer.getPlayerBackups()<3:
 		currentPlayer.alterPlayerBackups(1)
@@ -44,17 +46,21 @@ func _on_BackUp_pressed():
 
 
 func _on_Phase1_pressed():
+	$clickSound.play()
 	playerTracker.endTurn()
 
 
 func _on_UseBackUp_pressed():
+	$clickSound.play()
 	playerTracker.endTurn()
 
 
 func _on_CoLicense_pressed():
+	$clickSound.play()
 	playerTracker.endTurn()
 
 func _on_Phase2_pressed():
+	$clickSound.play()
 	playerTracker.endTurn()
 
 	
@@ -175,11 +181,18 @@ func showButtons():
 
 
 func _on_RollDice_pressed():
+	$clickSound.play()
 	var roll
 	if(cheatRoll > 0):
 		roll = cheatRoll
 	else:
 		roll = randi()%6 + 1
+		
+	for i in range(7):
+		$Dice.frame = i
+		yield(get_tree().create_timer(0.25), "timeout")
+		
+	$Dice.frame = roll
 	currentPlayer.setCurrentTile(roll)
 	connect("transfer_phaseandroll", get_node("DialogueBox/Dialogue"), "_on_transfer_phaseandroll")
 	emit_signal("transfer_phaseandroll", int(currentPlayer.getCurrentLevel()), int(currentPlayer.getCurrentTile()))
