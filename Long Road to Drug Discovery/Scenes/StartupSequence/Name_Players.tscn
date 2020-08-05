@@ -104,7 +104,7 @@ margin_top = 51.0
 margin_right = 100.0
 margin_bottom = 92.0
 size_flags_horizontal = 4
-icon = ExtResource( 4 )
+icon = ExtResource( 5 )
 flat = true
 
 [node name="Disease1" type="HBoxContainer" parent="Player1"]
@@ -185,7 +185,7 @@ margin_top = 51.0
 margin_right = 100.0
 margin_bottom = 92.0
 size_flags_horizontal = 4
-icon = ExtResource( 5 )
+icon = ExtResource( 4 )
 flat = true
 
 [node name="Disease2" type="HBoxContainer" parent="Player2"]

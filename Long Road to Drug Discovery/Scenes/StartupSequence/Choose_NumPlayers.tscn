@@ -125,7 +125,7 @@ margin_left = 353.363
 margin_top = 233.672
 margin_right = 412.363
 margin_bottom = 273.672
-texture = ExtResource( 4 )
+texture = ExtResource( 5 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -136,7 +136,7 @@ margin_left = 287.35
 margin_top = 227.86
 margin_right = 346.35
 margin_bottom = 267.86
-texture = ExtResource( 5 )
+texture = ExtResource( 4 )
 
 [node name="Player3" type="TextureRect" parent="Players"]
 visible = false

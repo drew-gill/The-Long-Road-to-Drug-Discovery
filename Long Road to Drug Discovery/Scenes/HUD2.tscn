@@ -55,6 +55,8 @@ margin_top = 39.4678
 margin_right = 1105.11
 margin_bottom = 95.4678
 custom_fonts/font = SubResource( 1 )
+custom_colors/font_color_shadow = Color( 0.211765, 0.384314, 0.803922, 1 )
+custom_constants/shadow_offset_x = -3
 __meta__ = {
 "_edit_use_anchors_": false
 }
