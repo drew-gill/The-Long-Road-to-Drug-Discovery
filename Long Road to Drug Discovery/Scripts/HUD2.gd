@@ -245,3 +245,11 @@ func _on_MoreInfo_pressed():
 
 func _on_cheatRoll_pressed(extra_arg_0):
 	cheatRoll = extra_arg_0
+
+
+func _on_ToggleMusic_toggled(button_pressed):
+	var musicNode = get_node("/root/GameBoard/BackgroundMusic")
+	if($ToggleMusic.is_pressed()):
+		musicNode.playing = true
+	else:
+		musicNode.playing = false
