@@ -209,7 +209,10 @@ func _on_RollDice_pressed():
 		
 	for i in range(7):
 		$Dice.frame = i
-		yield(get_tree().create_timer(0.25), "timeout")
+		if(GlobalVar.fastMode):
+			yield(get_tree().create_timer(0.10), "timeout")
+		else:
+			yield(get_tree().create_timer(0.25), "timeout")
 		
 	$Dice.frame = roll
 	currentPlayer.setCurrentTile(roll)

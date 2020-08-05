@@ -106,6 +106,7 @@ func _on_BackButton_pressed():
 	get_tree().change_scene("res://Scenes/StartupSequence/Choose_NumPlayers.tscn")
 
 func _on_ContinueButton_pressed():
+	GlobalVar.fastMode = $FastModeToggle.is_pressed()
 	get_tree().change_scene("res://Scenes/GameBoardScrolling.tscn")
 	
 func add_items():

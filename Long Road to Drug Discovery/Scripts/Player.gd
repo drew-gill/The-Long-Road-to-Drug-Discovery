@@ -30,6 +30,9 @@ func _ready():
 	movementTarget = self.position
 	connect("player_finished", get_node("/root/GameBoard/Level10"), "_on_player_finished")
 	
+func setPlayerSpeed(newSpeed):
+	movementSpeed = newSpeed
+	
 func setPlayerDisease(disease):
 	playerDisease = disease
 

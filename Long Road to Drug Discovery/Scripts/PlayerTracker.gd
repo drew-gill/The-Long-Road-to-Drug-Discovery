@@ -30,7 +30,12 @@ func endTurn():
 	
 	nextInTurnSequence()
 	get_node("../ScrollingCamera/HUD2").hide()
-	yield(get_tree().create_timer(2.0), "timeout")
+	
+	if(GlobalVar.fastMode):
+		yield(get_tree().create_timer(2.0), "timeout")
+	else:
+		yield(get_tree().create_timer(4.0), "timeout")
+	
 	get_node("../ScrollingCamera").SetActiveLevelNumber(getCurrentPlayerNode().getCurrentLevel())
 	
 	if(GlobalVar.allplayersfinished == GlobalVar.num_players):

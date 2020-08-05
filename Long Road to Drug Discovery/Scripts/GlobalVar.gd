@@ -3,6 +3,8 @@ extends Node
 var num_players = 1
 var allplayersfinished = 0
 
+var fastMode = false
+
 #Player 1 Attributes
 var Disease1 = ""
 var DrugName1 = ""

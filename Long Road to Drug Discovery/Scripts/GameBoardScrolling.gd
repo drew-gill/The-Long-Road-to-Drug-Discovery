@@ -15,6 +15,12 @@ func generate_pieces() -> void:
 		new_piece.set_name("Player" + str(GlobalVar.num_players - i))
 		var starting = get_node("Level1/StartingTile")
 		starting.set_piece(new_piece)
+		
+		if(GlobalVar.fastMode):
+			new_piece.setPlayerSpeed(500)
+		else:
+			new_piece.setPlayerSpeed(125)
+		
 		if GlobalVar.num_players - i == 1:
 			new_piece.setPlayerMoney(GlobalVar.Budget1)
 			new_piece.setPlayerYears(GlobalVar.Time1)
