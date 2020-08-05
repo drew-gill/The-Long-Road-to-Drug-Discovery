@@ -1,7 +1,14 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Scripts/Instructions.gd" type="Script" id=1]
 [ext_resource path="res://fonts/FSAlbertPro-ExtraBold.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://External Assets/Kenney Game Assets/2D assets/Alien Spaceship Pack/PNG/shipBeige_damage1.png" type="Texture" id=3]
+[ext_resource path="res://External Assets/Kenney Game Assets/2D assets/Alien Spaceship Pack/PNG/shipGreen_damage1.png" type="Texture" id=4]
+[ext_resource path="res://Custom Assets/TileSprites/laserPink3.png" type="Texture" id=5]
+[ext_resource path="res://Custom Assets/TileSprites/laserBeige3.png" type="Texture" id=6]
+[ext_resource path="res://Custom Assets/TileSprites/laserGreen3.png" type="Texture" id=7]
+[ext_resource path="res://Custom Assets/TileSprites/shipPink.png" type="Texture" id=8]
+[ext_resource path="res://Custom Assets/MouseAnimations/mouseGray.png" type="Texture" id=9]
 
 [sub_resource type="DynamicFont" id=1]
 size = 30
@@ -45,7 +52,7 @@ __meta__ = {
 }
 
 [node name="Title" type="Label" parent="VBoxContainer"]
-margin_right = 1104.0
+margin_right = 1103.0
 margin_bottom = 61.0
 custom_fonts/font = SubResource( 2 )
 custom_colors/font_color_shadow = Color( 0, 0.67451, 0.92549, 1 )
@@ -55,8 +62,8 @@ text = "INSTRUCTIONS"
 
 [node name="InstructionList" type="Label" parent="VBoxContainer"]
 margin_top = 77.0
-margin_right = 1104.0
-margin_bottom = 527.0
+margin_right = 1103.0
+margin_bottom = 526.0
 size_flags_vertical = 3
 custom_fonts/font = SubResource( 3 )
 text = "[ Setup ]"
@@ -102,27 +109,63 @@ margin_right = 1084.62
 margin_bottom = 506.762
 size_flags_vertical = 3
 custom_fonts/font = SubResource( 3 )
-text = "          - By Default
+text = "          - Depending on the type of disease your drug will treat,
+             you will receive a different amount of starting money and time for development.
+			
+             For example, when creating a drug for Breast Cancer, you will receive
                   - Money: $1B
                   - Years: 20
-                  - Backup formulations: 0
-                  - Player 1's turn
          - During Turn
                   - Roll the dice by selecting the \"Roll the Dice\" button
                            - Player (mouse) will move automatically
-                           - Message will be displayed about your progression or regression in the drug discovery process. 
-                                    - Can result in a subtraction of money
-                                    - Can reuslt in a subtraction in years
+                           - Message will be displayed about your progression 
+						                             OR regression in the drug discovery process. 
+                                    - Can result in a subtraction of money or years
+                                    - May need to buy or use backup formulations
                   - To end turn, select \"End Turn\" button 
                            - Player (mouse) will be teleported to the respecive tile piece
-                                    - If you land on green tile,  you will advance to the next phase
-                                    - If you land on yellow tile,  you will advance to the next phase
-                                    - If you land on a red tile, you will regress to the begining of the phase.
-                           - Screen will transition (if neccesary) to the respective phase.
-                           - Screen wll transition (if necceary) to the next player's phase
-         - Next Player Turn Starts
+                                    - In general, GREEN tiles are the \"best\" scenario, YELLOW tiles
+                                    are the \"okay\" scenario, RED tiles are the \"bad\" scenario
+                                    - If you land on a FILLED tile, you will advance to the next phase
+                                    - If you land on a HOLLOW tile, you will regress to the begining of the phase
+                                    OR to a previous phase
+         - Next Player's Turn Starts
 		"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 1754.42, 509.03 )
+scale = Vector2( 0.561695, 0.561695 )
+texture = ExtResource( 3 )
+
+[node name="Sprite2" type="Sprite" parent="."]
+position = Vector2( 1862.11, 611.751 )
+scale = Vector2( 0.561695, 0.561695 )
+texture = ExtResource( 5 )
+
+[node name="Sprite5" type="Sprite" parent="."]
+position = Vector2( 1802.26, 611.751 )
+scale = Vector2( 0.561695, 0.561695 )
+texture = ExtResource( 6 )
+
+[node name="Sprite6" type="Sprite" parent="."]
+position = Vector2( 1741.46, 611.751 )
+scale = Vector2( 0.561695, 0.561695 )
+texture = ExtResource( 7 )
+
+[node name="Sprite3" type="Sprite" parent="."]
+position = Vector2( 1662.46, 509.065 )
+scale = Vector2( 0.561695, 0.561695 )
+texture = ExtResource( 4 )
+
+[node name="Sprite4" type="Sprite" parent="."]
+position = Vector2( 1844.86, 510.015 )
+scale = Vector2( 0.561695, 0.561695 )
+texture = ExtResource( 8 )
+
+[node name="mouseGray" type="Sprite" parent="."]
+position = Vector2( 1544.35, 393.486 )
+texture = ExtResource( 9 )
 [connection signal="pressed" from="Back" to="Back" method="_on_Back_pressed"]
