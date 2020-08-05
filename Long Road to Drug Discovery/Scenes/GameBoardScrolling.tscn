@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://Prefabs/Tile.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scripts/GameBoardScrolling.gd" type="Script" id=2]
@@ -17,7 +17,6 @@
 [ext_resource path="res://Graphics/c057bb0f340652a920d8f1a514d0bc03-dna-chain-illustration-by-vexels.png" type="Texture" id=15]
 [ext_resource path="res://Graphics/imageedit_12_7303490012.png" type="Texture" id=16]
 [ext_resource path="res://fonts/FSAlbertPro-ExtraBold.ttf" type="DynamicFontData" id=17]
-[ext_resource path="res://Custom Assets/Time Driving.ogg" type="AudioStream" id=18]
 
 [sub_resource type="DynamicFont" id=1]
 size = 55
@@ -1073,8 +1072,3 @@ script = ExtResource( 6 )
 
 [node name="HUD2" parent="ScrollingCamera" instance=ExtResource( 5 )]
 playerTrackerPath = NodePath("../../PlayerTracker")
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 18 )
-volume_db = -20.0
-autoplay = true
