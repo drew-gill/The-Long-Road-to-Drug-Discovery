@@ -1,3 +1,5 @@
-# LRDD-Team2
+# About the Long Road to Drug Discovery
 
-Godot 2D game designed to help illustrate the process of drug discovery, safety testing, and marketing.
+An HTML5 game designed to help illustrate the process of drug discovery, safety testing, and marketing through board game-esque mechanics. 
+
+Built in the Godot 2D Game Engine.
