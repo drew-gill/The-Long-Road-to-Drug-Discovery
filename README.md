@@ -3,3 +3,5 @@
 An HTML5 game designed to help illustrate the process of drug discovery, safety testing, and marketing through board game-esque mechanics. 
 
 Built in the Godot 2D Game Engine.
+
+[View the gameplay demo here!](https://youtu.be/ZH6vrIxINCc)
